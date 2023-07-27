@@ -1,0 +1,54 @@
+<div class="modal modal_login">
+    <div class="modal-background modal_background_login"></div>
+    <div id="login_modal_card" class="modal-card animate__animated">
+      <header class="modal-card-head has-background-link-dark">
+        <p class="modal-card-title has-text-white-ter">Inicio de sesiòn</p>
+        <button id="close_login_modal_btn" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+        <center>
+          <img 
+              src="<%= base_url %>/images/amge_logo.webp" 
+              width="200" 
+              height="" 
+              style="max-height:none;"
+          >
+        </center>
+        <div class="field">
+          <label class="label">Email:</label>
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Contraseña:</label>
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="password" id="password_input">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+            
+            <span class="icon is-small is-right">
+              <i class="fas fa-eye"></i>
+            </span>           
+          </p>
+        </div>
+        <label class="checkbox" id="ver_password">
+          <input type="checkbox" id="ver_password_check">
+          Ver contraseña
+        </label>
+        
+      </section>
+      <footer class="modal-card-foot has-background-link-dark">
+        <button class="button is-success">Enviar</button>
+        <button class="button" id="login_modal_cancelar">Cancelar</button>
+      </footer>
+    </div>
+</div>

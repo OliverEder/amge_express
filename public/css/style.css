@@ -1,0 +1,39 @@
+.footer {
+    background-color: #28377b;
+}
+
+.btn_amge {
+    background-color: #28377b;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.btn_amge:hover{
+    color: aliceblue;
+    background-color: #283770;
+}
+
+.btn_amge:active {
+    color: aliceblue;
+    background-color: #141B38;
+}
+
+.custom-shape-divider-bottom-1682389076 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1682389076 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 69px;
+}
+
+.custom-shape-divider-bottom-1682389076 .shape-fill {
+    fill: #28377B;
+}

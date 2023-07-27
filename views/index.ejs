@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>/css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/index.css">
+</head>
+<body>
+  <%- include("templates/navbar"); -%>
+  <div class="container">
+    <section class="section is-medium animate__animated">
+      <div class="columns is-vcentered">
+          <div class="column">
+              <h2 class="is-size-1 has-text-weight-bold">Asociación Mexicana de Geofísicos de Exploración, A.C</h2>    
+              <hr>
+              <p class="is-size-4">
+                ¡Bienvenido al sito de la Asociación sin fines de lucro de Ingenieros Geofísicos en México (AMGE)!
+              </p>
+          </div>
+          <div class="column is-two-thirds mt-6">
+              <div class="box_image">
+                  <div class="spin-container">
+                      <div class="shape">
+                          <div class="bd"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>  
+    </section>      
+  </div>
+
+  <%- include("templates/index_carousel"); -%>
+
+  <section class="section is-small">
+      <h1 class="title">Anuncios AMGE</h1>
+      <div class="columns">
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="#">
+                        <img src="<%= base_url %>/images/voto-elecciones.jpeg" alt="Placeholder image">
+                      </a>
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">Convocatoria Delegaciòn Villahermosa</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="">
+                        <img src="<%= base_url %>/images/busqueda-de-candidatos-Evalart-672x372.jpeg" alt="Placeholder image">
+                      </a>                      
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">Postulación de candidatos</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="">
+                        <img src="<%= base_url %>/images/pexels-edmond-dantès-4342127.jpeg" alt="Placeholder image">
+                      </a>                      
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">Acta de Escrutinio del Comité Electoral</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </section>
+
+  <section class="section is-small">
+      <h1 class="title">Noticias AMGE</h1>
+      <div class="columns">
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="">
+                        <img src="<%= base_url %>/images/18 de marzo.png" alt="Placeholder image">
+                      </a>                      
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">Aniversario de la Expropiación Petrolera</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="">
+                        <img src="<%= base_url %>/images/Expropiacion_Petrolera.png" alt="Placeholder image">
+                      </a>                      
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">5 datos sobre la Expropiación Petrolera</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="column">
+              <div class="card animated_card animate__animated animate_element is-invisible">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <a href="">
+                        <img src="<%= base_url %>/images/dia_mujer.png" alt="Placeholder image">
+                      </a>                      
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <a class="title is-4">8 de Marzo 2023</a>
+                      </div>
+                    </div>
+                
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </section>
+
+  <%- include("templates/footer"); %>
+  <%- include("templates/login_model"); %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="<%= base_url %>/js/navbar.js"></script>
+  <script src="<%= base_url %>/js/login_modal.js"></script>
+  <script src="<%= base_url %>/js/swiper_index.js"></script>
+  <script src="<%= base_url %>/js/index.js"></script>
+</body>
+</html>

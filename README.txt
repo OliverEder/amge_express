@@ -1,0 +1,1 @@
+npm install express express-session express-validator nodemon sequelize body-parser cors dotenv ejs mysql2   

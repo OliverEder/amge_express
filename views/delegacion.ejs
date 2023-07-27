@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>/css/delegaciones.css">
+</head>
+<body>
+    <%- include("templates/navbar"); -%>
+    
+    <br><br><br><br><br>
+    <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+              <li><a href="/delegaciones">Delegaciones</a></li>
+              <li class="is-active"><a href="#" aria-current="page"><%= delegacion.nombre %></a></li>
+            </ul>
+        </nav> 
+    </div>
+    
+    <div class="container">
+        <section class="section animate__animated">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h2 class="is-size-1 has-text-weight-bold"><%= delegacion.nombre %></h2>    
+                    <hr>
+                </div>
+            </div>
+        </section>  
+             
+    </div>
+    
+
+    <section class="section" id="delegaciones_section">
+        <% delegacion.directiva.forEach(directive => { %>
+            <div class="columns ">
+                <div class="column is-half is-offset-one-quarter animate__animated animate_directive is-invisible">
+                    <article class="message is-link is-large" style="border-radius: 1rem;">
+                        <div class="message-body">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="<%= base_url %>/<%= directive.image %>">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <h3 class="is-size-3 has-text-link"><%= directive.nombre %></h3>
+                                <p class="has-text-weight-bold"><%= directive.cargo %></p>
+                            </div>
+                        </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        <% }); %>
+         
+    </section>
+    
+    <%- include("templates/footer"); %>
+    <%- include("templates/login_model"); %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="<%= base_url %>/js/navbar.js"></script>
+    <script src="<%= base_url %>/js/login_modal.js"></script>
+    <script src="<%= base_url %>/js/delegacion.js"></script>
+</body>
+</html>

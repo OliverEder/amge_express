@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>/css/membresias.css">
+</head>
+<body>
+    <%- include("templates/navbar"); -%>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <section class="section is-medium animate__animated animated_elements is-invisible">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h2 class="is-size-1 has-text-weight-bold">Membresias</h2>    
+                    <hr>
+                    <p class="is-size-4">
+                        Disfruta de los beneficios de pertenecer a la Asociación Mexicana de Geofísicos de Exploración.
+                    </p>
+                </div>
+                <div class="column is-two-thirds mt-6">
+                    <div class="box_image">
+                        <div class="spin-container">
+                            <div class="shape">
+                                <div class="bd"></div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    </div>
+
+    <section class="section" id="delegaciones_section">
+        <h1 class="is-size-1">Selecciona la delegación de tu interés</h1>
+        <hr>
+        <div class="columns is-multiline animate__animated animated_elements is-invisible">
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/cdmx.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Ciudad de México</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiascdmx.amge@gmail.com</p>
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="cdmx" 
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSeb-qHNJm53_Z8qZhZyTXIRbAayXXpOzcPwTBAY7NgJxc5XPg/viewform" 
+                            target="_blank"
+                        >Obtener más información</a>                    
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/carmen.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Ciudad del Carmen</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiascarmen.amge@gmail.com</p> 
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="carmen"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSe-k9oK3Z6eWv4HKGnyUQGUTQQmDu1jFg_6cvek7gkJw859Jw/viewform" 
+                            target="_blank"
+                        >Seleccionar</a>                     
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/pozarica.webp');">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Poza Rica</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiaspr.amge@gmail.com</p> 
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="pozarica"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScjA1arplQ1bq575qeLSYHI9chnnAVUi8B014CDgZVE29oH7Q/viewform" 
+                            target="_blank"
+                        >Seleccionar</a>                     
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/reynosa.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Reynosa</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiasrey.amge@gmail.com</p>  
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="reynosa"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSevq0SJDGzXBAjNmhpHXNcmBaxaj_LKuJO0YSu_tU8pES8bDA/viewform?usp=send_form" 
+                            target="_blank"
+                        >Seleccionar</a>                    
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/tampico.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Tampico</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiastamp.amge@gmail.com</p>
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="tampico"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSc3WP0JwIAMUMsaOpJ2_FmoI7bvCTFS8AEtRPIMGDalNlhiNQ/viewform" 
+                            target="_blank"
+                        >Seleccionar</a>                      
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/veracruz.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold nombre_delegacion">Delegación Veracruz</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold correo_delegacion">membresiasver.amge@gmail.com</p>  
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="veracruz"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSegZ-2yVg-3J5SZ2wBvEvgzz-K5LYXE9tP5248hoWfmb8Vomg/viewform" 
+                            target="_blank"
+                        >Seleccionar</a>                    
+                    </div>
+                </div>            
+            </div>
+            <div class="column is-one-quarter">
+                <div  class="hero-image" style="width: 100%; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= base_url %>/images/villahermosa.webp'); ">
+                    <div class="hero-text">
+                        <h1 class="is-size-3 has-text-weight-bold villahermosa nombre_delegacion" >Delegación Villahermosa</h1>
+                        <p>Correo de contacto:</p>
+                        <p class="is-size-5 has-text-weight-bold villahermosa correo_delegacion">membresiasvhsa.amge@gmail.com</p> 
+                        <a 
+                            class="button is-link select_delegacion_btn" 
+                            delegacion="villahermosa"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSexHphOeILVjLfo1u7XPsJ3PoykUujk9_MTgxo4gHXLlp6NHg/viewform" 
+                            target="_blank"
+                        >Seleccionar</a>                     
+                    </div>
+                </div>            
+            </div>
+        </div> 
+    </section>
+    
+    <%- include("templates/footer"); %>
+    <%- include("templates/login_model"); %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="<%= base_url %>/js/navbar.js"></script>
+    <script src="<%= base_url %>/js/login_modal.js"></script>
+    <script src="<%= base_url %>/js/membresias.js"></script>
+</body>
+</html>

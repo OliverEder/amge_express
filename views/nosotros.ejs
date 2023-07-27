@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>/css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/nosotros.css">
+</head>
+<body>
+    <%- include("templates/navbar"); -%>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <section class="section is-medium animate__animated">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h2 class="is-size-1 has-text-weight-bold">Nosotros en AMGE</h2>    
+                    <hr>
+                    <p class="is-size-4">Los cimientos de nuestro éxito</p>
+                </div>
+                <div class="column is-two-thirds mt-6">
+                    <div class="box_image">
+                        <div class="spin-container">
+                            <div class="shape">
+                                <div class="bd"></div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>        
+        
+        <section class="section is-medium animate__animated is-invisible">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h1 class="is-size-2">Misión</h1>
+                    <p class="is-size-5">
+                        La AMGE fue constituida en noviembre de 1958, con el fin de difundir el conocimiento de la 
+                        Geofísica entre sus socios. Es la asociación de Geofísicos más antigua de Latinoamérica, 
+                        la cual se encuentra en constante evolución, con el fin de mantenerse vigente enfrentando 
+                        los retos del presente y futuro.
+                    </p>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <img class="is-rounded" src="<%= base_url %>/images/mision.jpeg" alt="">
+                    </figure>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section is-medium animate__animated is-invisible">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <figure class="image">
+                        <img class="is-rounded" src="<%= base_url %>/images/geofisica.webp" alt="">
+                    </figure>
+                    
+                </div>
+                <div class="column">
+                    <h1 class="is-size-2">Visión</h1>
+                    <p class="is-size-5">
+                        Ser el referente gremial más influyente en Geofísica y Ciencias de la Tierra en Latinoamérica, 
+                        con presencia mundial.
+                    </p>
+                </div>                
+            </div>
+        </section>
+        <section class="section is-medium animate__animated is-invisible">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h1 class="is-size-2">Valores</h1>
+                    <p class="is-size-5">
+                        La AMGE es una asociación incluyente. La no discriminación (social, económica o física) y 
+                        el respeto entre socios son nuestros referentes éticos, imponiendo la importancia de cada socio 
+                        activo, jubilado o estudiante.
+                    </p>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <img class="is-rounded" src="<%= base_url %>/images/valores.jpeg" alt="">
+                    </figure>                        
+                </div>
+            </div>
+        </section>
+        
+        <section class="section is-small animate__animated is-invisible">
+            <h2 class="is-size-1">Documentos oficiales</h2>    
+            <hr>
+            <div class="columns is-8">
+                <div class="column">
+                    <div class="card p-4">
+                        <center>
+                            <a href="<%= base_url %>/documents/Estatuto AMGE.pdf" download>
+                                <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
+                                <p class="is-size-5 mt-3">Estatuo AMGE</p>
+                            </a>
+                        </center> 
+                    </div>                                       
+                </div>
+                <div class="column">
+                    <div class="card p-4">
+                        <center>
+                            <a href="<%= base_url %>/documents/Reglamento AMGE.pdf" download>
+                                <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
+                                <p class="is-size-5 mt-3">Reglamento AMGE</p>
+                            </a>
+                        </center>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <%- include("templates/footer"); %>
+    <%- include("templates/login_model"); %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="<%= base_url %>/js/navbar.js"></script>
+    <script src="<%= base_url %>/js/login_modal.js"></script>
+    <script src="<%= base_url %>/js/nosotros.js"></script>
+</body>
+</html>
