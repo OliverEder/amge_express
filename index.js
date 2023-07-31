@@ -8,6 +8,8 @@ import db from "./config/db.js";
 
 // Routers para las vistas
 import router_delegaciones from "./routes/page/delegaciones.js";
+import router_dashboard from "./routes/dashboard/dashboard_routes.js";
+
 const app = express();
 
 
@@ -63,6 +65,7 @@ app.get("/servicios", (req, res, next) => {
 });
 
 app.use("/delegaciones", router_delegaciones);
+app.use("/dashboard", router_dashboard);
 
 //conetar base de datos
 db.authenticate()
