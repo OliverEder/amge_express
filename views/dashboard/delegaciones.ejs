@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+                <p class="title is-size-2 is-spaced">
+                    Delegaciones
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Delegaciones
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Delegacion</th>
+                                            <th>Usuarios</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>CDMX</td> 
+                                            <td>40</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Ciudad del Carmen</td> 
+                                            <td>50</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Poza Rica</td> 
+                                            <td>50</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Reynosa</td> 
+                                            <td>60</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Tampico</td> 
+                                            <td>56</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Veracruz</td> 
+                                            <td>56</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Vila Hermosa</td> 
+                                            <td>56</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Usuarios por delegaciòn
+                                </p>
+                            </header>
+                            <div id="users_per_delegation"></div>
+                        </div>
+                    </div>
+                </div>
+   
+            </section>
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="<%= base_url %>js/dashboard/delegaciones.js"></script>
+</body>
+</html>

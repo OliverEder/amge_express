@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+    
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+
+                <p class="title is-size-2 is-spaced">
+                    Usuarios
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Usuarios
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="columns">
+                                    <div class="column is-offset-4 is-4">
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="Buscar usuarios">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Email</th>
+                                            <th>Usuario</th>
+                                            <th>Delegacion</th>
+                                            <th>Grupo</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Administrador</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>correo@correo.com</td>
+                                            <td>usuario usuario usuario</td>
+                                            <td>Villa Hermosa</td>
+                                            <td>Asociado</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+        
+                                    </tbody>
+                                </table>
+                                <div class="columns">
+                                    <div class="column is-8 is-offset-2">
+                                        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                                            <a class="pagination-previous">Anterior</a>
+                                            <a class="pagination-next">Siguiente</a>
+                                            <ul class="pagination-list">
+                                                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                                                <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Usuarios activos e inactivos
+                                </p>
+                            </header>
+                            <div id="active_users_chart"></div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Membresias expiradas y por expirar
+                                </p>
+                            </header>
+                            <div id="memberships_chart"></div>
+                            <footer class="card-footer">
+                                <a href="#" class="card-footer-item">Ver registros</a>
+                                <a href="#" class="card-footer-item">Enviar avisos</a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Sesiones
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Usuario</th>
+                                            <th>Inicio</th>
+                                            <th>Fin</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Usuario</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Usuario</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Usuario</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Usuario</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Usuario</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>2023-07-01 10:10:00</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                                        <a class="pagination-previous">Anterior</a>
+                                        <a class="pagination-next">Siguiente</a>
+                                        <ul class="pagination-list">
+                                            <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                            <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                                            <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                                            <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                            <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Registro historico de sesiones
+                                </p>
+                            </header>
+                            <div id="sessions_record_chart"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Grupos de usuarios
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Grupo</th>
+                                            <th>Usuario</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Administrador</td>
+                                            <td>2</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Directivo</td>
+                                            <td>5</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Asociados</td>
+                                            <td>200</td>
+                                            <td>Activo</td>
+                                            <td>
+                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="<%= base_url %>js/dashboard/usuarios.js"></script>
+</body>
+</html>
