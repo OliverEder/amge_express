@@ -64,6 +64,13 @@ app.get("/servicios", (req, res, next) => {
     });
 });
 
+app.get("/perfil/:user_id", (req, res, next) => {
+    res.render("perfil", {
+        base_url: process.env.BASE_URL,
+        api_base_url: process.env.API_BASE_URL
+    });
+});
+
 app.use("/delegaciones", router_delegaciones);
 app.use("/dashboard", router_dashboard);
 
