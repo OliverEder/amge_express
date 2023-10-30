@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>/css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+</head>
+<body>
+  <%- include("templates/navbar"); -%>
+  <div class="section ">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="is-size-1 mb-4">Registro de usuario</h1>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left">
+                        <input class="input is-large" type="email" placeholder="Registre su Email" id="reg_email_input">
+                        <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    <p class="help is-danger">This email is invalid</p>
+                </div>
+
+                <div class="field">
+                    <label class="label">Contraseña</label>
+                    <div class="control has-icons-left">
+                        <input class="input is-large" type="password" placeholder="Registre una contraseña" id="reg_password_input">
+                        <span class="icon is-small is-left">
+                        <i class="fas fa-key"></i>
+                        </span>
+                    </div>
+                    <p class="help is-danger">This email is invalid</p>
+                </div>
+
+                <div class="field">
+                    <label class="label">Confirmación de Contraseña</label>
+                    <div class="control has-icons-left">
+                        <input class="input is-large" type="password" placeholder="Confirme la contraseña" id="reg_confirmation_input">
+                        <span class="icon is-small is-left">
+                        <i class="fas fa-key"></i>
+                        </span>
+                    </div>
+                    <p class="help is-danger">This email is invalid</p>
+                </div>
+
+                <div class="field">
+                    <label class="label">Nombres</label>
+                    <div class="control">
+                      <input class="input is-large" type="text" placeholder="Registre sus Nombres" id="reg_names_input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Apellidos</label>
+                    <div class="control">
+                      <input class="input is-large" type="text" placeholder="Registre sus Apellidos" id="reg_lastnames_input">
+                    </div>
+                </div>
+                  
+            
+                
+                  
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link is-large" id="register_btn"">Registrar</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light is-large">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+  </div>
+  
+
+
+
+  <%- include("templates/footer"); %>
+  <%- include("templates/login_model"); %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="<%= base_url %>/js/navbar.js"></script>
+  <script src="<%= base_url %>/js/login_modal.js"></script>
+  <script src="<%= base_url %>/js/registro.js"></script>
+</body>
+</html>

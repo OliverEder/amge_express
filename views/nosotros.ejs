@@ -18,121 +18,320 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="<%= base_url %>/css/swiper_styles.css">
-    <link rel="stylesheet" href="<%= base_url %>/css/nosotros.css">
+    <link rel="stylesheet" href="<%= base_url %>css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>css/nosotros.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-accordion.min.css">
 </head>
 <body>
     <%- include("templates/navbar"); -%>
     <br>
     <br>
     <br>
-    <div class="container">
-        <section class="section is-medium animate__animated">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h2 class="is-size-1 has-text-weight-bold">Nosotros en AMGE</h2>    
-                    <hr>
-                    <p class="is-size-4">Los cimientos de nuestro éxito</p>
-                </div>
-                <div class="column is-two-thirds mt-6">
-                    <div class="box_image">
-                        <div class="spin-container">
-                            <div class="shape">
-                                <div class="bd"></div>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>        
-        
-        <section class="section is-medium animate__animated is-invisible">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h1 class="is-size-2">Misión</h1>
-                    <p class="is-size-5">
-                        La AMGE fue constituida en noviembre de 1958, con el fin de difundir el conocimiento de la 
-                        Geofísica entre sus socios. Es la asociación de Geofísicos más antigua de Latinoamérica, 
-                        la cual se encuentra en constante evolución, con el fin de mantenerse vigente enfrentando 
-                        los retos del presente y futuro.
+    <div class="columns">
+        <div class="column is-2">
+            <aside class="menu" id="menu_nosotros">
+                <button class="button is-link tooltip" id="menu_nosotros_btn">
+                    <i class="fa-solid fa-bars"></i>
+                    <span class="tooltiptext">Menu de contenido</span>
+                </button>
+                
+                <div id="menu_nosotros_contenido">
+                    <p class="menu-label">
+                        Nosotros
                     </p>
-                </div>
-                <div class="column">
-                    <figure class="image">
-                        <img class="is-rounded" src="<%= base_url %>/images/mision.jpeg" alt="">
-                    </figure>
-                </div>
-            </div>
-        </section>
+                    <ul class="menu-list">
+                        <li><a class="menu_li is-active" target="quienes_somos">¿Quienes Somos?</a></li>
+                        <li><a class="menu_li" target="objetivos">Objetivos</a></li>
+                        <li><a class="menu_li" target="mision_vision">Misión / Visión</a></li>
+                        <li><a class="menu_li" target="codigo_etica">Código de Ética</a></li>
+                        <li><a>Directiva Nacional</a></li>
+                        <li><a>Estatuto/Reglamento</a></li>
+                        <li><a>Consejo de Honor y Justicia</a></li>
+                        <li><a class="menu_li" target="mesas_directivas_anteriores">Mesas Directivas Anteriores</a></li>
+                    </ul>
+                </div>          
+            </aside>
+        </div>
+        <div class="column">
+            <div class="container">
         
-        <section class="section is-medium animate__animated is-invisible">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <figure class="image">
-                        <img class="is-rounded" src="<%= base_url %>/images/geofisica.webp" alt="">
-                    </figure>
+                <section class="section is-medium animate__animated">
                     
-                </div>
-                <div class="column">
-                    <h1 class="is-size-2">Visión</h1>
-                    <p class="is-size-5">
-                        Ser el referente gremial más influyente en Geofísica y Ciencias de la Tierra en Latinoamérica, 
-                        con presencia mundial.
-                    </p>
-                </div>                
-            </div>
-        </section>
-        <section class="section is-medium animate__animated is-invisible">
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h1 class="is-size-2">Valores</h1>
-                    <p class="is-size-5">
-                        La AMGE es una asociación incluyente. La no discriminación (social, económica o física) y 
-                        el respeto entre socios son nuestros referentes éticos, imponiendo la importancia de cada socio 
-                        activo, jubilado o estudiante.
-                    </p>
-                </div>
-                <div class="column">
-                    <figure class="image">
-                        <img class="is-rounded" src="<%= base_url %>/images/valores.jpeg" alt="">
-                    </figure>                        
-                </div>
-            </div>
-        </section>
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <h2 class="is-size-1 is-size-4-mobile has-text-weight-bold has-text-centered" >
+                                Nosotros en AMGE
+                            </h2>    
+                        </div>     
+                        <div class="column">
+                            <center>
+                                <img 
+                                    src="<%= base_url %>/images/amge_logotipo.webp" 
+                                    width="500" 
+                                    height="" 
+                                    style="max-height:none;"
+                                >
+                            </center>
+                        </div>
+                             
+                    </div>
+                    
+                </section> 
         
-        <section class="section is-small animate__animated is-invisible">
-            <h2 class="is-size-1">Documentos oficiales</h2>    
-            <hr>
-            <div class="columns is-8">
-                <div class="column">
-                    <div class="card p-4">
-                        <center>
-                            <a href="<%= base_url %>/documents/Estatuto AMGE.pdf" download>
-                                <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
-                                <p class="is-size-5 mt-3">Estatuo AMGE</p>
-                            </a>
-                        </center> 
-                    </div>                                       
-                </div>
-                <div class="column">
-                    <div class="card p-4">
-                        <center>
-                            <a href="<%= base_url %>/documents/Reglamento AMGE.pdf" download>
-                                <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
-                                <p class="is-size-5 mt-3">Reglamento AMGE</p>
-                            </a>
-                        </center>
-                    </div>                    
-                </div>
+                <section class="section" id="quienes_somos">
+                    <h2 class="is-size-2" style="margin:4rem 0 0 0;">¿Quienes Somos?</h2>
+                    <p class="is-size-5 has-text-justified">
+                        La Asociación Mexicana de Geofísicos de Exploración (la AMGE), fue fundada el 8 de noviembre de 1958, por un grupo 
+                        de entusiastas profesionales dedicados a la geofísica de exploración en la industria petrolera, encabezados por el 
+                        Ing. Antonio García Rojas, constituyendo la primera Asociación de Exploración Geofísica de Latinoamérica. 
+                    </p>
+                    <p class="is-size-5 has-text-justified">
+                        A continuación, las emotivas palabras del Ing. Vladimir Olhovich, ilustre profesional mexicano dedicado a la 
+                        geofísica, miembro fundador y primer editor de AMGE, en referencia a la formación de nuestra querida Asociación a 
+                        finales de la década de los 50’s: 
+                    </p>
+                    <p class="is-size-5 has-text-justified">
+                        “En una ocasión como la presente, en que todos hemos puesto una pequeña parte de nuestro tiempo, y de nuestro 
+                        entusiasmo, en formar una Asociación de Geofísica, cabe pensar en el futuro que espera a una agrupación de esta 
+                        índole. Todos hemos pensado, desde hace muchos años, en que un vínculo de esta clase entre los que nos dedicamos a 
+                        la ciencia de la Geofísica, estaría a tono con nuestros impulsos en el desarrollo de nuestras ideas, en el 
+                        intercambio de nuestras experiencias o en la divulgación de nuestros estudios. Hemos deseado tener esta 
+                        Asociación a la mano cuando nuestras facultades producen trabajo o ideas útiles, pero también hemos percibido el 
+                        compromiso de tener que realizar una obra en la que, por pequeña que sea nuestra colaboración, nos exigirá esfuerzo 
+                        y disciplina personal.
+                    </p>
+                    <p class="is-size-5 has-text-justified">
+                        En nuestros afanes profesionales, esta necesidad finalmente se ha impuesto, y nos encontramos ahora iniciando una 
+                        obra cuyos alcances todavía no podemos percibir. Yo concibo a esta Asociación grande, útil y productiva, sin que 
+                        por esto se aparte de modesta. Será, por su misma naturaleza, un medio de conocimiento  entre personas, será la 
+                        oportunidad de dar a conocer todo lo que nos parece esfuerzo en la rama de nuestra actividad, será la forma de 
+                        conseguir algunas de nuestras legitimas satisfacciones profesionales, un aliciente en el estudio científico, será 
+                        un modo organizado de compartir ideas con otras agrupaciones, de valorar personas y organizaciones, será la labor 
+                        respetable de un grupo profesional, sujeto a mutuas disciplinas”.
+                    </p>
+                </section>
+                
+                <section class="section" id="objetivos">
+                    <h2 class="is-size-2" style="margin:4rem 0 0 0;">Objetivos</h2>
+                    <p class="is-size-5">
+                        La asociación tiene los siguientes objetivos:
+                    </p>
+                    <ol type="a" class="is-size-5 has-text-justified pl-4">
+                        <li>
+                            Promover el estudio y desarrollo de la Geofísica en lo general y especialmente en las ramas de esta ciencia, 
+                            que se dedican a la exploración e investigación de la corteza terrestre, para la localización de yacimientos 
+                            de petróleo, gas, agua, minerales y cualquier otro recurso natural renovable o no renovable, así como el 
+                            estudio y la investigación vinculados a la atmósfera terrestre y el espacio interestelar. Con esto difundir 
+                            el interés científico, tecnológico y educativo para mantener un elevado nivel de conocimientos en todos sus 
+                            miembros.
+                        </li>
+                        <li>
+                            Desarrollar la fraternidad entre sus miembros para estrechar sus relaciones profesionales y sociales.
+                        </li>
+                        <li>
+                            Colaborar con otros organismos o asociaciones cuyos objetivos sean afines a los de la ASOCIACIÓN.
+                        </li>
+                        <li>
+                            Organizar por sí misma o conjuntamente con otros organismos, congresos, convenciones, simposios, cursos y 
+                            cualquier otro tipo de evento técnico nacional o en el extranjero, que permitan el intercambio tecnológico 
+                            entre profesionistas o asociaciones afines a las Ciencias de la Tierra.
+                        </li>
+                        <li>
+                            Participar en cualquier tipo de reunión técnica-científica y/o cultural nacional e internacional de 
+                            profesionistas o asociaciones afines a Ciencias de la Tierra.
+                        </li>
+                        <li>
+                            Ser un foro permanente de difusión de los principios técnicos y aplicaciones actuales de la geofísica de 
+                            exploración, a partir de la organización de eventos y reuniones técnicas, así como de publicaciones periódicas.
+                        </li>
+                        <li>
+                            Promover y documentar la implantación de normas y técnicas relacionadas con las diversas disciplinas de la 
+                            prospección geofísica.
+                        </li>
+                        <li>
+                            Mantener relaciones con instituciones de educación superior en donde se imparten conocimientos de prospección 
+                            geofísica y se realicen investigaciones sobre esta ciencia, para contribuir a mantener un elevado nivel de 
+                            enseñanza en esta disciplina.
+                        </li>
+                        <li>
+                            Proporcionar capacitación, asesoría y consultoría sin afán de lucro, a organismos gubernamentales, 
+                            profesionales y educativos en materia de prospección e investigación geofísica.
+                        </li>
+                        <li>
+                            Promover la colaboración entre los miembros, y la de éstos, con la ASOCIACIÓN para alcanzar sus fines.
+                        </li>
+                        <li>
+                            Celebrar convenios y contratos que coadyuven a alcanzar sus fines.
+                        </li>
+                        <li>
+                            Establecer, difundir y vigilar el cumplimiento entre los asociados de las normas de ética, conforme al Código de 
+                            Ética AMGE, con el objeto de elevar la calidad humana de sus miembros y el prestigio de la ASOCIACIÓN.
+                        </li>
+                    </ol>
+                </section>
+                
+                <section class="section is-medium animate__animated is-invisible" id="mision_vision">
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <h1 class="is-size-2">Misión</h1>
+                            <p class="is-size-5">
+                                La AMGE fue constituida en noviembre de 1958, con el fin de difundir el conocimiento de la 
+                                Geofísica entre sus socios. Es la asociación de Geofísicos más antigua de Latinoamérica, 
+                                la cual se encuentra en constante evolución, con el fin de mantenerse vigente enfrentando 
+                                los retos del presente y futuro.
+                            </p>
+                        </div>
+                        <div class="column">
+                            <figure class="image">
+                                <img class="is-rounded" src="<%= base_url %>/images/mision.jpeg" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="columns is-vcentered">
+                        <div class="column">
+                            <figure class="image">
+                                <img class="is-rounded" src="<%= base_url %>/images/geofisica.webp" alt="">
+                            </figure>
+                            
+                        </div>
+                        <div class="column">
+                            <h1 class="is-size-2">Visión</h1>
+                            <p class="is-size-5">
+                                Ser el referente gremial más influyente en Geofísica y Ciencias de la Tierra en Latinoamérica, 
+                                con presencia mundial.
+                            </p>
+                        </div>                
+                    </div>
+
+                </section>
+            
+        
+                <section class="section animate__animated is-invisible" id="codigo_etica">
+                    <h2 class="is-size-2" style="margin:4rem 0 0 0;">Código de Ética:</h2>
+                    <ol class="is-size-5 has-text-justified pl-4">
+                        <li>
+                            Siempre me conduciré con justicia, honradez, honestidad, lealtad, respeto, formalidad, discreción, 
+                            honorabilidad, responsabilidad, sinceridad, dignidad, buena fe, tolerancia, siendo incluyente, integro, 
+                            con equidad de género y solidaridad, en estricta observancia a las normas legales y éticas de mi 
+                            profesión.
+                        </li>
+                        <li>
+                            Pondré los conocimientos científicos y recursos técnicos para el mejor desempeño de mi profesión.
+                        </li>
+                        <li>
+                            Daré crédito a mis colegas, asesores y subordinados por la intervención de éstos en los asuntos, 
+                            investigaciones y trabajos elaborados en conjunto.
+                        </li>
+                        <li>
+                            Me mantendré actualizado de los avances científicos y tecnológicos de mi materia a lo largo de mi vida 
+                            para brindar un servicio de calidad total.
+                        </li>
+                        <li>
+                            Transmitiré mis conocimientos y experiencia a estudiantes y egresados de mi profesión, con objetividad y 
+                            en el más alto apego a la verdad del campo de conocimiento actualizado del que se trate.
+                        </li>
+                        <li>
+                            Dignificaré mi profesión mediante el buen desempeño del ejercicio profesional y el reconocimiento que haga 
+                            a los maestros que me transmitieron sus conocimientos y experiencia. 
+                        </li>
+                        <li>
+                            Contribuiré al desarrollo de mi profesión mediante la investigación profesional, realizada con apego a 
+                            normas metodológicas científicas y la docencia.
+                        </li>
+                        <li>
+                            En las investigaciones realizadas, expresaré las conclusiones en su exacta magnitud y en estricto apego a 
+                            las normas metodológicas acordes con el tipo de estudio.
+                        </li>
+                        <li>
+                            Pondré en alto el prestigio de mi profesión y de la AMGE en todo lugar y momento, defendiendo sus ideales 
+                            y nunca cometeré actos de deshonestidad, cobardía, acoso, ni hostigamiento.
+                        </li>
+                        <li>
+                            Estaré orgulloso de pertenecer a la AMGE, guardando y haciendo guardar celosamente su patrimonio y acatando 
+                            respetuosamente su Estatuto y Reglamento.
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="section  animate__animated is-invisible" id="mesas_directivas_anteriores">
+                    <h2 class="is-size-2" style="margin:4rem 0 0 0;">Mesas Directivas Anteriores</h2>
+                    <div class="columns">
+                        <div class="column">
+                            <section class="accordions">
+                                <% directives.forEach(directive => { %>
+                                    <article class="accordion">
+                                        <div class="accordion-header toggle has-background-link">
+                                            <p><%= directive.prev_association_directive_tittle %></p>
+                                        </div>
+                                        <div class="accordion-body">
+                                            <div class="accordion-content">
+                                                <div class="columns is-multiline is-mobile">
+                                                    <% members.forEach(member => { %>
+                                                        <% if (member.prev_association_directive_id == directive.prev_association_directive_id) { %>
+                                                            <div class="column is-3">
+                                                                <p class="is-size-1 has-text-centered has-text-link">
+                                                                    <i class="fa-solid fa-user"></i>
+                                                                </p>
+                                                                <p class="has-text-centered has-text-link">
+                                                                    <%= member.prev_association_directive_member_name %> 
+                                                                </p>
+                                                                <p class="has-text-centered has-text-weight-bold has-text-link">
+                                                                    <%= member.prev_association_directive_member_position %>
+                                                                </p>
+                                                                
+                                                            </div>
+                                                            
+                                                        <% } %>
+                                                    <%  }); %>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </article>
+                                <%}); %>
+                            </section>                 
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section class="section is-small animate__animated is-invisible" id="documentos_oficiales">
+                    <h2 class="is-size-1" >Documentos oficiales</h2>    
+                    <hr>
+                    <div class="columns is-8">
+                        <div class="column">
+                            <div class="card p-4">
+                                <center>
+                                    <a href="<%= base_url %>/documents/Estatuto AMGE.pdf" download>
+                                        <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
+                                        <p class="is-size-5 mt-3">Estatuo AMGE</p>
+                                    </a>
+                                </center> 
+                            </div>                                       
+                        </div>
+                        <div class="column">
+                            <div class="card p-4">
+                                <center>
+                                    <a href="<%= base_url %>/documents/Reglamento AMGE.pdf" download>
+                                        <i class="fa-solid fa-file-pdf" style="font-size: 7rem;"></i>
+                                        <p class="is-size-5 mt-3">Reglamento AMGE</p>
+                                    </a>
+                                </center>
+                            </div>                    
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
     </div>
+    
     <%- include("templates/footer"); %>
     <%- include("templates/login_model"); %>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="<%= base_url %>/js/navbar.js"></script>
     <script src="<%= base_url %>/js/login_modal.js"></script>
+    <script src="<%= base_url %>/js/bulma-accordion.js"></script>
     <script src="<%= base_url %>/js/nosotros.js"></script>
+    
 </body>
 </html>

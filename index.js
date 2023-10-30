@@ -9,6 +9,7 @@ import db from "./config/db.js";
 // Routers para las vistas
 import router_delegaciones from "./routes/page/delegaciones.js";
 import router_dashboard from "./routes/dashboard/dashboard_routes.js";
+import router_amge from "./routes/page/amge_routes.js";
 
 const app = express();
 
@@ -36,43 +37,10 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.get("/", (req, res, next) => {
-    res.render("index", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
-
-app.get("/nosotros", (req, res, next) => {
-    res.render("nosotros", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
-
-app.get("/membresias", (req, res, next) => {
-    res.render("membresias", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
-
-app.get("/servicios", (req, res, next) => {
-    res.render("servicios", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
-
-app.get("/perfil/:user_id", (req, res, next) => {
-    res.render("perfil", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
 
 app.use("/delegaciones", router_delegaciones);
 app.use("/dashboard", router_dashboard);
+app.use("/", router_amge);
 
 //conetar base de datos
 db.authenticate()
