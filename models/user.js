@@ -19,10 +19,13 @@ export const User = db.define("user",{
     user_last_names: {
         type: Sequelize.STRING
     },
+    user_birth: {
+        type: Sequelize.DATE
+    },
     user_created_at: {
         type: Sequelize.DATE
     },
-    user_modify_at: {
+    user_modified_at: {
         type: Sequelize.DATE
     },
     user_group_id: {
