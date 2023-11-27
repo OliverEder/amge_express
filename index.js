@@ -23,7 +23,12 @@ app.set('trust proxy', 1);
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    rolling: true,
+    cookie: {
+        expires: new Date(Date.now() + (24 * 60 * 60 * 1000) ),
+        //maxAge: (24 * 60 * 60 * 1000) 
+    }
 }));
 
 app.use(function(req, res, next) {

@@ -1,18 +1,17 @@
 const sections = document.querySelectorAll(".section");
 const menu_nosotros_btn = document.querySelector("#menu_nosotros_btn");
 const menu_li = document.querySelectorAll(".menu_li");
-console.log(sections);
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
             entry.target.classList.add("animate__fadeIn");
             entry.target.classList.remove("is-invisible");
-            console.log(entry.target.id);
+            //console.log("asda",entry.target.id);
             menu_li.forEach(li => {
                 li.classList.remove("is-active");
                 if(li.getAttribute("target")=== entry.target.id ){
-                    console.log("encontrado");
+                    //console.log("encontrado");
                     li.classList.add("is-active")
                 }
             });
@@ -38,9 +37,7 @@ menu_li.forEach(li => {
         e.preventDefault();
         const target_id = e.target.getAttribute("target")
         const target = document.querySelector(`#${target_id}`);
-        console.log(target);
         target.scrollIntoView({ behavior: 'smooth'});
-
     })
 });
 

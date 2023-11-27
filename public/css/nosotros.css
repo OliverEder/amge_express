@@ -77,7 +77,7 @@
     top: 6rem;
     
     width: 15rem;
-    height: 27rem;
+    height: 30rem;
     transition: width 0.5s;
     background-color: white;
     /* height: calc(100vh - 6rem); */
@@ -140,7 +140,7 @@
     #menu_nosotros{
         padding:1rem;
         width: 15rem;
-        height: 27rem;
+        height: 30rem;
         transition: width 0.5s;
         background-color: white;
         z-index: 1;

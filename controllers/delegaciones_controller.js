@@ -1,12 +1,16 @@
 export const delegaciones = (req, res, next) => {
+    const { session } = req;
     res.render("delegaciones", {
         base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
+        api_base_url: process.env.API_BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_email:  session.logged ? session.user_email : ""
     });
 }
 
 export const delegacion = (req, res, next) => {
     const { params } = req;
+    const { session } = req;
 
     const delegaciones = [
         {
@@ -110,6 +114,8 @@ export const delegacion = (req, res, next) => {
     res.render("delegacion", {
         base_url: process.env.BASE_URL,
         api_base_url: process.env.API_BASE_URL,
-        delegacion: delegacion[0]
+        delegacion: delegacion[0],
+        logged: session.logged ? session.logged : false,
+        user_email:  session.logged ? session.user_email : ""
     });
 }

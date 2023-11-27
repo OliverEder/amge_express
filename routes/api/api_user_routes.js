@@ -1,6 +1,11 @@
 import express from "express";
 
-import { register } from "../../controllers/user_controller.js"
+import { 
+    register,
+    login, 
+    logout
+} from "../../controllers/user_controller.js"
+import { login_validation } from "../../validations/login_validations.js";
 
 const router_api_user = express.Router();
 
@@ -32,19 +37,9 @@ router_api_user.delete("/:user_id", (req, res, next) => {
 });
 
 // login
-router_api_user.post("/login", (req, res, next) => {
-    res.render("index", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
+router_api_user.post("/login", login_validation, login);
 
 
 // logout
-router_api_user.post("/logout", (req, res, next) => {
-    res.render("index", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
+router_api_user.post("/logout", logout);
 export default router_api_user;

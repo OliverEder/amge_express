@@ -35,9 +35,12 @@ export const User = db.define("user",{
             key: "user_group_id"
         }
     },
-    delegation_id: {
+    user_email_updates: {
         type: Sequelize.INTEGER,
     },   
+    delegation_id: {
+        type: Sequelize.INTEGER,
+    }, 
     user_status: {
         type: Sequelize.CHAR
     }

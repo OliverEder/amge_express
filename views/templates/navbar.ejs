@@ -1,3 +1,4 @@
+<div id="base_url" base_url="<%= base_url %>"></div>
 <nav class="navbar is-fixed-top " role="navigation" aria-label="main navigation" style="border-bottom: 1px solid; height: 6rem; ">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
@@ -21,9 +22,9 @@
           Nosotros
         </a>
   
-        <a href="/servicios" class="navbar-item has-text-weight-bold">
+<!--         <a href="/servicios" class="navbar-item has-text-weight-bold">
           Servicios
-        </a>
+        </a> -->
 
         <a href="/membresias" class="navbar-item has-text-weight-bold">
           Membresìas
@@ -48,18 +49,39 @@
           </div>
         </div>
       </div>
-  
+      
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-large is-primary" href="/registro">
-              <strong>Registro</strong>
+        <% if (logged) { %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link has-text-weight-bold">
+              <i class="fa-solid fa-user mr-2"></i>
+              <%= user_email  %>
             </a>
-            <a id="login_btn" class="button btn_amge is-large">
-              Inicio de sesión
-            </a>
+    
+            <div class="navbar-dropdown animate__animated animate__fadeIn">
+              <a class="navbar-item">
+                <i class="fa-solid fa-user mr-2 has-text-link"></i>
+                Perfil
+              </a>
+              <a class="navbar-item" id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket mr-2 has-text-danger"></i>
+                Cerrar sesiòn
+              </a>
+            </div>
           </div>
-        </div>
+        <% } else { %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary" href="/registro">
+                <strong>Registro </strong>
+              </a>
+              <a id="login_btn" class="button btn_amge">
+                Inicio de sesión
+              </a>
+            </div>
+          </div>
+        <% } %>
+        
       </div>
     </div>
 </nav>

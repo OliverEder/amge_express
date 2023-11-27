@@ -6,6 +6,9 @@ const reg_lastnames_input = document.querySelector("#reg_lastnames_input");
 const reg_birth_input = document.querySelector("#reg_birth_input");
 const register_btn = document.querySelector("#register_btn");
 const register_form = document.querySelector("#register_form");
+const conditions_cb = document.querySelector("#conditions_cb");
+const email_update_cb = document.querySelector("#email_update_cb");
+
 const base_url = document.querySelector("#base_url").getAttribute("base_url");
 
 const fields_validations = [
@@ -50,6 +53,14 @@ const fields_validations = [
 const register = async (e)=> {
     try {
         e.preventDefault();
+        if(!conditions_cb.checked){
+            Swal.fire({
+                title: "Registro",
+                text: "Para continuar es necesario aceptar los Terminos y Condiciones",
+                icon: "warning"
+            });
+            return;
+        }
         const formData = new FormData(register_form);
         const fields = Object.fromEntries(formData);
         reset_warnings();
@@ -66,9 +77,9 @@ const register = async (e)=> {
             user_password: reg_password_input.value.trim(),
             user_names: reg_names_input.value.trim(),
             user_last_names: reg_lastnames_input.value.trim(),
-            user_birth: reg_birth_input.value.trim()
+            user_birth: reg_birth_input.value.trim(),
+            user_email_updates: email_update_cb.checked ? 1 : 0
         }
-        console.log(form_data);
         // Enviar datos de registro
         const response = await fetch(`${base_url}api/user/`, {
             method: "POST",
@@ -87,13 +98,18 @@ const register = async (e)=> {
             });
             return;
         }
-        
+
         Swal.fire({
             title: "Registro",
             text: result.response,
             icon: "success"
         });
-        console.log(result);
+
+        setTimeout(() => {
+            window.location.href="/";
+        },1000);
+
+        
     } catch (error) {
         console.log(error);
     }
@@ -131,7 +147,5 @@ reg_confirmation_input.addEventListener("keyup", (e) => {
     e.preventDefault();
     if(reg_password_input.value.trim()== ""){
         return;
-    }
-    
-
+    }   
 });
