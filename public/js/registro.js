@@ -9,9 +9,9 @@ const register_form = document.querySelector("#register_form");
 const conditions_cb = document.querySelector("#conditions_cb");
 const email_update_cb = document.querySelector("#email_update_cb");
 
-const base_url = document.querySelector("#base_url").getAttribute("base_url");
+//const base_url = document.querySelector("#base_url").getAttribute("base_url");
 
-const fields_validations = [
+const fields_validations_registro = [
     {
         field_name: "reg_email_input",
         validations: ["not_empty", "email"],
@@ -63,12 +63,12 @@ const register = async (e)=> {
         }
         const formData = new FormData(register_form);
         const fields = Object.fromEntries(formData);
-        reset_warnings();
+        reset_warnings(fields_validations_registro);
         let validation_result = true;
         for (const field in fields) {
-            validation_result = validate(field)
+            validation_result = validate(field, fields_validations_registro)
         }
-        show_warnings();
+        show_warnings_register();
         if(!validation_result){
             return;
         }
@@ -117,7 +117,7 @@ const register = async (e)=> {
     
 }   
 
-const show_warnings = () => {
+const show_warnings_register = () => {
     fields_validations.forEach(field_validations => {
         const field = document.querySelector(`#${field_validations.field_name}`);
         const warning_element = document.querySelector(`#${field_validations.warning_element}`);

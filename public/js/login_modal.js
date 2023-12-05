@@ -92,10 +92,10 @@ const login = async (e) => {
         console.log("algo");
         const formData = new FormData(login_form);
         const fields = Object.fromEntries(formData);
-        reset_warnings();
+        reset_warnings(fields_validations);
         let validation_result = true;
         for (const field in fields) {
-            validation_result = validate(field)
+            validation_result = validate(field, fields_validations)
         }
         show_warnings();
         if(!validation_result){

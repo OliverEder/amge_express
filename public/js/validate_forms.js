@@ -36,7 +36,7 @@ const max_length = (field, max_length) => {
     return;
 }
 
-const validate = ( field ) => {
+const validate = ( field, fields_validations ) => {
     let validation_result = true;
     for (const field_validation of fields_validations) {
         if(field_validation.field_name === field){
@@ -80,7 +80,7 @@ const validate = ( field ) => {
     return validation_result;
 }
 
-const reset_warnings = () => {
+const reset_warnings = (fields_validations) => {
     fields_validations.forEach(field_validations => {
         field_validations.warnings = [];
     })

@@ -86,7 +86,7 @@ export const login = async (req, res, next) => {
         //validar si el usuario existe  
         const user = await User.findOne({where: {user_email: body.user_email}});
         console.log("user:", user);
-        if(!user) return res.status(400).json({errors:[{msg: "El usuario o la contraseña son incorrectos"}]});
+        if(!user) return res.status(400).json({errors:[{msg: "El usuario no existe"}]});
         //Validar si la contraseña es correcta
         //comparar los paswords hasheados
         const match = await bcrypt.compare(body.user_password, user.user_password);
