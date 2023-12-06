@@ -59,9 +59,9 @@
                     
                 </div>
                 <div class="column">
-                    <p class="has-text-weight-bold is-size-4 has-text-link">Nombre del asociado</p>
+                    <p class="has-text-weight-bold is-size-4 has-text-link"><%= user.user_names %> <%= user.user_last_names %></p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Titulo:</span> Doctor en Geología</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-4">Email:</span> correo@amge.com</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-4">Email:</span> <%= user.user_email %></p>
                     <p><span class="has-text-weight-bold has-text-link is-size-4">Telefono:</span> 55 55 55 55 55</p>
                     <p><span class="has-text-weight-bold has-text-link is-size-4">Delegacion:</span> CDMX</p>
                     <p><span class="has-text-weight-bold has-text-link is-size-4">Miembre desde:</span> Septiembre 2023</p>
@@ -80,7 +80,7 @@
             <div class="columns">
                 <div class="column">
                     <p class="has-text-weight-bold has-text-link is-size-5">Datos personales</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Fecha de nacimiento:</span>13 de Marzo 2000</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Fecha de nacimiento:</span><%= user.user_birth %></p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Nacionalidad:</span> Mexicano</p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Dirección:</span> XXX XXX XXX</p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Tipo de sangre:</span> A</p>

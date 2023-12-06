@@ -38,9 +38,8 @@ export const register = async (req, res, next) => {
         });
 
         let contentHTML = `
-            <h1>Información de usuario</h1>
-            <p>Has solicitado recuperar tu contraseña para el correo: ${body.user_email}</p>
-            <p>Ingresa al siguiente link:</p>
+            <h1>Registro de usuario</h1>
+            <p>Bienvenido, te has registrado en AMGE con el correo ${body.user_email}</p>
             
         `;
 
