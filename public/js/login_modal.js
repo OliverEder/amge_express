@@ -164,8 +164,11 @@ const show_warnings = () => {
     });
 }
 
-login_modal_send_btn.addEventListener("click", login);
+if(login_modal_send_btn){
+    login_modal_send_btn.addEventListener("click", login);
+}
 
+console.log(logout_btn);
 if(logout_btn){
     logout_btn.addEventListener("click", logout);
 }
