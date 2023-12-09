@@ -13,6 +13,9 @@ export const User = db.define("user",{
     user_password: {
         type: Sequelize.STRING
     },
+    user_avatar: {
+        type: Sequelize.STRING
+    },
     user_names: {
         type: Sequelize.STRING
     },
@@ -21,6 +24,21 @@ export const User = db.define("user",{
     },
     user_birth: {
         type: Sequelize.DATE
+    },
+    user_phone: {
+        type: Sequelize.STRING
+    },
+    user_nationality: {
+        type: Sequelize.STRING
+    },
+    user_address: {
+        type: Sequelize.STRING
+    },
+    user_cp: {
+        type: Sequelize.STRING
+    },
+    user_blood_type: {
+        type: Sequelize.STRING
     },
     user_created_at: {
         type: Sequelize.DATE

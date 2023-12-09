@@ -90,6 +90,7 @@ const register = async (e)=> {
         });
 
         const result = await response.json();
+        console.log(result);
         if(result.error){
             Swal.fire({
                 title: "Registro",
