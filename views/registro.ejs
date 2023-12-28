@@ -22,16 +22,45 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="<%= base_url %>/css/bulma-pricingtable.min.css">
     
 </head>
 <body>
   <%- include("templates/navbar"); -%>
-  <div class="section ">
+  <div class="section">
     <div class="container">
-        <form action="" id="register_form">
-            <div class="columns">
-                <div class="column">
-                    <h1 class="is-size-1 mb-4">Registro de usuario</h1>
+        <h1 class="is-size-1 mb-4 has-text-centered">Registro de usuario</h1>
+        
+        <div class="columns" id="personal_section">
+            <div class="column is-8 is-offset-2 card">
+                <h2 class="is-size-3 mb-4">Datos personales</h1>
+                <form action="" id="register_form">
+                    <div class="field">
+                        <label class="label">Nombres</label>
+                        <div class="control">
+                            <input 
+                                class="input is-medium" 
+                                type="text" 
+                                placeholder="Registre sus Nombres" 
+                                id="reg_names_input" 
+                                name="reg_names_input"
+                            >
+                        </div>
+                        <p class="help is-danger" id="reg_names_message"></p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Apellidos</label>
+                        <div class="control">
+                            <input 
+                                class="input is-medium" 
+                                type="text" 
+                                placeholder="Registre sus Apellidos" 
+                                id="reg_lastnames_input" 
+                                name="reg_lastnames_input"
+                            >
+                        </div>
+                        <p class="help is-danger" id="reg_lastnames_message"></p>
+                    </div>
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control has-icons-left">
@@ -83,45 +112,91 @@
                         </div>
                         <p class="help is-danger" id="reg_confirmation_message"></p>
                     </div>
+
+                    <div class="field">
+                        <label class="label">Teléfono</label>
+                        <div class="control has-icons-left">
+                            <input 
+                                class="input is-medium" 
+                                type="number" 
+                                placeholder="Registre su Telefono" 
+                                id="reg_phone_input" 
+                                name="reg_phone_input" 
+                                required
+                            >
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                        </div>
+                        <p class="help is-danger" id="reg_phone_message"></p>
+                    </div>
     
                     <div class="field">
-                        <label class="label">Nombres</label>
-                        <div class="control">
+                        <label class="label">Nacionalidad</label>
+                        <div class="control has-icons-left">
                             <input 
                                 class="input is-medium" 
                                 type="text" 
-                                placeholder="Registre sus Nombres" 
-                                id="reg_names_input" 
-                                name="reg_names_input"
+                                placeholder="Registre su nacionalidad" 
+                                id="reg_nationality_input" 
+                                name="reg_nationality_input" 
+                                required
                             >
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-flag"></i>
+                            </span>
                         </div>
-                        <p class="help is-danger" id="reg_names_message"></p>
+                        <p class="help is-danger" id="reg_nationality_message"></p>
                     </div>
-                    <div class="field">
-                        <label class="label">Apellidos</label>
-                        <div class="control">
-                            <input 
-                                class="input is-medium" 
-                                type="text" 
-                                placeholder="Registre sus Apellidos" 
-                                id="reg_lastnames_input" 
-                                name="reg_lastnames_input"
-                            >
-                        </div>
-                        <p class="help is-danger" id="reg_lastnames_message"></p>
-                    </div>
-                      
+                    
                     <div class="field">
                         <label class="label">Fecha de nacimiento</label>
-                        <div class="control">
+                        <div class="control has-icons-left">
                             <input 
                                 class="input is-medium" 
                                 type="date" 
                                 id="reg_birth_input" 
                                 name="reg_birth_input"
                             >
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-calendar"></i>
+                            </span>
                         </div>
                         <p class="help is-danger" id="reg_birth_message"></p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Dirección</label>
+                        <div class="control has-icons-left">
+                            <input 
+                                class="input is-medium" 
+                                type="text" 
+                                placeholder="Registre su nacionalidad" 
+                                id="reg_address_input" 
+                                name="reg_address_input"
+                            >
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-house"></i>
+                            </span>
+                        </div>
+                        <p class="help is-danger" id="reg_address_message"></p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Tipo de sangre</label>
+                        <div class="control has-icons-left">
+                            <input 
+                                class="input is-medium" 
+                                type="text" 
+                                placeholder="Registre su tipo de sangre" 
+                                id="reg_blood_type_input" 
+                                name="reg_blood_type_input"
+                            >
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-droplet"></i>
+                            </span>
+                        </div>
+                        <p class="help is-danger" id="reg_blood_type_message"></p>
                     </div>
 
                     <div class="field">
@@ -132,7 +207,7 @@
                             </label>
                         </div>
                     </div>
-                      
+                    
                     <div class="field">
                         <div class="control">
                             <label class="checkbox">
@@ -140,21 +215,143 @@
                                 Deseo recibir actualizaciones de noticias y eventos
                             </label>
                         </div>
-                    </div>                    
-                      
-                    <div class="field is-grouped mt-5">
-                        <div class="control">
-                            <button class="button is-link is-large" id="register_btn"">Registrar</button>
-                        </div>
-                        <div class="control">
-                            <button class="button is-link is-light is-large">Cancelar</button>
-                        </div>
+                    </div> 
+                </form>                   
+                    
+                <div class="field is-grouped mt-5">
+                    <div class="control">
+                        <button class="button is-link is-light is-large">Cancelar</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-large" id="register_btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span>Registrar</span>                            
+                        </button>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+        
+        <div class="columns is-hidden" id="membership_section">
+            <div class="column is-8 is-offset-2 card">
+                <h2 class="is-size-3 mb-4">Membresia</h1>
+                <p class="has-text-justified mb-2">
+                    Únete a nosotros para fomentar una cultura de curiosidad y excelencia. Como miembro de la AMGE, 
+                    disfrutarás de los beneficios de ser parte de una comunidad orientada al futuro, tendrás acceso 
+                    a recursos exclusivos y participarás en eventos que buscan dar forma al futuro de la ingeniería 
+                    geofísica en México.
+                </p>
+                <p class="has-text-justified mb-3">
+                    Como miembro de la AMGE, tendrás la oportunidad de participar en una variedad de actividades 
+                    diseñadas para mejorar tu trayectoria profesional. Desde talleres especializados y conferencias 
+                    hasta iniciativas de investigación colaborativa, ofrecemos oportunidades para ampliar tus habilidades, 
+                    mantenerte al tanto de los avances en la industria y contribuir activamente a la evolución de la 
+                    geofísica
+                </p>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" id="conditions_cb">
+                            Ya cuento con una membresia activa
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" id="conditions_cb">
+                            En otro momento
+                        </label>
+                    </div>
+                </div>
+                <h3 class="is-size-4">Tipos de membresias</h3>
+                <div class="pricing-table is-horizontal">          
+                    <div class="pricing-plan is-warning">
+                        <div class="plan-header">Estudiantes</div>
+                        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>100</span>/año</div>
+                        
+                        <div class="plan-footer">
+                            <label class="radio has-background-warning has-text-weight-bold p-2">
+                                <input type="radio" name="answer">
+                                Suscribir
+                            </label>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-plan is-info">
+                        <div class="plan-header">Socios Jubilados</div>
+                        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>500</span>/año</div>
+                        
+            
+                        <div class="plan-footer">
+                            <label class="radio has-background-info has-text-light has-text-weight-bold p-2">
+                                <input type="radio" name="answer">
+                                Suscribir
+                            </label>
+                        </div>
+                    </div>
+                  
+                    <div class="pricing-plan is-danger">
+                        <div class="plan-header">Socios Activos</div>
+                        <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>1000</span>/año</div>
+                        
+                       
+                        <div class="plan-footer">
+                            <label class="radio has-background-danger has-text-light has-text-weight-bold p-2">
+                                <input type="radio" name="answer">
+                                Suscribir
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="field">
+                    <label class="label">Selecciona una delegación:</label>
+                    <div class="control">
+                        <div class="select is-large is-fullwidth">
+                            <select>
+                                <option>Delegaciones</option>
+                                <option>Ciudad de México</option>
+                                <option>Ciudad del Carmen</option>
+                                <option>Poza Rica</option>
+                                <option>Reynosa</option>
+                                <option>Tampico</option>
+                                <option>Veracruz</option>
+                                <option>Villahermosa</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="field is-grouped mt-5">
+                    <div class="control">
+                        <button class="button is-success is-large" id="back_btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </span>
+                            <span>Atras</span>
+                        </button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-large" id="register_btn">Registrar</button>
+                    </div>
+                    <div class="control">
+                        <a class="button is-link is-large" id="pay_btn" href="https://buy.stripe.com/5kA01y4YL2dk3m0eUU" target="_blank">Pagar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
   </div>
+
+
+
+
   
 
 

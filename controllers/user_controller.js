@@ -29,10 +29,14 @@ export const register = async (req, res, next) => {
             user_password: hash_password,
             user_names: body.user_names,
             user_last_names: body.user_last_names,
-            user_birth: body.user_birth,
+            user_phone: body.user_phone,
+            user_birth: body.user_birth,            
             user_created_at: moment().format("YYYY-MM-DD HH:mm:ss"),
             user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
             user_email_updates: body.user_email_updates ? 1 : 0,
+            user_nationality: body.user_nationality,
+            user_address: body.user_address,
+            user_blood_type: body.user_blood_type,
             user_group_id: 2,
             user_status: "A"
         });
@@ -59,7 +63,7 @@ export const register = async (req, res, next) => {
         let info = await transporter.sendMail({
             from: '<soporte@sycec.com.mx>', // sender address,
             to: body.user_email,
-            subject: 'Recuperar contraseña',
+            subject: 'Registro de usuario',
             html: contentHTML
         });
         console.log(info);

@@ -25,6 +25,7 @@ const observer = new IntersectionObserver((entries) => {
 );
 
 sections.forEach(section => observer.observe(section));
+
 menu_nosotros_btn.addEventListener("click", ()=>{
     const menu_nosotros = document.querySelector("#menu_nosotros");
     const menu_nosotros_contenido = document.querySelector("#menu_nosotros_contenido");
