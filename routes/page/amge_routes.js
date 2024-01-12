@@ -7,7 +7,8 @@ import {
 import { 
     nosotros, 
     registro,
-    perfil
+    perfil,
+    editar_perfil
 } from "../../controllers/amge_controller.js";
 
 import { session_validation } from "../../validations/session_validation.js"
@@ -67,5 +68,5 @@ router_amge.get("/servicios", (req, res, next) => {
 
 router_amge.get("/perfil/:user_id",session_validation,  perfil);
 
-
+router_amge.get("/editar_perfil/:user_id",session_validation,  editar_perfil);
 export default router_amge;

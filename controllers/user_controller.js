@@ -17,7 +17,7 @@ export const register = async (req, res, next) => {
         
         if(user){
             res.status(400).json(
-                { error:"El usuario o la contraseña son incorrectos" }
+                { error:"Ya existe un usuario con ese correo electronico" }
             );
             return ;
         }
@@ -88,21 +88,17 @@ export const login = async (req, res, next) => {
         const { body } = req;
         //validar si el usuario existe  
         const user = await User.findOne({where: {user_email: body.user_email}});
-        console.log("user:", user);
         if(!user) return res.status(400).json({errors:[{msg: "El usuario no existe"}]});
-        console.log("1:::::");
         //Validar si la contraseña es correcta
         //comparar los paswords hasheados
         const match = await bcrypt.compare(body.user_password, user.user_password);
         if(!match) return res.status(400).json({errors:[{msg:"El usuario o la contraseña son incorrectos"}]});
-        console.log("2:::::", match);
         //crear un payload
         const payload = { id: user.user_id }; 
         //Firmar el token      
         const { sign, verify } = jwt;
         const token = sign(payload, process.env.TOKEN_SECRET, { expiresIn: (1000 * 60 * 60 * 24) });
         const user_group = await User_group.findOne({ where: {user_group_id: user.user_group_id }});
-        console.log("3:::::", user_group);
         // Creación de la sesion por parte de express
         req.session.logged = true;
         req.session.user_email = user.user_email;

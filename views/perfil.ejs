@@ -22,13 +22,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="<%= base_url %>/css/swiper_styles.css">
-    <link rel="stylesheet" href="<%= base_url %>/css/index.css">
+    <link rel="stylesheet" href="<%= base_url %>css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>css/index.css">
 </head>
 <body>
   <%- include("templates/navbar"); -%>
   <div class="container">
-    <section class="section is-medium animate__animated">
+    <section class="section animate__animated">
         <div class="card">
             <header class="card-header">
                 <p class="card-header-title">
@@ -49,25 +49,25 @@
                             <span>Editar imagen</span>
                         </button>
 
-                        <button class="button is-primary is-fullwidth">
+                        <a class="button is-primary is-fullwidth" href="<%= base_url %>editar_perfil/<%= user_id %>">
                             <span class="icon">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </span>
                             <span>Editar perfil</span>
-                        </button>
+                          </a>
                     </center>
                     
                 </div>
                 <div class="column">
                     <p class="has-text-weight-bold is-size-4 has-text-link"><%= user.user_names %> <%= user.user_last_names %></p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Titulo:</span> Doctor en Geología</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-4">Email:</span> <%= user.user_email %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-4">Telefono:</span> 55 55 55 55 55</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-4">Delegacion:</span> CDMX</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-4">Miembre desde:</span> Septiembre 2023</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Email:</span> <%= user.user_email %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Telefono:</span> <%= user.user_phone %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Delegacion:</span> CDMX</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Miembre desde:</span> Septiembre 2023</p>
                     <p>
-                        <span class="has-text-weight-bold has-text-link is-size-4">Estatus de membresia:</span> 
-                        <span class="has-text-weight-bold has-text-success is-size-4">Activo</span>
+                        <span class="has-text-weight-bold has-text-link is-size-5">Estatus de membresia:</span> 
+                        <span class="has-text-weight-bold has-text-success is-size-5">Activo</span>
                     </p>
                 </div>
                 <div class="column">
@@ -81,9 +81,9 @@
                 <div class="column">
                     <p class="has-text-weight-bold has-text-link is-size-5">Datos personales</p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Fecha de nacimiento:</span><%= user.user_birth %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Nacionalidad:</span> Mexicano</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Dirección:</span> XXX XXX XXX</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Tipo de sangre:</span> A</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Nacionalidad:</span> <%= user.user_nationality %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Dirección:</span> <%= user.user_address %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Tipo de sangre:</span> <%= user.user_blood_type %></p>
                 </div>
                 <div class="column">
                     <p class="has-text-weight-bold has-text-link is-size-5">Datos Profecionales</p>

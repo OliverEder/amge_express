@@ -1,7 +1,8 @@
 import {} from "dotenv/config";
-import {Prev_association_directive} from "../models/prev_association_directive.js"
+import { Prev_association_directive } from "../models/prev_association_directive.js"
 import { Prev_association_directive_member } from "../models/prev_association_directive_member.js";
 import { User } from "../models/user.js";
+import { Membership } from "../models/membership.js";
 
 export const nosotros = async (req, res, next) => {
     try {
@@ -44,7 +45,32 @@ export const perfil = async (req, res, next) => {
         
 
         const user = await User.findOne({where:{user_id: session.user_id}});
+        const membership = await Membership.findOne({where:{user_id: session.user_id}});
+        
+        console.log(membership);
         res.render("perfil", {
+            base_url: process.env.BASE_URL,
+            api_base_url: process.env.API_BASE_URL,
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : "",
+            user: user
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const editar_perfil = async (req, res, next) => {
+    try {
+        const { session } = req;
+        
+
+        const user = await User.findOne({where:{user_id: session.user_id}});
+        const membership = await Membership.findOne({where:{user_id: session.user_id}});
+        
+        console.log(membership);
+        res.render("editar_perfil", {
             base_url: process.env.BASE_URL,
             api_base_url: process.env.API_BASE_URL,
             logged: session.logged ? session.logged : false,
