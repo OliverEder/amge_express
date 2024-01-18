@@ -68,8 +68,6 @@ export const editar_perfil = async (req, res, next) => {
 
         const user = await User.findOne({where:{user_id: session.user_id}});
         const membership = await Membership.findOne({where:{user_id: session.user_id}});
-        
-        console.log(membership);
         res.render("editar_perfil", {
             base_url: process.env.BASE_URL,
             api_base_url: process.env.API_BASE_URL,

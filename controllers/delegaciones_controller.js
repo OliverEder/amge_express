@@ -1,9 +1,11 @@
 export const delegaciones = (req, res, next) => {
     const { session } = req;
+
     res.render("delegaciones", {
         base_url: process.env.BASE_URL,
         api_base_url: process.env.API_BASE_URL,
         logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
         user_email:  session.logged ? session.user_email : ""
     });
 }

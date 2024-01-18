@@ -50,6 +50,7 @@
                                 placeholder="Registre sus Nombres" 
                                 id="reg_names_input" 
                                 name="reg_names_input"
+                                value="<%= user.user_names %>"
                             >
                         </div>
                         <p class="help is-danger" id="reg_names_message"></p>
@@ -63,6 +64,7 @@
                                 placeholder="Registre sus Apellidos" 
                                 id="reg_lastnames_input" 
                                 name="reg_lastnames_input"
+                                value="<%= user.user_last_names %>"
                             >
                         </div>
                         <p class="help is-danger" id="reg_lastnames_message"></p>
@@ -76,6 +78,7 @@
                                 placeholder="Registre su Email" 
                                 id="reg_email_input" 
                                 name="reg_email_input" 
+                                value="<%= user.user_email %>"
                                 required
                             >
                             <span class="icon is-small is-left">
@@ -128,6 +131,7 @@
                                 placeholder="Registre su Telefono" 
                                 id="reg_phone_input" 
                                 name="reg_phone_input" 
+                                value="<%= user.user_phone %>"
                                 required
                             >
                             <span class="icon is-small is-left">
@@ -146,6 +150,7 @@
                                 placeholder="Registre su nacionalidad" 
                                 id="reg_nationality_input" 
                                 name="reg_nationality_input" 
+                                value="<%= user.user_nationality %>"
                                 required
                             >
                             <span class="icon is-small is-left">
@@ -163,6 +168,7 @@
                                 type="date" 
                                 id="reg_birth_input" 
                                 name="reg_birth_input"
+                                value="<%= user.user_birth %>"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-calendar"></i>
@@ -180,6 +186,7 @@
                                 placeholder="Registre su nacionalidad" 
                                 id="reg_address_input" 
                                 name="reg_address_input"
+                                value="<%= user.user_address %>"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-house"></i>
@@ -197,6 +204,7 @@
                                 placeholder="Registre su tipo de sangre" 
                                 id="reg_blood_type_input" 
                                 name="reg_blood_type_input"
+                                value="<%= user.user_blood_type %>"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-droplet"></i>
@@ -204,24 +212,6 @@
                         </div>
                         <p class="help is-danger" id="reg_blood_type_message"></p>
                     </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <label class="checkbox">
-                                <input type="checkbox" id="conditions_cb">
-                                Acepto los <a href="#">terminos y condiciones</a>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="field">
-                        <div class="control">
-                            <label class="checkbox">
-                                <input type="checkbox" id="email_update_cb">
-                                Deseo recibir actualizaciones de noticias y eventos
-                            </label>
-                        </div>
-                    </div> 
                 </form>                   
                     
                 <div class="field is-grouped mt-5">

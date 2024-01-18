@@ -55,6 +55,17 @@ router_amge.get("/membresias", (req, res, next) => {
     });
 });
 
+router_amge.get("/aviso_privacidad", (req, res, next) => {
+    const { session } = req;
+    res.render("aviso_privacidad", {
+        base_url: process.env.BASE_URL,
+        api_base_url: process.env.API_BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
+        user_email:  session.logged ? session.user_email : ""
+    });
+});
+
 router_amge.get("/servicios", (req, res, next) => {
     const { session } = req;
     res.render("servicios", {
