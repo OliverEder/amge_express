@@ -203,13 +203,22 @@
                     <div class="field">
                         <label class="label">Tipo de sangre</label>
                         <div class="control has-icons-left">
-                            <input 
-                                class="input is-medium" 
-                                type="text" 
-                                placeholder="Registre su tipo de sangre" 
-                                id="reg_blood_type_input" 
-                                name="reg_blood_type_input"
-                            >
+                            <div class="select">
+                                <select
+                                    id="reg_blood_type_input" 
+                                    name="reg_blood_type_input"
+                                >
+                                    <option value="">Selecciona un tipo de sangre</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-droplet"></i>
                             </span>

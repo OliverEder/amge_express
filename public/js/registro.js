@@ -95,12 +95,14 @@ const register = async (e)=> {
         const formData = new FormData(register_form);
         const fields = Object.fromEntries(formData);
         reset_warnings(fields_validations_registro);
-        let validation_result = true;
+        let register_validation_result = true;
         for (const field in fields) {
-            validation_result = validate(field, fields_validations_registro)
+            if(!validate(field, fields_validations_registro)){
+                register_validation_result = false;
+            }
         }
         show_warnings_register();
-        if(!validation_result){
+        if(!register_validation_result){
             return;
         }
         const form_data = {
@@ -136,10 +138,10 @@ const register = async (e)=> {
 
         Swal.fire({
             title: "Registro",
-            text: result.response,
+            text: "Se registro el usuario correctamente",
             icon: "success"
         });
-
+        console.log("last");
         setTimeout(() => {
             window.location.href="/";
         },1000);
