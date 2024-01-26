@@ -222,6 +222,27 @@
       </div>
   </section>
 
+  <div class="modal" id="anuncio_modal">
+    <div class="modal-background" id="anuncio_modal_background"></div>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+        <div class="card  animate__animated animate__fadeInDown">
+          <dir>
+            <img src="<%= base_url %>/images/CMP2024_Logo.png" alt="">
+          </dir>
+          <div style="background-color: #021330; color:#FFF" class="p-5">
+            <span >19 - 22 de junio, 2024</span>
+            <p class="is-size-5">Centro de Convenciones y Exposiciones (Expo Tampico) · Tampico, Tamps.</p>
+            <p class="is-size-3">Congreso Mexicano del Petróleo 2024</p>
+            <p class="is-size-5">Visita: <a href="https://www.congresomexicanodelpetroleo.com/" target="_blank" ="color: burlywood;">www.congresomexicanodelpetroleo.com</a></p>
+          </div>
+        </div>
+        
+          
+      </div>
+    <button class="modal-close is-large" id="anuncio_modal_close" aria-label="close"></button>
+  </div>
+
   <%- include("templates/footer"); %>
   <%- include("templates/login_model"); %>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

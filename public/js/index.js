@@ -1,4 +1,6 @@
-const animate_elements = document.querySelectorAll(".animate_element")
+const animate_elements = document.querySelectorAll(".animate_element");
+const anuncio_modal_close = document.querySelector("#anuncio_modal_close");
+const anuncio_modal_background = document.querySelector("#anuncio_modal_background");
 
 const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -37,3 +39,16 @@ animated_cards.forEach(animated_card => {
         element3.classList.remove("animate__pulse")
     })
 }) */
+
+const close_anuncio_modal = () => {
+    const  anuncio_modal = document.querySelector("#anuncio_modal");
+    anuncio_modal.classList.remove("is-active")
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const  anuncio_modal = document.querySelector("#anuncio_modal");
+    anuncio_modal.classList.add("is-active")
+});
+
+anuncio_modal_close.addEventListener("click", close_anuncio_modal);
+anuncio_modal_background.addEventListener("click", close_anuncio_modal);

@@ -141,7 +141,7 @@ const register = async (e)=> {
             text: "Se registro el usuario correctamente",
             icon: "success"
         });
-        console.log("last");
+        
         setTimeout(() => {
             window.location.href="/";
         },1000);
