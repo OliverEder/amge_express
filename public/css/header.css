@@ -64,6 +64,11 @@
     margin-bottom: 0;
   }
   
+  .header-content h4 {
+    color: #fff;
+    margin-bottom: 0;
+  }
+
   .header-content p {
     font-size: 1.5rem;
     display: block;
