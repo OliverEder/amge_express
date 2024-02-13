@@ -89,9 +89,10 @@ const logout = async (e) => {
 const login = async (e) => {
     try {
         e.preventDefault();
-        console.log("algo");
+        // Se obtienen los campos
         const formData = new FormData(login_form);
         const fields = Object.fromEntries(formData);
+        // Funcion para resetar todas las alertas del formulario
         reset_warnings(fields_validations);
         let validation_result = true;
         for (const field in fields) {

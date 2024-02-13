@@ -2,13 +2,13 @@
     box-sizing: border-box;
   }
   
-  body {
+/*   body {
     margin: 0;
     font-size: 1rem;
     line-height: 1.5;
     color: #333;
     overflow-x: hidden;
-  }
+  } */
   
   header{
     margin-bottom: 0;
@@ -20,7 +20,7 @@
     color: #fff;
   }
   
-  .content {
+  .header-content {
     max-width: 40rem;
     padding-left: 1rem;
     padding-right: 1rem;
