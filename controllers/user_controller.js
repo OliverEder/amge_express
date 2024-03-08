@@ -41,7 +41,7 @@ export const register = async (req, res, next) => {
             user_status: "A"
         });
 
-        let contentHTML = `
+        /* let contentHTML = `
             <h1>Registro de usuario</h1>
             <p>Bienvenido, te has registrado en AMGE con el correo ${body.user_email}</p>
             
@@ -65,7 +65,7 @@ export const register = async (req, res, next) => {
             to: body.user_email,
             subject: 'Registro de usuario',
             html: contentHTML
-        });
+        }); */
         console.log(info);
         res.json({ response: "Usuario guardado correctamente" });
 
