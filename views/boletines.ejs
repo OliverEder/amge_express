@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/membresias.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-pricingtable.min.css">
+</head>
+<body>
+    <%- include("templates/navbar"); -%>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+       
+        
+        <section class="section">
+            <div class="columns">
+                <div class="column primera_columna">
+                    <div class="card">
+                        <header class="card-header btn_desplegable" year="60">
+                            <p class="card-header-title">
+                                <i class="fa-regular fa-hourglass"></i>&ensp;<b>60's</b>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card is-hidden" id="boletines_60">
+                            <header class="card-header year_desplegable" year="1960">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1960</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1960">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1960</b>
+                                    -&ensp;Boletín de la sociatión Mexicana de Geofísicos de Exploración
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div> 
+
+                            <header class="card-header year_desplegable" year="1961">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1961</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1961">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1961</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1961</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1961</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1961</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1962">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1962</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1962">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1962</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1962</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1962</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1962</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1963">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1963</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1963">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1963</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1963</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1963</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1963</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1964">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1964</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1964">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1964</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1964</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1964</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1964</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1965">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1965</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1965">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1965</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1965</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1965</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1965</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1966">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1966</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1966">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1966</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1966</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1966</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1966</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1967">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1967</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1967">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1967</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1967</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1967</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1967</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1968">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1968</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1968">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1968</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1968</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1968</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1969">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1969</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1969">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1969</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1969</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1969</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1969</b>
+                                    -&ensp;Boletín de la Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+                        <header class="card-header btn_desplegable" year="70">
+                            <p class="card-header-title">
+                                <i class="fa-regular fa-hourglass"></i>&ensp;<b>70's</b>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card is-hidden" id="boletines_70">
+
+                            <header class="card-header year_desplegable" year="1970">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1970</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1970">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1970</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1970</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1970</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 y V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+
+                            <header class="card-header year_desplegable" year="1971">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1971</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1971">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1971</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1971</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1971</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1972">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1972</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1972">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1972</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1972</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1972</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1972</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1973">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1973</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1973">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1973</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1973</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1973</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1973</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1974">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1974</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1974">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1974</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1974</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1974</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1974</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1975">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1975</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1975">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1975</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1975</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1975</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1975</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1976">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1976</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1976">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1976</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1976</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1976</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1976</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1977">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1977</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1977">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1977</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1977</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1977</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1977</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1978">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1978</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1978">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1978</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1978</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1978</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1978</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1979">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1979</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1979">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1979</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1979</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1979</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 y V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+                        <header class="card-header btn_desplegable" year="80">
+                            <p class="card-header-title">
+                                <i class="fa-regular fa-hourglass"></i>&ensp;<b>80's</b>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card is-hidden" id="boletines_80">
+
+                            <header class="card-header year_desplegable" year="1980">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1980</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1980">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1980</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 y V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1980</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 y V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+
+                            <header class="card-header year_desplegable" year="1981">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1981</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1981">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1981</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 y V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1981</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 y V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1982">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1982</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1982">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1982</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1983">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1983</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1983">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1983</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1983</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1983</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1983</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4 - 1984 V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1984">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1984</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1984">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1984</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1984</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 y v4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1984</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 y 1983 V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1985">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1985</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1985">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1985</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1985</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1985</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1985</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1986">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1986</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1986">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1986</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1986</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V2 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1987">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1987</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1987">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1987</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 - V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1987</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1988">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1988</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1988">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1988</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 - V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1988</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1989">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1989</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1989">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1989</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V1 - V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1989</b>
+                                    -&ensp;Consultores y Contratistas de Geología y Geofísica V3 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                        <header class="card-header btn_desplegable" year="90">
+                            <p class="card-header-title">
+                                <i class="fa-regular fa-hourglass"></i>&ensp;<b>90's</b>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card is-hidden" id="boletines_90">
+
+                            <header class="card-header year_desplegable" year="1990">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1990</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1990">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1990</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1990</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1990</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1991">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1991</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1991">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1991</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1991</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1991</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1991</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1992">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1992</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1992">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1992</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1 - V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1992</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1994">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1994</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1994">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1994</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1994</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1994</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1994</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1995">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1995</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1995">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1995</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2 - V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1996">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1996</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1996">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1996</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1997">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1997</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1997">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1997</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1998">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1998</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1998">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1998</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1 - V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1998</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="1999">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>1999</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_1999">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>1999</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1 - V4
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+                        </div>   
+
+
+                        <header class="card-header btn_desplegable" year="00">
+                            <p class="card-header-title">
+                                <i class="fa-regular fa-hourglass"></i>&ensp;<b>2000's</b>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+                        <div class="card is-hidden" id="boletines_00">
+
+                            <header class="card-header year_desplegable" year="2000">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>2000</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_2000">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>2000</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="2001">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>2001</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_2001">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>2001</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>2001</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V2
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>2001</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V3
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+
+                            <header class="card-header year_desplegable" year="2002">
+                                <p class="card-header-title">
+                                    <i class="fa-regular fa-calendar"></i>&ensp;<b>2002</b>
+                                </p>
+                                <button class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content is-hidden" id="boletines_2002">
+                                <div class="content has-background-light" style="height: 60px;">
+                                    <i class="fa-regular fa-file-pdf"></i> <b>2002</b>
+                                    -&ensp;Asociación Mexicana de Geofísicos de Exploración V1
+                                    <center>
+                                        <a class="button is-primary is-small view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                        <a class="button is-primary is-small" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                                        <!-- <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <!-- <div class="card">
+                        <div class="card-content">
+                          <p class="title">
+                            <i class="fa-regular fa-file-pdf"></i> <b>1960</b>
+                          </p>
+                          <p class="subtitle">
+                            Boletín de la sociatión Mexicana de Geofísicos de Exploración
+                          </p>
+                        </div>
+                        <footer class="card-footer">
+                          <p class="card-footer-item">
+                            <span>
+                                <a class="view-pdf" ><i class="fa-regular fa-eye"></i>&ensp;Ver</a>
+                                <iframe class="pdf-hidden hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe>
+                            </span>
+                          </p>
+                          <p class="card-footer-item">
+                            <span>
+                                <a href="../public/boletines/1960/4_1960.pdf" download><i class="fa-solid fa-download"></i> Descargar</a>
+                            </span>
+                          </p>
+                        </footer>
+                      </div> -->
+
+                </div>
+                
+                <div class="column segunda_columna">
+                   
+                    <div class="row" id="pdf-view">
+                        <div class="card">
+                            <div class="card-content">
+                                <h4 class="is-justify-content-center">Visor de documentos</h4>
+                                <h5 class="is-justify-content-center">Gerencia de Proyectos Ambientales</h5>
+                                <br><br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pdf-hidden" id = "loader-spinner">
+                        <div class="col s12">
+                            <br><br><br><br>
+                            <center>
+                            <div class="preloader-wrapper big active" >
+                                <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                                </div>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <iframe id="main-pdf" class="pdf-hidden" src="files/SYC-AF-TI-FT-01_V00.pdf#toolbar=0" width="100%" height="100%"></iframe>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- <section class="section is-medium">
+            <div class="columns">
+                <div class="column primera_columna">
+                    
+                    <ul class="collapsible">
+                        <li>
+                            
+                            <div class="collapsible-body">
+                                <ul class="collapsible">
+                                    <li>
+                                        <div class="collapsible-header"><i class="fa-regular fa-hourglass"></i>1960</div>
+                                        <div class="collapsible-body">
+                                            <ul class="collapsible">
+                                                <li>
+                                                    <dd><i class="far fa-file-pdf"></i>Boletin de la Asociatión Mexicana de Geofísicos de Exploración</dd>
+                                                    <div class="collapsible-body">
+                                                        <center>
+                                                            <a class="waves-effect waves-light btn-small light-blue darken-3 view-pdf" ><i class="fa-regular fa-eye"></i>Ver</a>
+                                                            <a class="waves-effect waves-light btn-small light-blue darken-3" href="../public/boletines/1960/4_1960.pdf" download><i class="fa-regular fa-download"></i>Descargar</a>
+                                                            <iframe class="pdf-hidden" src="../public/boletines/1960/4_1960.pdf#toolbar=0" width="100%" height="500px"></iframe>
+                                                        </center>                              
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="column segunda_columna">
+                   
+                    <div class="row" id="pdf-view">
+                        <div class="col s12">
+                        <div class="card-panel">
+                            <h4 class="center-align">Visor de documentos</h4>
+                            <h5 class="center-align">Gerencia de Proyectos Ambientales</h5>
+                            <br><br><br><br>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row pdf-hidden" id = "loader-spinner">
+                        <div class="col s12">
+                            <br><br><br><br>
+                            <center>
+                            <div class="preloader-wrapper big active" >
+                                <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                                </div>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <iframe id="main-pdf" class="pdf-hidden" src="files/SYC-AF-TI-FT-01_V00.pdf#toolbar=0" width="100%" height="100%"></iframe>
+
+                </div>
+            </div>
+        </section> -->
+
+    
+    </div>
+    <%- include("templates/footer"); %>
+    <%- include("templates/login_model"); %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="<%= base_url %>js/navbar.js"></script>
+    <script src="<%= base_url %>js/validate_forms.js"></script>
+    <script src="<%= base_url %>js/login_modal.js"></script> -->
+    <script src="<%= base_url %>js/boletines.js"></script>
+
+    <!-- <script>
+        const pdf_buttons = document.querySelectorAll(".view-pdf");
+        console.log(pdf_buttons,"BTN PDF");
+        const pdf_view = document.querySelector("#pdf-view");
+        const main_pdf = document.querySelector("#main-pdf");
+        const loader_spinner = document.querySelector("#loader-spinner");
+        
+        pdf_buttons.forEach(function(button){
+            button.addEventListener("click",view_pdf);            
+        });
+
+        function view_pdf(){
+            let pdf_button_parent = event.target.parentNode;
+            let pdf = pdf_button_parent.lastElementChild;
+            let pdf_src = pdf.getAttribute("src");
+            main_pdf.setAttribute("src",pdf_src);
+            pdf_view.classList.add("pdf-hidden"),
+            loader_spinner.classList.remove("pdf-hidden");
+            setTimeout(function(){
+                loader_spinner.classList.add("pdf-hidden");
+                main_pdf.classList.remove("pdf-hidden");                
+            },1000);
+        }
+        
+    </script> -->
+</body>
+</html>

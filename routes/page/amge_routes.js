@@ -8,7 +8,8 @@ import {
     nosotros, 
     registro,
     perfil,
-    editar_perfil
+    editar_perfil,
+    boletines
 } from "../../controllers/amge_controller.js";
 
 import { session_validation } from "../../validations/session_validation.js"
@@ -80,4 +81,6 @@ router_amge.get("/servicios", (req, res, next) => {
 router_amge.get("/perfil/:user_id",session_validation,  perfil);
 
 router_amge.get("/editar_perfil/:user_id",session_validation,  editar_perfil);
+
+router_amge.get("/boletines", boletines);
 export default router_amge;

@@ -53,4 +53,10 @@ router_dashboard.get("/votaciones", (req, res, next) => {
     })
 });
 
+router_dashboard.get("/boletines", (req, res, next) => {
+    res.render("dashboard/boletines", {
+        base_url: process.env.BASE_URL
+    })
+});
+
 export default router_dashboard;
