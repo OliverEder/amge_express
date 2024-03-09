@@ -37,3 +37,10 @@
 .custom-shape-divider-bottom-1682389076 .shape-fill {
     fill: #28377B;
 }
+
+@media only screen and (max-width: 600px) {
+    .segunda_columna{
+        width: 400px;
+        height: 450px;
+    }
+}
