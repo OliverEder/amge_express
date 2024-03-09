@@ -11,10 +11,10 @@ pdf_buttons.forEach(function(button){
     button.addEventListener("click",view_pdf);            
 });
 
-function view_pdf(){
-    let pdf_button_parent = event.target.parentNode;
+function view_pdf(e){
+    let pdf_button_parent = e.target.parentNode;
     let pdf = pdf_button_parent.lastElementChild;
-    let pdf_src = pdf.getAttribute("src");
+    let pdf_src = pdf.getAttribute("file");
     main_pdf.setAttribute("src",pdf_src);
     pdf_view.classList.add("is-hidden"),
     loader_spinner.classList.remove("is-hidden");
