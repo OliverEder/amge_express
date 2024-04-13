@@ -115,7 +115,7 @@ const login = async (e) => {
             body: new URLSearchParams(form_data)
         });
         const result = await response.json();
-        console.log(result);
+        console.log("correo1@gmail.com", result);
 
         if(result.errors.length != 0){
             Swal.fire({
@@ -134,7 +134,7 @@ const login = async (e) => {
 
         setTimeout(() => {
             window.location.href="/";
-        },500);
+        },1000);
         
     } catch (error) {
         console.log(error);
