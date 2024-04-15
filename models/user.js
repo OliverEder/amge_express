@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js"
 
+import { User_group } from "./user_group.js";
+
 export const User = db.define("user",{
     user_id: {
         type: Sequelize.INTEGER,
@@ -65,3 +67,9 @@ export const User = db.define("user",{
 },{
     freezeTableName: true
 });
+
+User.belongsTo(User_group, {
+    foreignKey: {
+      name: 'user_group_id'
+    }
+  });

@@ -8,6 +8,27 @@ import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
 
 
+export const users_dashboard = async (req, res, next) => {
+    try {
+        const users = await User.findAll({
+            where: {user_status : "A"},
+            include:[
+                {model: User_group}
+            ]
+            
+        });
+        console.log("users:", users);
+        res.render("dashboard/usuarios", {
+            base_url: process.env.BASE_URL,
+            users: users
+        })
+    } catch (error) {
+        //Enviar error
+        res.status(400).send(error);
+        next();
+    }
+}
+
 export const register = async (req, res, next) => {
     try {
         const { body } = req;

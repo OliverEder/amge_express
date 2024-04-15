@@ -60,101 +60,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Administrador</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>correo@correo.com</td>
-                                            <td>usuario usuario usuario</td>
-                                            <td>Villa Hermosa</td>
-                                            <td>Asociado</td>
-                                            <td>Activo</td>
-                                            <td>
-                                                <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
-                                                <a href="#"><i class="fa-solid fa-trash"></i></a> 
-                                            </td>
-                                        </tr>
+                                        <% users.forEach(user => { %>
+                                            <tr>
+                                                <td><%= user.user_id %></td>
+                                                <td><%= user.user_email %></td>
+                                                <td><%= user.user_names %> <%= user.user_last_names %></td>
+                                                <td></td>
+                                                <td><%= user.user_group.user_group_name %></td>
+                                                <td><%= user.user_status == "A" ? "Activo" : ""%></td>
+                                                <td>
+                                                    <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                                                    <a href="#"><i class="fa-solid fa-pencil mr-1"></i></a>
+                                                    <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+                                        
         
                                     </tbody>
                                 </table>
-                                <div class="columns">
+                                <!-- <div class="columns">
                                     <div class="column is-8 is-offset-2">
                                         <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                                             <a class="pagination-previous">Anterior</a>
@@ -170,7 +95,7 @@
                                             </ul>
                                         </nav>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             
                         </div>
