@@ -125,6 +125,12 @@ const login = async (e) => {
             });
             return; 
         }
+        
+        Swal.fire({
+            title: "Registro",
+            text: "Sesión iniciada",
+            icon: "warning"
+        });
 
         window.localStorage.setItem("token", result.token );
         window.localStorage.setItem("user_id", result.user_id );
