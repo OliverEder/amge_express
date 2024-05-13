@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>    
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+
+                <p class="title is-size-2 is-spaced">
+                    Noticias
+                </p>
+                <form action="">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Título</label>
+                                <div class="control">
+                                    <input 
+                                        class="input" 
+                                        type="text" 
+                                        name="titulo" 
+                                        placeholder="Ingrese el título del post"
+                                        id="titulo_input"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Contenido</label>
+                                <div class="control">
+                                    <textarea 
+                                        class="Medium  textarea" 
+                                        name="editor" 
+                                        placeholder="Ingrese el contenido del post"
+                                        id="editor" 
+                                    >
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button 
+                                        class="button is-primary" 
+                                        type="submit"
+                                        id="guardar_btn"
+                                    >
+                                        Guardar Noticia
+                                    </button>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-light" type="reset">Limpiar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                
+            </section>
+            
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<%= base_url %>js/dashboard/noticia_registro.js"></script>
+</body>
+</html>

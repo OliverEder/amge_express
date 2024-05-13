@@ -119,7 +119,7 @@ const login = async (e) => {
 
         if(result.errors.length != 0){
             Swal.fire({
-                title: "Registro",
+                title: "Inicio de sesión",
                 text: result.errors[0].msg,
                 icon: "warning"
             });
@@ -127,12 +127,12 @@ const login = async (e) => {
         }
         
         Swal.fire({
-            title: "Registro",
-            text: "Sesión iniciada",
-            icon: "warning"
+            title: "Sesión iniciada",
+            showConfirmButton: false,
         });
 
-        window.localStorage.setItem("token", result.token );
+        window.localStorage.setItem("base_url", base_url);
+        window.localStorage.setItem("token", result.token);
         window.localStorage.setItem("user_id", result.user_id );
         window.localStorage.setItem("user_email", result.user_email );
         window.localStorage.setItem("user_group_id", result.user_group_id );

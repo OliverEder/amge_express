@@ -15,9 +15,7 @@ export const users_dashboard = async (req, res, next) => {
             include:[
                 {model: User_group}
             ]
-            
         });
-        console.log("users:", users);
         res.render("dashboard/usuarios", {
             base_url: process.env.BASE_URL,
             users: users

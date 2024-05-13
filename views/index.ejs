@@ -29,7 +29,7 @@
 <body>
 
   <%- include("templates/navbar"); -%>
-  <header class="header header-content">
+  <!-- <header class="header header-content">
     <div class="header-video">
       <video autoplay muted loop id="background-video">
         <source src="<%= base_url %>videos/wall.mp4" type="video/mp4">
@@ -44,7 +44,8 @@
       </p>
       <a href="/membresias" class="btn">Adquiere tu membresia</a>
     </div>
-  </header>
+  </header> -->
+  <br><br><br>
   <%- include("templates/index_carousel"); -%>
   <div class="container">
     <section class="section is-medium animate__animated">
@@ -72,84 +73,87 @@
   <section class="section is-small">
       <h1 class="title">Anuncios AMGE</h1>
       <div class="columns">
-          <div class="column">
-              <div class="card animated_card animate__animated animate_element is-invisible">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <a href="#">
-                        <img src="<%= base_url %>images/voto-elecciones.jpeg" alt="Placeholder image">
-                      </a>
-                    </figure>
+        <div class="column">
+          <div class="card animated_card animate__animated animate_element is-invisible">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <a href="">
+                    <img src="<%= base_url %>images/tampico_thumbnail.png" alt="Placeholder image">
+                  </a>                      
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <a class="title is-4">
+                      Explorando las Raíces de la Industria Petrolera en México: Tampico...
+                    </a>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <a class="title is-4">Convocatoria Delegaciòn Villahermosa</a>
-                      </div>
-                    </div>
-                
-                    <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                      <a href="#">#css</a> <a href="#">#responsive</a>
-                      <br>
-                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                    </div>
-                  </div>
+                </div>
+            
+                <div class="content">
+                  Bienvenidos al corazón de la historia petrolera de México, 
+                  donde cada calle cuenta una historia de audacia ... <br>
+                  <a href="<%= base_url %>noticia/tampico_cuna_de_un_legado">ver más</a>
+                  <br>
+                  <time datetime="2016-1-1">Mayo 2024</time>
+                </div>
               </div>
           </div>
-          <div class="column">
-              <div class="card animated_card animate__animated animate_element is-invisible">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <a href="">
-                        <img src="<%= base_url %>images/busqueda-de-candidatos-Evalart-672x372.jpeg" alt="Placeholder image">
-                      </a>                      
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <a class="title is-4">Postulación de candidatos</a>
-                      </div>
-                    </div>
-                
-                    <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                      <a href="#">#css</a> <a href="#">#responsive</a>
-                      <br>
-                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        </div>
+        <div class="column">
+            <div class="card animated_card animate__animated animate_element is-invisible">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <a href="#">
+                      <img src="<%= base_url %>images/voto-elecciones.jpeg" alt="Placeholder image">
+                    </a>
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <a class="title is-4">Convocatoria Delegaciòn Villahermosa</a>
                     </div>
                   </div>
-              </div>
-          </div>
-          <div class="column">
-              <div class="card animated_card animate__animated animate_element is-invisible">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <a href="">
-                        <img src="<%= base_url %>images/pexels-edmond-dantès-4342127.jpeg" alt="Placeholder image">
-                      </a>                      
-                    </figure>
+              
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-content">
-                        <a class="title is-4">Acta de Escrutinio del Comité Electoral</a>
-                      </div>
-                    </div>
-                
-                    <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                      <a href="#">#css</a> <a href="#">#responsive</a>
-                      <br>
-                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card animated_card animate__animated animate_element is-invisible">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <a href="">
+                      <img src="<%= base_url %>images/busqueda-de-candidatos-Evalart-672x372.jpeg" alt="Placeholder image">
+                    </a>                      
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <a class="title is-4">Postulación de candidatos</a>
                     </div>
                   </div>
-              </div>
-          </div>
+              
+                  <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href="#">#css</a> <a href="#">#responsive</a>
+                    <br>
+                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                  </div>
+                </div>
+            </div>
+        </div>
+          
           
       </div>
   </section>

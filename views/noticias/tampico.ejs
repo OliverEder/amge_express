@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>css/index.css">
+    <link rel="stylesheet" href="<%= base_url %>css/header.css">
+</head>
+<body>
+
+  <%- include("../templates/navbar"); -%>
+  <!-- <header class="header header-content">
+    <div class="header-video">
+      <video autoplay muted loop id="background-video">
+        <source src="<%= base_url %>videos/wall.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h4>Asociación Mexicana de Geofísicos de Exploración A. C.</h4>
+      <p>
+        Disfruta de los beneficios de pertenecer a la AMGE.
+      </p>
+      <a href="/membresias" class="btn">Adquiere tu membresia</a>
+    </div>
+  </header> -->
+  
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <h2 class="is-size-2">
+                    Explorando las Raíces de la Industria Petrolera en México: Tampico, Cuna de un Legado
+                </h2>
+                <hr>
+                <video controls>
+                    <source src="<%= base_url %>videos/Tampico.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <p class="is-size-5 has-text-justified">
+                    Bienvenidos al corazón de la historia petrolera de México, donde cada calle cuenta una historia de audacia y progreso: Tampico, Tamaulipas. En el Congreso Mexicano del Petróleo 2024, nos complace presentarles un homenaje a esta ciudad emblemática que ha sido testigo y protagonista del surgimiento y desarrollo de la industria petrolera en nuestro país.
+                </p>
+                
+                <p class="is-size-5 has-text-justified">
+                    Tampico es mucho más que una ciudad; es un símbolo de tenacidad y visión. Desde el momento en que Ezequiel Ordoñez propuso el descubrimiento del histórico pozo de La Pez a principios del siglo XX, esta tierra ha sido el epicentro de una revolución industrial que ha transformado no solo el panorama económico de México, sino también su identidad nacional.
+                </p>
+                
+                <p class="is-size-5 has-text-justified">
+                    El legado de Tampico reside en sus puertos, donde el petróleo fluye como vida misma. Desde aquí, se exporta la riqueza de nuestras tierras a destinos internacionales, marcando el inicio de una aventura que ha llevado a México a la vanguardia de la industria energética global.
+                </p>
+                
+                <p class="is-size-5 has-text-justified">
+                    El Presidente de la Asociación Mexicana de Geofísicos de Exploración, Humberto Salazar Soto,  nos recuerda la importancia vital de Tampico para la industria petrolera mexicana. Sus palabras resuenan con la grandeza de una ciudad que ha sido pionera, líder y ejemplo para todo un país.
+                </p>
+                
+                <p class="is-size-5 has-text-justified">
+                    Únanse a nosotros mientras exploramos las raíces de la industria petrolera en México, y descubramos juntos el legado eterno de Tampico en esta apasionante narrativa de progreso y éxito.
+                </p>
+                
+                <p class="is-size-5 has-text-justified">
+                    ¡Bienvenidos a Tampico, cuna de un legado que sigue impulsando el futuro de México en el escenario global del petróleo!
+                </p>
+            </div>
+        </div>
+    </section>
+ 
+
+
+  <%- include("../templates/footer"); %>
+  <%- include("../templates/login_model"); %>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="<%= base_url %>js/navbar.js"></script>
+  <script src="<%= base_url %>js/validate_forms.js"></script>
+  <script src="<%= base_url %>js/login_modal.js"></script>
+  <script src="<%= base_url %>js/swiper_index.js"></script>
+</body>
+</html>
