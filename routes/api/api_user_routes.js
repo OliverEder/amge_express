@@ -3,7 +3,8 @@ import express from "express";
 import { 
     register,
     login, 
-    logout
+    logout, 
+    api_editar_usuario
 } from "../../controllers/user_controller.js"
 import { login_validation } from "../../validations/login_validations.js";
 
@@ -21,12 +22,7 @@ router_api_user.get("/", (req, res, next) => {
 router_api_user.post("/", register);
 
 // Editar registro
-router_api_user.put("/:user_id", (req, res, next) => {
-    res.render("index", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL
-    });
-});
+router_api_user.put("/:user_id", api_editar_usuario);
 
 // Eliminar registro
 router_api_user.delete("/:user_id", (req, res, next) => {
@@ -38,7 +34,6 @@ router_api_user.delete("/:user_id", (req, res, next) => {
 
 // login
 router_api_user.post("/login", login_validation, login);
-
 
 // logout
 router_api_user.post("/logout", logout);

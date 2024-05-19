@@ -6,6 +6,7 @@ import { validationResult } from "express-validator";
 
 import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
+import { Delegation } from "../models/delegation.js";
 
 
 export const users_dashboard = async (req, res, next) => {
@@ -13,12 +14,40 @@ export const users_dashboard = async (req, res, next) => {
         const users = await User.findAll({
             where: {user_status : "A"},
             include:[
-                {model: User_group}
+                {model: User_group},
+                {model: Delegation}
             ]
         });
         res.render("dashboard/usuarios", {
             base_url: process.env.BASE_URL,
             users: users
+        })
+    } catch (error) {
+        //Enviar error
+        res.status(400).send(error);
+        next();
+    }
+}
+
+export const edit_user_dashboard = async (req, res, next) => {
+    try {
+        const {params} = req;
+        const user = await User.findOne({
+            where: {user_id: params.user_id},
+            include: [
+                {model:User_group},
+                {model: Delegation}
+            ]
+        });
+
+        const user_groups = await User_group.findAll();
+        const delegations = await Delegation.findAll();
+
+        res.render("dashboard/editar_usuario", {
+            base_url: process.env.BASE_URL,
+            user: user,
+            user_groups: user_groups,
+            delegations:delegations
         })
     } catch (error) {
         //Enviar error
@@ -152,3 +181,44 @@ export const logout = async (req, res, next) => {
         next();
     }
 } 
+
+export const api_editar_usuario = async (req, res, next) => {
+    try {
+        const {body, params} = req;
+
+        const user_obj = {
+            user_email: body.user_email,
+            user_avatar: body.user_avatar,
+            user_names: body.user_names,
+            user_last_names: body.user_last_names,
+            user_birth: body.user_birth,
+            user_phone: body.user_phone,
+            user_nationality: body.user_nationality,
+            user_address: body.user_address,
+            user_cp: body.user_cp,
+            user_blood_type: body.user_blood_type,
+            user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
+            user_email_updates: body.user_email_updates,
+            user_group_id: body.user_group_id,
+            delegation_id: body.delegation_id,
+            user_status: body.user_status
+        }
+
+        if(body.user_password != ""){
+            const saltRounds = 10;
+            const salt = await bcrypt.genSalt(saltRounds);
+            const hash_password = await bcrypt.hash(body.user_password, salt);
+            user_obj.user_password = hash_password;
+        }
+
+        const user = User.update(
+            user_obj,
+            {where: {user_id: params.user_id}}
+        )
+        res.json({mensaje: "Registro editado con éxito"});
+    } catch (error) {
+        //Enviar error
+        res.status(400).send(error);
+        next();
+    }
+}

@@ -4,7 +4,7 @@ import {
     session_validation, 
     session_validation_admin 
 } from "../../validations/session_validation.js"
-import { users_dashboard } from "../../controllers/user_controller.js";
+import { users_dashboard, edit_user_dashboard } from "../../controllers/user_controller.js";
 import { news } from "../../controllers/news_controller.js";
 const router_dashboard = express.Router();
 
@@ -24,6 +24,13 @@ router_dashboard.get(
     session_validation, 
     session_validation_admin,
     users_dashboard
+);
+
+router_dashboard.get(
+    "/usuarios/editar/:user_id",
+    session_validation, 
+    session_validation_admin,
+    edit_user_dashboard
 );
 
 router_dashboard.get(
