@@ -18,16 +18,21 @@ const router_amge = express.Router();
 
 
 router_amge.get("/", (req, res, next) => {
-    
-    const { session } = req;
+    try {
+        const { session } = req;
 
-    res.render("index", {
-        base_url: process.env.BASE_URL,
-        api_base_url: process.env.API_BASE_URL,
-        logged: session.logged ? session.logged : false,
-        user_id: session.logged ? session.user_id : "",
-        user_email:  session.logged ? session.user_email : ""
-    });
+        res.render("index", {
+            base_url: process.env.BASE_URL,
+            api_base_url: process.env.API_BASE_URL,
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : ""
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(400).send(error);
+        next(); 
+    }    
 });
 
 router_amge.get("/nosotros", nosotros);

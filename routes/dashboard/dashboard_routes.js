@@ -14,10 +14,21 @@ router_dashboard.get(
     session_validation, 
     session_validation_admin, 
     (req, res, next) => {
-    res.render("dashboard/dashboard", {
-        base_url: process.env.BASE_URL
-    })
-});
+        try {
+            const { session } = req;
+            res.render("dashboard/dashboard", {
+                base_url: process.env.BASE_URL,
+                logged: session.logged ? session.logged : false,
+                user_id: session.logged ? session.user_id : "",
+                user_email:  session.logged ? session.user_email : ""
+            })
+        } catch (error) {
+            console.log(error);
+            res.status(400).send(error);
+            next();
+        }
+    }
+);
 
 router_dashboard.get(
     "/usuarios",
@@ -37,20 +48,32 @@ router_dashboard.get(
     "/delegaciones", 
     session_validation, 
     (req, res, next) => {
-    res.render("dashboard/delegaciones", {
-        base_url: process.env.BASE_URL
-    })
+        const { session } = req;
+        res.render("dashboard/delegaciones", {
+            base_url: process.env.BASE_URL,
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : "",
+        })
 });
 
 router_dashboard.get("/banners", (req, res, next) => {
+    const { session } = req;
     res.render("dashboard/banners", session_validation, {
-        base_url: process.env.BASE_URL
+        base_url: process.env.BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
+        user_email:  session.logged ? session.user_email : "",
     })
 });
 
 router_dashboard.get("/eventos", (req, res, next) => {
+    const { session } = req;
     res.render("dashboard/dashboard",session_validation,  {
-        base_url: process.env.BASE_URL
+        base_url: process.env.BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
+        user_email:  session.logged ? session.user_email : "",
     })
 });
 

@@ -11,6 +11,7 @@ import { Delegation } from "../models/delegation.js";
 
 export const users_dashboard = async (req, res, next) => {
     try {
+        const { session } = req;
         const users = await User.findAll({
             where: {user_status : "A"},
             include:[
@@ -20,7 +21,13 @@ export const users_dashboard = async (req, res, next) => {
         });
         res.render("dashboard/usuarios", {
             base_url: process.env.BASE_URL,
-            users: users
+            users: users,
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : "",
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : ""
         })
     } catch (error) {
         //Enviar error
@@ -32,6 +39,7 @@ export const users_dashboard = async (req, res, next) => {
 export const edit_user_dashboard = async (req, res, next) => {
     try {
         const {params} = req;
+        const { session } = req;
         const user = await User.findOne({
             where: {user_id: params.user_id},
             include: [
@@ -46,6 +54,9 @@ export const edit_user_dashboard = async (req, res, next) => {
         res.render("dashboard/editar_usuario", {
             base_url: process.env.BASE_URL,
             user: user,
+            logged: session.logged ? session.logged : false,
+            user_id: session.logged ? session.user_id : "",
+            user_email:  session.logged ? session.user_email : "",
             user_groups: user_groups,
             delegations:delegations
         })
