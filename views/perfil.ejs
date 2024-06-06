@@ -35,12 +35,17 @@
                   Perfil de usuario
                 </p>
             </header>
-            <div class="columns pt-5">            
-                <div class="column is-3">
-                    
+            <div class="columns p-2">            
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Nombre</label>
+                        <div class="control">
+                            <p class="has-text-weight-bold is-size-4 has-text-link"><%= user.user_names %> <%= user.user_last_names %></p>
+                        </div>
+                    </div>
                     <center>
-                        <figure class="image is-128x128 mb-2">
-                            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                        <figure class="image is-128x128 mb-4">
+                            <img class="is-rounded" src="/images/perfil-del-usuario.png">
                         </figure>
                         <button class="button btn_amge mb-3 is-fullwidth">
                             <span class="icon">
@@ -58,45 +63,33 @@
                     </center>
                     
                 </div>
-                <div class="column">
-                    <p class="has-text-weight-bold is-size-4 has-text-link"><%= user.user_names %> <%= user.user_last_names %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Titulo:</span> Doctor en Geología</p>
+                <div class="column is-4">
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Email:</span> <%= user.user_email %></p>
                     <p><span class="has-text-weight-bold has-text-link is-size-5">Telefono:</span> <%= user.user_phone %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Delegacion:</span> CDMX</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Miembre desde:</span> Septiembre 2023</p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Delegacion:</span> <%= user.delegation.delegation_name %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Fecha de nacimiento:</span><%= user.user_birth %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Nacionalidad:</span> <%= user.user_nationality %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Dirección:</span> <%= user.user_address %></p>
+                    <p><span class="has-text-weight-bold has-text-link is-size-5">Tipo de sangre:</span> <%= user.user_blood_type %></p>
                     <p>
                         <span class="has-text-weight-bold has-text-link is-size-5">Estatus de membresia:</span> 
-                        <span class="has-text-weight-bold has-text-success is-size-5">Activo</span>
+                        <span class="has-text-weight-bold has-text-success is-size-5">
+                            <% if (membership && membership.membership_status == "A") { %>
+                                Activo
+                            <% }else{ %>
+                                Inactivo
+                            <% } %>
+                        </span>
                     </p>
                 </div>
-                <div class="column">
+                <div class="column is-4">
                    <center>
                         <img src="/images/amge.qr.png" style="height: 250px;">
                         <p class="is-size-5">Escanear el codigo para ver la credencial de AMGP</p>
                    </center>
                 </div>
             </div>
-            <div class="columns">
-                <div class="column">
-                    <p class="has-text-weight-bold has-text-link is-size-5">Datos personales</p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Fecha de nacimiento:</span><%= user.user_birth %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Nacionalidad:</span> <%= user.user_nationality %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Dirección:</span> <%= user.user_address %></p>
-                    <p><span class="has-text-weight-bold has-text-link is-size-5">Tipo de sangre:</span> <%= user.user_blood_type %></p>
-                </div>
-                <div class="column">
-                    <p class="has-text-weight-bold has-text-link is-size-5">Datos Profecionales</p>
-                </div>
-                <div class="column">
-                    <p class="has-text-weight-bold has-text-link is-size-5">Datos Academicos</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <p class="has-text-weight-bold has-text-link is-size-5">Desacargas</p>
-                </div>               
-            </div>
+           
         </div>
         
     </section>      
