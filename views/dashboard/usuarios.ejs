@@ -79,23 +79,55 @@
         
                                     </tbody>
                                 </table>
-                                <!-- <div class="columns">
+                                <div class="columns">
                                     <div class="column is-8 is-offset-2">
                                         <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                                            <a class="pagination-previous">Anterior</a>
-                                            <a class="pagination-next">Siguiente</a>
+                                            <% if (datos_paginacion.pagina != 1) { %>
+                                                <a 
+                                                    class="pagination-previous"
+                                                    href="<%= base_url %>dashboard/usuarios/principal/ <%= datos_paginacion.pagina_anterior %>"
+                                                >
+                                                    Anterior
+                                                </a>
+                                            <% } %>
+                                            <% if (datos_paginacion.pagina != datos_paginacion.total_paginas) { %>
+                                                <a 
+                                                    class="pagination-next"
+                                                    href="<%= base_url %>dashboard/usuarios/principal/<%= datos_paginacion.pagina_siguiente %>"
+                                                >
+                                                    Siguiente
+                                                </a>
+                                            <% } %>
+                                            
                                             <ul class="pagination-list">
-                                                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                                                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
-                                                <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
-                                                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
-                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                                                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                                                <% for( let pagina = datos_paginacion.limite_inferior; pagina <= datos_paginacion.limite_superior; pagina++ ) { %>
+                                                    <% if (pagina == datos_paginacion.pagina) { %>
+                                                        <li>
+                                                            <a 
+                                                                class="pagination-link" 
+                                                                aria-label="Goto page 1"
+                                                                href="<%= base_url %>dashboard/usuarios/principal/<%= pagina %>"
+                                                            >
+                                                                <%= pagina %>
+                                                            </a>
+                                                        </li>
+                                                    <% } else { %>
+                                                        <li>
+                                                            <a 
+                                                                class="pagination-link" 
+                                                                aria-label="Goto page 45"
+                                                                href="<%= base_url %>dashboard/usuarios/principal/<%= pagina %>"
+                                                            >
+                                                                <%= pagina %>
+                                                            </a>
+                                                        </li>
+                                                    <% } %>
+                                                <% } %>
+                                                
                                             </ul>
                                         </nav>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             
                         </div>
@@ -294,6 +326,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                    
                             </div>
 
                         </div>

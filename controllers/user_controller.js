@@ -3,7 +3,7 @@ import moment from "moment";
 import nodemailer from 'nodemailer';
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
-
+import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
 import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
 import { Delegation } from "../models/delegation.js";
@@ -11,17 +11,33 @@ import { Delegation } from "../models/delegation.js";
 
 export const users_dashboard = async (req, res, next) => {
     try {
-        const { session } = req;
+        const { 
+            params,
+            session 
+        } = req;
+        const total_users = await User.count();
+        console.log("params:",params);
+        const datos_pagina = {
+            pagina: parseInt(params.pagina),
+            total_registros: total_users,
+            registros_por_pagina: 10
+        };
+        const datos_paginacion = paginacion_tabla(datos_pagina);
+
         const users = await User.findAll({
             where: {user_status : "A"},
             include:[
                 {model: User_group},
                 {model: Delegation}
-            ]
+            ],
+            offset: datos_paginacion.inicio,
+            limit: datos_paginacion.registros_por_pagina
         });
+
         res.render("dashboard/usuarios", {
             base_url: process.env.BASE_URL,
             users: users,
+            datos_paginacion: datos_paginacion,
             logged: session.logged ? session.logged : false,
             user_id: session.logged ? session.user_id : "",
             user_email:  session.logged ? session.user_email : "",

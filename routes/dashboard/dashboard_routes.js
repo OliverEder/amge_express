@@ -31,7 +31,7 @@ router_dashboard.get(
 );
 
 router_dashboard.get(
-    "/usuarios",
+    "/usuarios/principal/:pagina",
     session_validation, 
     session_validation_admin,
     users_dashboard
