@@ -179,7 +179,14 @@ export const login = async (req, res, next) => {
         req.session.user_email = user.user_email;
         req.session.user_id = user.user_id;
         req.session.user_group_id = user.user_group_id;
-
+        console.log({
+            token: token,
+            user_id:user.user_id,
+            user_email:user.user_email,
+            user_group_id: user.user_group_id,
+            user_group_name: user_group.user_group_name,
+            errors: []
+        });
         res.header("auth-token", token).json({
             token: token,
             user_id:user.user_id,

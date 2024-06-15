@@ -20,7 +20,9 @@ const router_amge = express.Router();
 router_amge.get("/", (req, res, next) => {
     try {
         const { session } = req;
-
+        console.log("=======================");
+        console.log("session:", session);
+        console.log("=======================")
         res.render("index", {
             base_url: process.env.BASE_URL,
             api_base_url: process.env.API_BASE_URL,
