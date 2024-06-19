@@ -7,6 +7,7 @@ import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
 import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
 import { Delegation } from "../models/delegation.js";
+import { Membership } from "../models/membership.js";
 
 
 export const users_dashboard = async (req, res, next) => {
@@ -174,17 +175,32 @@ export const login = async (req, res, next) => {
         const { sign, verify } = jwt;
         const token = sign(payload, process.env.TOKEN_SECRET, { expiresIn: (1000 * 60 * 60 * 24) });
         const user_group = await User_group.findOne({ where: {user_group_id: user.user_group_id }});
+        const membresia = await Membership.findOne({
+            where: {
+                user_id: user.user_id,
+                membership_status: "A"
+            }
+        });
+        console.log("membresia;", membresia);
         // Creación de la sesion por parte de express
         req.session.logged = true;
         req.session.user_email = user.user_email;
         req.session.user_id = user.user_id;
         req.session.user_group_id = user.user_group_id;
+        if(membresia){
+            req.session.membership = membresia.membership_status;
+        }else{
+            req.session.membership = "I";
+        }
+        
+        console.log(req.session);
         console.log({
             token: token,
             user_id:user.user_id,
             user_email:user.user_email,
             user_group_id: user.user_group_id,
             user_group_name: user_group.user_group_name,
+            membresia: membresia,
             errors: []
         });
         res.header("auth-token", token).json({
@@ -193,6 +209,7 @@ export const login = async (req, res, next) => {
             user_email:user.user_email,
             user_group_id: user.user_group_id,
             user_group_name: user_group.user_group_name,
+            membresia: membresia,
             errors: []
         });
         

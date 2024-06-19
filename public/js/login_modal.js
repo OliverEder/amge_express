@@ -78,6 +78,7 @@ const logout = async (e) => {
             body: new URLSearchParams(form_data)
         });
         const result = await response.json();
+        localStorage.clear();
         setTimeout(() => {
             window.location.href="/";
         },500);
@@ -115,7 +116,6 @@ const login = async (e) => {
             body: new URLSearchParams(form_data)
         });
         const result = await response.json();
-        console.log("correo1@gmail.com", result);
 
         if(result.errors.length != 0){
             Swal.fire({
@@ -130,13 +130,17 @@ const login = async (e) => {
             title: "Sesión iniciada",
             showConfirmButton: false,
         });
-
+        window.localStorage.clear();
         window.localStorage.setItem("base_url", base_url);
         window.localStorage.setItem("token", result.token);
         window.localStorage.setItem("user_id", result.user_id );
         window.localStorage.setItem("user_email", result.user_email );
         window.localStorage.setItem("user_group_id", result.user_group_id );
         window.localStorage.setItem("user_group_name", result.user_group_name);
+        if(result.membresia){
+            window.localStorage.setItem("membership_status", result.membresia.membership_status);
+        }
+        
 
         setTimeout(() => {
             window.location.href="/";
