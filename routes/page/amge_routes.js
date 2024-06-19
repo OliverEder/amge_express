@@ -94,7 +94,8 @@ router_amge.get("/editar_perfil/:user_id",session_validation,  editar_perfil);
 router_amge.get("/noticia/:noticia_id", (req, res, next) => {
     const { session, params } = req;
     const noticias = {
-        tampico_cuna_de_un_legado: "tampico"
+        tampico_cuna_de_un_legado: "tampico",
+        reporte_actividades_tampico: "reporte_actividades_tampico"
     }
     res.render(`noticias/${noticias[params.noticia_id]}`, {
         base_url: process.env.BASE_URL,
