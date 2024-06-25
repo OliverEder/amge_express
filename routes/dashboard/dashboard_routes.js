@@ -82,13 +82,17 @@ router_dashboard.get("/eventos", (req, res, next) => {
 router_dashboard.get(
     "/noticias", 
     session_validation, 
-    session_validation_admin,
+    //session_validation_admin,
     news
 );
 
 router_dashboard.get("/noticias/nueva", (req, res, next) => {
+    const { session } = req;
     res.render("dashboard/noticia_registro", {
-        base_url: process.env.BASE_URL
+        base_url: process.env.BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
+        user_email:  session.logged ? session.user_email : "",
     })
 });
 
