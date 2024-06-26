@@ -3,7 +3,8 @@ import express from "express";
 import { 
     register,
     login, 
-    logout
+    logout,
+    edit_register
 } from "../../controllers/user_controller.js"
 import { login_validation } from "../../validations/login_validations.js";
 
@@ -43,3 +44,6 @@ router_api_user.post("/login", login_validation, login);
 // logout
 router_api_user.post("/logout", logout);
 export default router_api_user;
+
+//Edita registro usuario 
+router_api_user.post("/editar_registro", edit_register);
