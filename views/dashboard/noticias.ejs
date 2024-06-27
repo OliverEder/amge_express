@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+    
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+
+                <p class="title is-size-2 is-spaced">
+                    Noticias
+                </p>
+                <a class="button is-info" href="/dashboard/noticias/nueva">
+                    Nueva noticia
+                </a>
+                <br><br>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Noticias
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="columns">
+                                    <div class="column is-offset-4 is-4">
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="Buscar">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Titulo</th>
+                                            <th>Creación</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                                <!-- <div class="columns">
+                                    <div class="column is-8 is-offset-2">
+                                        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                                            <a class="pagination-previous">Anterior</a>
+                                            <a class="pagination-next">Siguiente</a>
+                                            <ul class="pagination-list">
+                                                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+                                                <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+                                                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div> -->
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="<%= base_url %>js/dashboard/usuarios.js"></script>
+</body>
+</html>

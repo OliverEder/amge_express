@@ -20,6 +20,7 @@
     />
     <link rel="stylesheet" href="<%= base_url %>css/membresias.css">
     <link rel="stylesheet" href="<%= base_url %>css/bulma-pricingtable.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <%- include("templates/navbar"); -%>
@@ -48,7 +49,7 @@
             </div>
         </section>        
     </div>
-
+    
     <section class="section is-medium">
         <h1 class="is-size-3">Tipos de membresias</h1>
         <div class="pricing-table">          
@@ -57,7 +58,24 @@
                 <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>100</span>/año</div>
                 <img src="<%= base_url %>images/socios_estudiantes.webp" alt="">
                 <div class="plan-footer">
-                    <button class="button is-fullwidth">Suscribir</button>
+                    <!-- Mostrar boton de membresia cuando esta logueado y no cuenta con membresia -->
+                    <% if (logged && membership == "I") { %>
+                        <a 
+                            class="button is-fullwidth" 
+                            id="estudiante_active_btn" 
+                            price="100" 
+                            membership="A" 
+                            href="https://pago.clip.mx/55720c92-b417-401c-bcd2-964a5c48840d"
+                            target="_blank"
+                        >
+                            Suscribir
+                        </a>
+                    <% }else{ %>
+                        <button class="button is-fullwidth" id="estudiante_btn" price="100" membership="A">
+                            Suscribir
+                        </button>
+                    <% } %>
+                    
                 </div>
             </div>
             
@@ -67,7 +85,22 @@
                 <img src="<%= base_url %>images/socios_jubilados.webp" alt="">
     
                 <div class="plan-footer">
-                    <button class="button is-fullwidth">Suscribir</button>
+                    <% if (logged && membership == "I") { %>
+                        <a 
+                            class="button is-fullwidth" 
+                            id="jubilado_active_btn" 
+                            price="100" 
+                            membership="A" 
+                            href="https://pago.clip.mx/5b4fd7b2-6913-4fd4-bb3b-ce17873f8aa2"
+                            target="_blank"
+                        >
+                            Suscribir
+                        </a>
+                    <% }else{ %>
+                        <button class="button is-fullwidth" id="jubilado_btn" price="100" membership="A">
+                            Suscribir
+                        </button>
+                    <% } %>
                 </div>
             </div>
           
@@ -77,10 +110,34 @@
                 <img src="<%= base_url %>images/socios_activos.webp" alt="">
                
                 <div class="plan-footer">
-                    <button class="button is-fullwidth">Suscribir</button>
+                    <% if (logged && membership == "I") { %>
+                        <a 
+                            class="button is-fullwidth" 
+                            id="socio_active-btn" 
+                            price="100" 
+                            membership="A" 
+                            href="https://pago.clip.mx/8ec5888a-bc75-43bd-8fab-6e6ca73bedf5"
+                            target="_blank"
+                        >
+                            Suscribir
+                        </a>
+                    <% }else{ %>
+                        <button class="button is-fullwidth" id="socio_btn" price="100" membership="A">
+                            Suscribir
+                        </button>
+                    <% } %>
                 </div>
             </div>
         </div>
+        <article class="message is-info">
+            <div class="message-header">
+              <p>Importante</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+                Una vez realizado el pago la membresía se activará en un lapso de 24 a 48 horas
+            </div>
+          </article>
     </section>
 
     <section class="section" id="delegaciones_section">
@@ -194,14 +251,39 @@
             </div>
         </div> 
     </section>
+
+    <div class="modal" id="pago_modal">
+        <div class="modal-background" id="modal_background_pago"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Pago de membresía</p>
+                <button class="delete" aria-label="close" id="close_pago"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="payment-form">
+                    <div id="checkout"></div>
+                    <button id="submit">Get Card Token ID</button>
+                    <p id="cardTokenId"></p>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <div class="buttons">
+                <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button>
+                </div>
+            </footer>
+        </div>
+    </div>
     
     <%- include("templates/footer"); %>
     <%- include("templates/login_model"); %>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://sdk.clip.mx/js/clip-sdk.js"></script>
     <script src="<%= base_url %>js/navbar.js"></script>
     <script src="<%= base_url %>js/validate_forms.js"></script>
     <script src="<%= base_url %>js/login_modal.js"></script>
     <script src="<%= base_url %>js/membresias.js"></script>
+    
 </body>
 </html>

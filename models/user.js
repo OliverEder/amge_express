@@ -1,5 +1,9 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js"
+import moment from "moment";
+
+import { User_group } from "./user_group.js";
+import { Delegation } from "./delegation.js";
 
 export const User = db.define("user",{
     user_id: {
@@ -41,10 +45,16 @@ export const User = db.define("user",{
         type: Sequelize.STRING
     },
     user_created_at: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        get() {
+            return moment(this.getDataValue('user_created_at')).format('DD/MM/YYYY HH:mm:ss');
+        }
     },
     user_modified_at: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        get() {
+            return moment(this.getDataValue('user_modified_at')).format('DD/MM/YYYY HH:mm:ss');
+        }
     },
     user_group_id: {
         type: Sequelize.INTEGER,
@@ -65,3 +75,17 @@ export const User = db.define("user",{
 },{
     freezeTableName: true
 });
+
+User.belongsTo(User_group, {
+    foreignKey: {
+      name: 'user_group_id'
+    }
+});
+
+User.belongsTo(Delegation, {
+    foreignKey: {
+      name: 'delegation_id'
+    }
+});
+
+  
