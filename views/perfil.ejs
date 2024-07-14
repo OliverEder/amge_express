@@ -24,6 +24,7 @@
     />
     <link rel="stylesheet" href="<%= base_url %>css/swiper_styles.css">
     <link rel="stylesheet" href="<%= base_url %>css/index.css">
+    <link rel="stylesheet" href="<%= base_url %>css/cropper.min.css">
 </head>
 <body>
   <%- include("templates/navbar"); -%>
@@ -47,13 +48,6 @@
                         <figure class="image is-128x128 mb-4">
                             <img class="is-rounded" src="/images/perfil-del-usuario.png">
                         </figure>
-                        <button class="button btn_amge mb-3 is-fullwidth">
-                            <span class="icon">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </span>
-                            <span>Editar imagen</span>
-                        </button>
-
                         <a class="button is-primary is-fullwidth" href="<%= base_url %>editar_perfil/<%= user_id %>">
                             <span class="icon">
                                 <i class="fa-solid fa-pen-to-square"></i>
@@ -103,6 +97,8 @@
   <%- include("templates/login_model"); %>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <script src="<%= base_url %>js/cropper.min.js"></script>
   <script src="<%= base_url %>js/navbar.js"></script>
   <script src="<%= base_url %>js/perfil.js"></script>
   <script src="<%= base_url %>js/login_modal.js"></script>

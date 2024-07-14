@@ -3,9 +3,12 @@ import moment from "moment";
 import nodemailer from 'nodemailer';
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
-import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
+import fs from "fs-extra";
 import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
+import { where } from "sequelize";
+import {} from "dotenv/config";
+import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
 import { Delegation } from "../models/delegation.js";
 import { Membership } from "../models/membership.js";
 
@@ -267,6 +270,69 @@ export const api_editar_usuario = async (req, res, next) => {
             {where: {user_id: params.user_id}}
         )
         res.json({mensaje: "Registro editado con éxito"});
+    } catch (error) {
+        //Enviar error
+        res.status(400).send(error);
+        next();
+    }
+}
+
+export const edit_register = async (req, res, next) => {
+    try {
+        const { body } = req;
+        
+        let img_value = ""
+        if(body.user_avatar !== ''){
+            img_value = body.user_id
+        }
+
+        if (body.user_password_edit != "") {
+            const saltRounds = 10;
+            const salt = await bcrypt.genSalt(saltRounds);
+            const hash_password = await bcrypt.hash(body.user_password_edit, salt);
+            const editado = await User.update({
+                user_email: body.user_email,
+                user_password: hash_password,
+                user_names: body.user_names,
+                user_last_names: body.user_last_names,
+                user_phone: body.user_phone,
+                user_birth: body.user_birth,            
+                user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
+                user_nationality: body.user_nationality,
+                user_address: body.user_address,
+                user_blood_type: body.user_blood_type,
+                user_avatar: img_value,
+            },{where:{user_id: body.user_id}});
+        } else {
+            const editado = await User.update({
+                user_email: body.user_email,
+                user_password: body.user_password_anterior,
+                user_names: body.user_names,
+                user_last_names: body.user_last_names,
+                user_phone: body.user_phone,
+                user_birth: body.user_birth,            
+                user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
+                user_nationality: body.user_nationality,
+                user_address: body.user_address,
+                user_blood_type: body.user_blood_type,
+                user_avatar: img_value,
+            },{where:{user_id: body.user_id}});
+        }
+        
+        const userFolder = fs.existsSync(`public/usuarios/${body.user_id}`);
+        if(!userFolder){
+            fs.mkdirSync(`public/usuarios/${body.user_id}`);
+          }
+        if(body.user_avatar != ""){
+            // Reemplazar imagen a png y base64
+            let base_64_data = body.user_avatar.replace(/^data:image\/png;base64,/, "");
+            // Guardar imágen en la siguiente ruta y con el nombre de la nueva categoría
+            fs.writeFile(`public/usuarios/${body.user_id}/${body.user_id}.png`, base_64_data, 'base64', (err) => {
+                console.log("err---------------------------->", err);
+            });
+        }
+
+        res.json({ response: "Usuario editado correctamente" });
     } catch (error) {
         //Enviar error
         res.status(400).send(error);

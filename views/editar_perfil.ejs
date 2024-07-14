@@ -7,6 +7,7 @@
     <title>AMGE</title>
     <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
     <link rel="stylesheet" href="<%= base_url %>css/style.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-tooltip.min.css">
     <link 
         rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
@@ -23,8 +24,25 @@
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="<%= base_url %>css/bulma-pricingtable.min.css">
-    
+    <link rel="stylesheet" href="<%= base_url %>css/cropper.min.css">
 </head>
+<style>
+    .cropper-crop-box,
+    .cropper-view-box { border-radius: 50% }
+    .cropper-view-box {
+        box-shadow: 0 0 0 1px #39f;
+        outline: 0;
+    }
+    
+    .imagen_perfil{
+        display:block;
+        margin:auto;
+    }
+
+    .cropper-container{
+        left: -30px;
+    }
+</style>
 <body>
   <%- include("templates/navbar"); -%>
   <div class="section">
@@ -33,12 +51,33 @@
         <div class="tabs">
             <ul>
                 <li class="is-active"><a>Datos Personales</a></li>
-                <li><a>Datos Profesionales</a></li>
-                <li><a>Datos Academicos</a></li>
+                <!-- <li><a>Datos Profesionales</a></li>
+                <li><a>Datos Academicos</a></li> -->
             </ul>
         </div>
         <div class="columns" id="personal_section">
             <div class="column is-8 is-offset-2 card">
+                <!-- Perfil del Usuario -->
+                <figure class="image is-128x128 img-editar mb-6 imagen_perfil">
+                    <img class="is-rounded" src="/usuarios/<%= user.user_id %>/<%= user.user_id %>.png" />
+                </figure>
+                <div class="file is-justify-content-center">
+                    <label class="file-label">
+                        <input 
+                            class="file-input" 
+                            type="file" 
+                            name="resume" 
+                            id="btn_edita_imagen"
+                        />
+                        <span class="file-cta btn_amge mb-3 is-fullwidth" style="width: 295px; text-align: center;">
+                            <span class="file-icon" style="margin-left: 60px;">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </span>
+                            <span class="file-label">Editar imagen</span>
+                        </span>
+                    </label>
+                </div>
+
                 <h2 class="is-size-3 mb-4">Datos personales</h1>
                 <form action="" id="register_form">
                     <div class="field">
@@ -46,11 +85,19 @@
                         <div class="control">
                             <input 
                                 class="input is-medium" 
+                                type="hidden" 
+                                id="user_id" 
+                                name="user_id"
+                                value="<%= user.user_id %>"
+                            >
+                            <input 
+                                class="input is-medium valid" 
                                 type="text" 
                                 placeholder="Registre sus Nombres" 
                                 id="reg_names_input" 
                                 name="reg_names_input"
                                 value="<%= user.user_names %>"
+                                data-msg="Nombres es incorrecto"
                             >
                         </div>
                         <p class="help is-danger" id="reg_names_message"></p>
@@ -59,12 +106,13 @@
                         <label class="label">Apellidos</label>
                         <div class="control">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="text" 
                                 placeholder="Registre sus Apellidos" 
                                 id="reg_lastnames_input" 
                                 name="reg_lastnames_input"
                                 value="<%= user.user_last_names %>"
+                                data-msg="Apellidos es incorrecto"
                             >
                         </div>
                         <p class="help is-danger" id="reg_lastnames_message"></p>
@@ -73,13 +121,14 @@
                         <label class="label">Email</label>
                         <div class="control has-icons-left">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="email" 
                                 placeholder="Registre su Email" 
                                 id="reg_email_input" 
                                 name="reg_email_input" 
                                 value="<%= user.user_email %>"
                                 required
+                                data-msg="Email es incorrecto"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
@@ -87,10 +136,23 @@
                         </div>
                         <p class="help is-danger" id="reg_email_message"></p>
                     </div>
-    
+                    <a
+                        class="icon has-tooltip-arrow has-tooltip-right delete-user"
+                        href="#!"
+                        data-tooltip="Si desea cambiar la contraseña, agregue una nueva, de lo contraio, dejar el campo vacío."
+                    >
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
                     <div class="field">
                         <label class="label">Contraseña</label>
                         <div class="control has-icons-left">
+                            <input 
+                                class="input is-medium" 
+                                type="hidden" 
+                                id="password_anterior" 
+                                name="password_anterior"
+                                value="<%= user.user_password %>"
+                            >
                             <input 
                                 class="input is-medium" 
                                 type="password" 
@@ -126,13 +188,14 @@
                         <label class="label">Teléfono</label>
                         <div class="control has-icons-left">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="number" 
                                 placeholder="Registre su Telefono" 
                                 id="reg_phone_input" 
                                 name="reg_phone_input" 
                                 value="<%= user.user_phone %>"
                                 required
+                                data-msg="Teléfono es incorrecto"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-phone"></i>
@@ -145,13 +208,14 @@
                         <label class="label">Nacionalidad</label>
                         <div class="control has-icons-left">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="text" 
                                 placeholder="Registre su nacionalidad" 
                                 id="reg_nationality_input" 
                                 name="reg_nationality_input" 
                                 value="<%= user.user_nationality %>"
                                 required
+                                data-msg="Nacionalidad es incorrecto"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-flag"></i>
@@ -164,11 +228,12 @@
                         <label class="label">Fecha de nacimiento</label>
                         <div class="control has-icons-left">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="date" 
                                 id="reg_birth_input" 
                                 name="reg_birth_input"
                                 value="<%= user.user_birth %>"
+                                data-msg="Fecha de nacimiento es incorrecto"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-calendar"></i>
@@ -181,12 +246,13 @@
                         <label class="label">Dirección</label>
                         <div class="control has-icons-left">
                             <input 
-                                class="input is-medium" 
+                                class="input is-medium valid" 
                                 type="text" 
                                 placeholder="Registre su nacionalidad" 
                                 id="reg_address_input" 
                                 name="reg_address_input"
                                 value="<%= user.user_address %>"
+                                data-msg="Dirección es incorrecto"
                             >
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-house"></i>
@@ -194,18 +260,26 @@
                         </div>
                         <p class="help is-danger" id="reg_address_message"></p>
                     </div>
-
                     <div class="field">
                         <label class="label">Tipo de sangre</label>
                         <div class="control has-icons-left">
-                            <input 
-                                class="input is-medium" 
-                                type="text" 
-                                placeholder="Registre su tipo de sangre" 
-                                id="reg_blood_type_input" 
-                                name="reg_blood_type_input"
-                                value="<%= user.user_blood_type %>"
-                            >
+                            <div class="select is-fullwidth">
+                                <select
+                                    id="reg_blood_type_input" 
+                                    name="reg_blood_type_input"
+                                    class="valid"
+                                >
+                                    <option value="<%= user.user_blood_type %>" selected disabled><%= user.user_blood_type %></option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-droplet"></i>
                             </span>
@@ -216,14 +290,14 @@
                     
                 <div class="field is-grouped mt-5">
                     <div class="control">
-                        <button class="button is-link is-light is-large">Cancelar</button>
+                        <button class="button is-link is-light is-large" id="cancelar_btn">Cancelar</button>
                     </div>
                     <div class="control">
-                        <button class="button is-link is-large" id="register_btn">
+                        <button class="button is-link is-large" id="guardar_btn">
                             <span class="icon">
                                 <i class="fa-solid fa-check"></i>
                             </span>
-                            <span>Registrar</span>                            
+                            <span>Guardar</span>                            
                         </button>
                     </div>
                 </div>
@@ -354,10 +428,12 @@
 
   <%- include("templates/footer"); %>
   <%- include("templates/login_model"); %>
+  <!-- script para el cortado de imágen -->
+  <script src="<%= base_url %>js/cropper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="<%= base_url %>js/navbar.js"></script>
   <script src="<%= base_url %>js/login_modal.js"></script>
   <script src="<%= base_url %>js/validate_forms.js"></script>
-  <script src="<%= base_url %>js/registro.js"></script>
+  <script src="<%= base_url %>js/editar_perfil.js"></script>
 </body>
 </html>
