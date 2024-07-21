@@ -1,4 +1,4 @@
-const btn_edita_imagen = document.querySelector("#btn_edita_imagen");
+
 let content_img_editar = document.querySelector('.img-editar');
 let cropper = "";
 
@@ -51,5 +51,3 @@ const edita_imagen_perfil = (e) => {
         console.log(value,"================Values");
       }
 }
-
-btn_edita_imagen.addEventListener("change", edita_imagen_perfil);

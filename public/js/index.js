@@ -45,10 +45,10 @@ const close_anuncio_modal = () => {
     anuncio_modal.classList.remove("is-active")
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
     const  anuncio_modal = document.querySelector("#anuncio_modal");
     anuncio_modal.classList.add("is-active")
-});
+}); */
 
 anuncio_modal_close.addEventListener("click", close_anuncio_modal);
 anuncio_modal_background.addEventListener("click", close_anuncio_modal);

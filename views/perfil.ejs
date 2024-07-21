@@ -46,7 +46,7 @@
                     </div>
                     <center>
                         <figure class="image is-128x128 mb-4">
-                            <img class="is-rounded" src="/images/perfil-del-usuario.png">
+                            <img class="is-rounded" src="<%= user.user_avatar ? `/usuarios/${user.user_id}/${user.user_id}.png`: '/images/perfil-del-usuario.png'%>" >
                         </figure>
                         <a class="button is-primary is-fullwidth" href="<%= base_url %>editar_perfil/<%= user_id %>">
                             <span class="icon">
