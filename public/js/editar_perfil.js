@@ -75,7 +75,7 @@ const guarda_datos_editados = async ()=>{
     
             const result = await response.text();
             console.log("result:", result);
-            if(result.error){
+            /* if(result.error){
                 Swal.fire({
                     title: "Registro",
                     text: result.error,
@@ -93,7 +93,7 @@ const guarda_datos_editados = async ()=>{
             setTimeout(() => {
                 // window.location.href="/";
                 window.location.href=`/perfil/${user_id.value}`;
-            },1000);
+            },1000); */
         }
 
         
