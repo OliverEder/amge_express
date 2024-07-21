@@ -280,7 +280,6 @@ export const api_editar_usuario = async (req, res, next) => {
 export const edit_register = async (req, res, next) => {
     try {
         const { body } = req;
-        console.log("body:", body);
         // Procesar y guardar imagen si está presente
         if (body.user_avatar != "") {
             // Generar la carpeta para el usuario
@@ -321,15 +320,7 @@ export const edit_register = async (req, res, next) => {
         }, {
             where: { user_id: body.user_id }
         });
-        /* 
-        avatar_db si y 
-        avatar_body no
-        entonces si
-
-        avatar_db no y 
-        avatar_body si
-        entonces si 
-        */
+        
         // Responder con éxito
         res.json({ response: "Usuario editado correctamente" });
         /* let img_value = ""
