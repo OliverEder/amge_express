@@ -48,53 +48,52 @@ const guarda_datos_editados = async ()=>{
                 maxWidth: 500,
                 imageSmoothingQuality: 'high'
             }).toDataURL();
-            
-            
-            // Crear formData para enviar al servidor
-            const form_data = new FormData();
-            form_data.append('user_id', user_id.value);
-            form_data.append('user_email', reg_email_input.value.trim());
-            form_data.append('user_password_edit', reg_password_input.value.trim());
-            form_data.append('user_password_anterior', password_anterior.value);
-            form_data.append('user_names', reg_names_input.value.trim());
-            form_data.append('user_last_names', reg_lastnames_input.value.trim());
-            form_data.append('user_phone', reg_phone_input.value.trim());
-            form_data.append('user_birth', reg_birth_input.value.trim());
-            form_data.append('user_nationality', reg_nationality_input.value.trim());
-            form_data.append('user_address', reg_address_input.value.trim());
-            form_data.append('user_blood_type', reg_blood_type_input.value.trim());
-            form_data.append('user_avatar', img_src);
-            // Enviar datos de registro
-            const response = await fetch(`${base_url}api/user/editar_registro`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-                },
-                body: new URLSearchParams(form_data)
-            });
-    
-            const result = await response.text();
-            console.log("result:", result);
-            if(result.error){
-                Swal.fire({
-                    title: "Registro",
-                    text: result.error,
-                    icon: "warning"
-                });
-                return;
-            }
-    
+        }
+
+        // Crear formData para enviar al servidor
+        const form_data = new FormData();
+        form_data.append('user_id', user_id.value);
+        form_data.append('user_email', reg_email_input.value.trim());
+        form_data.append('user_password_edit', reg_password_input.value.trim());
+        form_data.append('user_password_anterior', password_anterior.value);
+        form_data.append('user_names', reg_names_input.value.trim());
+        form_data.append('user_last_names', reg_lastnames_input.value.trim());
+        form_data.append('user_phone', reg_phone_input.value.trim());
+        form_data.append('user_birth', reg_birth_input.value.trim());
+        form_data.append('user_nationality', reg_nationality_input.value.trim());
+        form_data.append('user_address', reg_address_input.value.trim());
+        form_data.append('user_blood_type', reg_blood_type_input.value.trim());
+        form_data.append('user_avatar', img_src);
+        // Enviar datos de registro
+        const response = await fetch(`${base_url}api/user/editar_registro`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            },
+            body: new URLSearchParams(form_data)
+        });
+
+        const result = await response.text();
+        console.log("result:", result);
+        if(result.error){
             Swal.fire({
                 title: "Registro",
-                text: "Se registro el usuario correctamente",
-                icon: "success"
+                text: result.error,
+                icon: "warning"
             });
-            
-            setTimeout(() => {
-                // window.location.href="/";
-                window.location.href=`/perfil/${user_id.value}`;
-            },1000);
+            return;
         }
+
+        Swal.fire({
+            title: "Registro",
+            text: "Se registro el usuario correctamente",
+            icon: "success"
+        });
+        
+        setTimeout(() => {
+            // window.location.href="/";
+            window.location.href=`/perfil/${user_id.value}`;
+        },1000);
 
         
 

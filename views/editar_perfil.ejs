@@ -59,7 +59,7 @@
             <div class="column is-8 is-offset-2 card">
                 <!-- Perfil del Usuario -->
                 <figure class="image is-128x128 img-editar mb-6 imagen_perfil">
-                    <img class="is-rounded" src="/usuarios/<%= user.user_id %>/<%= user.user_id %>.png" />
+                    <img class="is-rounded" src="<%= user.user_avatar ? `/usuarios/${user.user_id}/${user.user_id}.png`: '/images/perfil-del-usuario.png'%>" >
                 </figure>
                 <div class="file is-justify-content-center">
                     <label class="file-label">
