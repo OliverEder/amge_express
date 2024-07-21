@@ -280,10 +280,11 @@ export const api_editar_usuario = async (req, res, next) => {
 export const edit_register = async (req, res, next) => {
     try {
         const { body } = req;
-        
+        console.log("body:", body);
         // Procesar y guardar imagen si está presente
-        if (body.user_avatar) {
+        if (body.user_avatar != "") {
             // Generar la carpeta para el usuario
+            console.log("user_avatar");
             const userFolder = fs.existsSync(`public/usuarios/${body.user_id}`);
             if(!userFolder){
                 fs.mkdirSync(`public/usuarios/${body.user_id}`);
@@ -301,7 +302,9 @@ export const edit_register = async (req, res, next) => {
             const salt = await bcrypt.genSalt(saltRounds);
             hash_password = await bcrypt.hash(body.user_password_edit, salt);
         }
-
+        const user = await User.findOne({
+            where:{user_id: body.user_id }
+        });
         // Actualizar usuario en la base de datos
         const editado = await User.update({
             user_email: body.user_email,
@@ -314,11 +317,19 @@ export const edit_register = async (req, res, next) => {
             user_nationality: body.user_nationality,
             user_address: body.user_address,
             user_blood_type: body.user_blood_type,
-            user_avatar: body.user_avatar ? `${body.user_id}.png` : '', // Actualizar el nombre del avatar si se cargó
+            user_avatar: body.user_avatar ? `${body.user_id}.png` : user.user_avatar, // Actualizar el nombre del avatar si se cargó
         }, {
             where: { user_id: body.user_id }
         });
+        /* 
+        avatar_db si y 
+        avatar_body no
+        entonces si
 
+        avatar_db no y 
+        avatar_body si
+        entonces si 
+        */
         // Responder con éxito
         res.json({ response: "Usuario editado correctamente" });
         /* let img_value = ""
