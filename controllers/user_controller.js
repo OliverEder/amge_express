@@ -79,7 +79,7 @@ export const edit_user_dashboard = async (req, res, next) => {
             user_email:  session.logged ? session.user_email : "",
             user_groups: user_groups,
             delegations:delegations
-        })
+        });
     } catch (error) {
         //Enviar error
         res.status(400).send(error);

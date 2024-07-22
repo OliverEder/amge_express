@@ -95,7 +95,7 @@ const guardar = async (e) => {
             showConfirmButton: true
         }).then(() => {
             console.log("ok");
-            window.location.href="/dashboard/usuarios/";
+            window.location.href="/dashboard/usuarios/principal/1";
         })
 
 
