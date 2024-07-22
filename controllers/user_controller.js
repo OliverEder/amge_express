@@ -29,7 +29,6 @@ export const users_dashboard = async (req, res, next) => {
         const datos_paginacion = paginacion_tabla(datos_pagina);
 
         const users = await User.findAll({
-            where: {user_status : "A"},
             include:[
                 {model: User_group},
                 {model: Delegation}
