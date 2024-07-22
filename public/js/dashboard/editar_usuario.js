@@ -88,7 +88,8 @@ const guardar = async (e) => {
 
         const result = await response.json();
 
-        Swal.fire({
+        console.log("resullt:",result);
+        /* Swal.fire({
             title: "Registro",
             text: result.mensaje,
             icon: "success",
@@ -96,7 +97,7 @@ const guardar = async (e) => {
         }).then(() => {
             console.log("ok");
             window.location.href="/dashboard/usuarios/principal/1";
-        })
+        }) */
 
 
     } catch (error) {
