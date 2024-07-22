@@ -257,7 +257,7 @@ export const api_editar_usuario = async (req, res, next) => {
             delegation_id: body.delegation_id,
             user_status: body.user_status
         }
-
+        console.log("user_obj:", user_obj);
         if(body.user_password != ""){
             const saltRounds = 10;
             const salt = await bcrypt.genSalt(saltRounds);
@@ -269,6 +269,7 @@ export const api_editar_usuario = async (req, res, next) => {
             user_obj,
             {where: {user_id: params.user_id}}
         )
+        console.log("user:", user);
         res.json({mensaje: "Registro editado con éxito"});
     } catch (error) {
         //Enviar error
