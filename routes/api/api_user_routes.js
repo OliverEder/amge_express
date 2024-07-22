@@ -5,7 +5,8 @@ import {
     login, 
     logout,
     edit_register,
-    api_editar_usuario
+    api_editar_usuario,
+    api_buscar
 } from "../../controllers/user_controller.js"
 import { login_validation } from "../../validations/login_validations.js";
 
@@ -32,6 +33,9 @@ router_api_user.delete("/:user_id", (req, res, next) => {
         api_base_url: process.env.API_BASE_URL
     });
 });
+
+// busqueda
+router_api_user.post("/buscar", login_validation, api_buscar);
 
 // login
 router_api_user.post("/login", login_validation, login);

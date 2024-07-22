@@ -6,7 +6,7 @@ import { validationResult } from "express-validator";
 import fs from "fs-extra";
 import {User} from "../models/user.js";
 import { User_group } from "../models/user_group.js";
-import { where } from "sequelize";
+import { where, Op, Sequelize } from "sequelize";
 import {} from "dotenv/config";
 import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
 import { Delegation } from "../models/delegation.js";
@@ -277,6 +277,36 @@ export const api_editar_usuario = async (req, res, next) => {
         next();
     }
 }
+
+export const api_buscar = async (req,res, next ) => {
+    try {
+        const {body} = req;
+        const busqueda = await User.findAll({
+            where: {
+              [Op.or]: [
+                Sequelize.where(Sequelize.col('user_email'), {
+                  [Op.like]: `%${body.busqueda}%`
+                }),
+                Sequelize.where(Sequelize.col('user_names'), {
+                  [Op.like]: `%${body.busqueda}%`
+                }),
+                Sequelize.where(Sequelize.col('user_last_names'), {
+                  [Op.like]: `%${body.busqueda}%`
+                }),
+              ]
+            },
+            include:[
+                {model: User_group},
+                {model: Delegation}
+            ],
+            order: [["user_last_names", "ASC"]],
+        });
+        res.json(busqueda);
+    } catch (error) {
+        res.status(400).send(error);
+        next();
+    }
+} 
 
 export const edit_register = async (req, res, next) => {
     try {

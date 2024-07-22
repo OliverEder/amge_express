@@ -1,3 +1,8 @@
+const buscar_input = document.querySelector("#buscar_input");
+const tbody_paginada = document.querySelector("#tbody_paginada");
+const tbody_busqueda = document.querySelector("#tbody_busqueda");
+
+
 document.addEventListener("DOMContentLoaded", () => {
     build_active_users_chart();
     memberships_chart();
@@ -54,3 +59,58 @@ const build_sessions_record_chart = () => {
       
     Plotly.newPlot(sessions_record_chart, data, layout);
 }
+
+buscar_input.addEventListener("keyup", async (e) => {
+    try {
+        const paginacion_div = document.querySelector("#paginacion_div");
+        if(e.target.value.trim() == ""){
+            tbody_paginada.classList.remove("is-hidden");
+            paginacion_div.classList.remove("is-hidden");
+            tbody_busqueda.classList.add ("is-hidden");
+            return ;
+        }
+        tbody_busqueda.innerHTML = "";
+        tbody_paginada.classList.add("is-hidden");
+        paginacion_div.classList.add("is-hidden");
+        tbody_busqueda.classList.remove("is-hidden");
+        const form_data = {
+            busqueda: e.target.value,
+        };
+        
+
+        // Enviar datos de registro
+        const base_url = localStorage.getItem("base_url");
+        const response = await fetch(`${base_url}api/user/buscar`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            },
+            body: new URLSearchParams(form_data)
+        });
+
+        const result = await response.json();
+        console.log("result", result);
+        
+        result.forEach(user => {
+            const tr = document.createElement("tr")
+            tr.innerHTML = `
+                <td>${user.user_id}</td>
+                <td>${user.user_email}</td>
+                <td>${user.user_last_names} ${user.user_names}</td>
+                <td></td>
+                <td>${user.user_group.user_group_name}</td>
+                <td>${user.user_status == "A" ? "Activo" : ""}</td>
+                <td>
+                    <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                    <a href="<%= base_url %>dashboard/usuarios/editar/<%= user.user_id %>"><i class="fa-solid fa-pencil mr-1"></i></a>
+                    <a href="#"><i class="fa-solid fa-trash"></i></a> 
+                </td>
+            `;
+            tbody_busqueda.appendChild(tr);
+        });
+       
+    } catch (error) {
+        console.log(error);
+    }
+});
+
