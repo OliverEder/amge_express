@@ -264,7 +264,7 @@ export const api_editar_usuario = async (req, res, next) => {
             user_obj.user_password = hash_password;
         }
 
-        const user = User.update(
+        const user = await User.update(
             user_obj,
             {where: {user_id: params.user_id}}
         )
