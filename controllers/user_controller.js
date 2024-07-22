@@ -34,6 +34,7 @@ export const users_dashboard = async (req, res, next) => {
                 {model: User_group},
                 {model: Delegation}
             ],
+            order: [["user_last_names", "ASC"]],
             offset: datos_paginacion.inicio,
             limit: datos_paginacion.registros_por_pagina
         });
