@@ -242,7 +242,6 @@ export const api_editar_usuario = async (req, res, next) => {
 
         const user_obj = {
             user_email: body.user_email,
-            user_avatar: body.user_avatar,
             user_names: body.user_names,
             user_last_names: body.user_last_names,
             user_birth: body.user_birth,
@@ -252,7 +251,7 @@ export const api_editar_usuario = async (req, res, next) => {
             user_cp: body.user_cp,
             user_blood_type: body.user_blood_type,
             user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
-            user_email_updates: body.user_email_updates,
+            user_email_updates: body.user_email_updates.checked ? 1 : 0,
             user_group_id: body.user_group_id,
             delegation_id: body.delegation_id,
             user_status: body.user_status

@@ -57,7 +57,6 @@ const guardar = async (e) => {
         const user_id = user_email.getAttribute("user_id");
         const form_data = {
             user_email: user_email.value,
-            user_avatar: user_avatar.value,
             user_names: user_names.value,
             user_last_names: user_last_names.value,
             user_birth: user_birth.value,
