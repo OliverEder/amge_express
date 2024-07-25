@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js"
 
+import { Cat_membership_type } from "./cat_membership_type.js";
+
 export const Membership = db.define("membership",{
     membership_id: {
         type: Sequelize.INTEGER,
@@ -25,4 +27,10 @@ export const Membership = db.define("membership",{
     }
 },{
     freezeTableName: true
+});
+
+Membership.belongsTo(Cat_membership_type, {
+    foreignKey: {
+      name: 'cat_membership_type_id'
+    }
 });

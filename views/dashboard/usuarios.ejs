@@ -66,9 +66,9 @@
                                                 <td><%= user.user_id %></td>
                                                 <td><%= user.user_email %></td>
                                                 <td><%= user.user_last_names %> <%= user.user_names %></td>
-                                                <td></td>
+                                                <td><%= user.delegation ? user.delegation.delegation_name : "" %></td>
                                                 <td><%= user.user_group.user_group_name %></td>
-                                                <td><%= user.user_status == "A" ? "Activo" : ""%></td>
+                                                <td><%= user.user_status == "A" ? "Activo" : "Inactivo"%></td>
                                                 <td>
                                                     <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
                                                     <a href="<%= base_url %>dashboard/usuarios/editar/<%= user.user_id %>"><i class="fa-solid fa-pencil mr-1"></i></a>

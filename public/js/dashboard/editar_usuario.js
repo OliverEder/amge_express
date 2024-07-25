@@ -68,13 +68,11 @@ const guardar = async (e) => {
             user_password: user_password.value,
             user_created_at: user_created_at.value,
             user_modified_at: user_modified_at.value,
-            user_email_updates: user_email_updates.value != "" ? user_email_updates.value : 0,
+            user_email_updates: user_email_updates.checked ? 1 : 0,
             user_group_id: user_group_id.value,
             delegation_id: delegation_id.value,
             user_status: user_status.value
         };
-        
-
         // Enviar datos de registro
         const base_url = localStorage.getItem("base_url");
         const response = await fetch(`${base_url}api/user/${user_id}`, {

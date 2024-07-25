@@ -1,6 +1,7 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js"
 
+
 export const Cat_membership_type = db.define("cat_membership_type",{
     cat_membership_type_id: {
         type: Sequelize.INTEGER,
@@ -16,3 +17,4 @@ export const Cat_membership_type = db.define("cat_membership_type",{
 },{
     freezeTableName: true
 });
+

@@ -11,6 +11,7 @@ import {} from "dotenv/config";
 import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
 import { Delegation } from "../models/delegation.js";
 import { Membership } from "../models/membership.js";
+import { Cat_membership_type } from "../models/cat_membership_type.js";
 
 
 export const users_dashboard = async (req, res, next) => {
@@ -37,7 +38,6 @@ export const users_dashboard = async (req, res, next) => {
             offset: datos_paginacion.inicio,
             limit: datos_paginacion.registros_por_pagina
         });
-
         res.render("dashboard/usuarios", {
             base_url: process.env.BASE_URL,
             users: users,
@@ -70,6 +70,12 @@ export const edit_user_dashboard = async (req, res, next) => {
 
         const user_groups = await User_group.findAll();
         const delegations = await Delegation.findAll();
+        const memberships = await Membership.findAll({
+            where:{user_id: params.user_id},
+            include: [
+                {model:Cat_membership_type},
+            ]
+        });
 
         res.render("dashboard/editar_usuario", {
             base_url: process.env.BASE_URL,
@@ -78,7 +84,8 @@ export const edit_user_dashboard = async (req, res, next) => {
             user_id: session.logged ? session.user_id : "",
             user_email:  session.logged ? session.user_email : "",
             user_groups: user_groups,
-            delegations:delegations
+            delegations:delegations,
+            memberships: memberships
         });
     } catch (error) {
         //Enviar error
@@ -251,7 +258,7 @@ export const api_editar_usuario = async (req, res, next) => {
             user_cp: body.user_cp,
             user_blood_type: body.user_blood_type,
             user_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
-            user_email_updates: body.user_email_updates.checked ? 1 : 0,
+            user_email_updates: body.user_email_updates,
             user_group_id: body.user_group_id,
             delegation_id: body.delegation_id,
             user_status: body.user_status

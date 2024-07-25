@@ -20,9 +20,7 @@ const router_amge = express.Router();
 router_amge.get("/", (req, res, next) => {
     try {
         const { session } = req;
-        console.log("=======================");
-        console.log("session:", session);
-        console.log("=======================")
+
         res.render("index", {
             base_url: process.env.BASE_URL,
             api_base_url: process.env.API_BASE_URL,
@@ -95,7 +93,8 @@ router_amge.get("/noticia/:noticia_id", (req, res, next) => {
     const { session, params } = req;
     const noticias = {
         tampico_cuna_de_un_legado: "tampico",
-        reporte_actividades_tampico: "reporte_actividades_tampico"
+        reporte_actividades_tampico: "reporte_actividades_tampico",
+        convocatoria_registro_planillas: "convocatoria_registro_planillas"
     }
     res.render(`noticias/${noticias[params.noticia_id]}`, {
         base_url: process.env.BASE_URL,

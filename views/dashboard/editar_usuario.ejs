@@ -277,6 +277,7 @@
                                                 type="checkbox" 
                                                 name="user_email_updates" 
                                                 id="user_email_updates"
+                                                user_email_updates="<%= user.user_email_updates %>"
                                                 <% if(user.user_email_updates) { %> checked <% } %>
                                             >
                                             Deseo recibir actualizaciones por correo electrónico
@@ -337,8 +338,19 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card">
+                            <header class="card-header">
+                              <p class="card-header-title">Membresias</p>
+                            </header>
+                            <div class="card-content">
+                              <div class="content">
+                                <%= memberships %>
+                              </div>
+                            </div>
+                        </div>
         
-                        <div class="columns">
+                        <div class="columns mt-4">
                             <div class="column">
                                 <div class="field">
                                     <div class="control">
