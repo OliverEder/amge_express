@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+    
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+
+                <p class="title is-size-2 is-spaced">
+                    Votaciones
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Registro
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label class="label">Titulo</label>
+                                            <div class="control">
+                                              <input class="input" type="text" placeholder="Text input" id="titulo_input">
+                                            </div>
+                                            <p class="help is-danger is-hidden" id="titulo_msg">El titulo es requerido</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label class="label">Descripción</label>
+                                            <div class="control">
+                                              <textarea class="textarea" placeholder="Textarea" id="descripccion_textarea"></textarea>
+                                            </div>
+                                            <p class="help is-danger is-hidden" id="descripccion_msg">La descripción es requerido</p>
+                                        </div> 
+                                    </div>
+                                </div>
+
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label class="label">Estatus</label>
+                                            <div class="control">
+                                              <div class="select">
+                                                <select id="status_select">
+                                                    <option value="">Selecciona una opcion</option>
+                                                    <option value="A">Activa</option>
+                                                    <option value="I">Inactiva</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                            <p class="help is-danger is-hidden" id="status_msg">La estatus es requerido</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <p>Preguntas</p>
+                                <div id="preguntas" class="mt-5">
+                                    <div class="pregunta mb-5" id="pregunta_div_1" pregunta="1">
+                                        <div class="columns has-background-info-light" pregunta="1">
+                                            <div class="column is-10">
+                                                <div class="field">
+                                                    <label class="label">Pregunta</label>
+                                                    <div class="control">
+                                                      <input class="input pregunta_input" type="text" placeholder="Text input" id="pregunta_input_1">
+                                                    </div>
+                                                  </div>
+                                            </div>
+        
+                                            <div class="column">
+                                                <button class="button is-info mt-5 add_pregunta_btn" pregunta="1">+</button> 
+                                            </div>
+                                        </div>
+                                        <div id="opciones_pregunta_1" pregunta="1">
+                                            <div class="opcion" id="opcion_div_1" pregunta="1" opcion="1">
+                                                <div class="columns has-background-success-light" >
+                                                    <div class="column is-10">
+                                                        <div class="field">
+                                                            <label class="label">Opcion</label>
+                                                            <div class="control">
+                                                              <input class="input opcion_input" type="text" placeholder="Text input" id="opcion_input_1">
+                                                            </div>
+                                                          </div>
+                                                    </div>
+                
+                                                    <div class="column">
+                                                        <button class="button is-info mt-5 add_opcion_btn" pregunta="1" opcion="1" >+</button> 
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <a class="button is-info  is-rounded" id="guardar_btn">
+                                    <i class="fa-solid fa-check-to-slot mr-2"></i> 
+                                    Guardar
+                                </a>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="<%= base_url %>js/dashboard/votacion_registro.js"></script>
+</body>
+</html>

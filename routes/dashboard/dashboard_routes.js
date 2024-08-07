@@ -6,6 +6,7 @@ import {
 } from "../../validations/session_validation.js"
 import { users_dashboard, edit_user_dashboard } from "../../controllers/user_controller.js";
 import { news } from "../../controllers/news_controller.js";
+import {votaciones, votacion_registro} from "../../controllers/votaciones_controller.js";
 const router_dashboard = express.Router();
 
 
@@ -134,11 +135,18 @@ router_dashboard.get("/publicaciones/editar/:publicacion_id", (req, res, next) =
     })
 });
 
-router_dashboard.get("/votaciones", (req, res, next) => {
-    res.render("dashboard/dashboard", {
-        base_url: process.env.BASE_URL
-    })
-});
+router_dashboard.get("/votaciones", 
+    session_validation, 
+    session_validation_admin,
+    votaciones
+);
+
+router_dashboard.get("/votaciones/registro", 
+    session_validation, 
+    session_validation_admin,
+    votacion_registro
+);
+
 
 router_dashboard.get("/boletines", (req, res, next) => {
     res.render("dashboard/boletines", {

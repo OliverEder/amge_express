@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE Dashboard</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/bulma-dashboard.min.css">
+    
+</head>
+<body>
+    <div class="dashboard is-full-height">
+        <%- include("templates/sidenav"); -%>
+        <!-- main section -->
+        <div class="dashboard-main is-scrollable">
+            <%- include("templates/navbar"); -%>
+            <section class="section">
+
+                <p class="title is-size-2 is-spaced">
+                    Votaciones
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <div class="card">
+                            <header class="card-header has-background-info">
+                                <p class="card-header-title has-text-white">
+                                    Votaciones
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="columns">
+                                    <div class="column is-offset-4 is-4">
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input" type="text" placeholder="Buscar usuarios" id="buscar_input">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </span>
+                                            </div>
+                                            <p class="help">Busqueda por titulo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <table class="table is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha de publicación</th>
+                                            <th>Fecha de cierre</th>
+                                            <th>Votos</th>
+                                            <th>Status</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_paginada">
+                                        <% elections.forEach(election => { %>
+                                            <tr>
+                                                <td><%= election.vote_id %></td>
+                                                <td><%= election.vote_title %></td>
+                                                <td><%= election.vote_release_at %></td>
+                                                <td><%= election.vote_expiration_at %></td>
+                                                <td></td>
+                                                <td><%= election.vote_status %></td>
+                                            </tr>
+                                        <% }) %>
+                                        
+        
+                                    </tbody>
+                                    <tbody id="tbody_busqueda" class="is-hidden">
+
+                                    </tbody>
+                                </table>
+
+                                <a class="button is-info  is-rounded" href="/dashboard/votaciones/registro">
+                                    <i class="fa-solid fa-check-to-slot mr-2"></i> 
+                                    Nueva Votación
+                                </a>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            
+            
+            <%- include("templates/footer"); -%>            
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <script src="<%= base_url %>js/dashboard/usuarios.js"></script>
+</body>
+</html>
