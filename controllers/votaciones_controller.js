@@ -46,7 +46,7 @@ export const votacion_registro = async(req, res, next) => {
 export const api_votacion_registro = async (req, res, next) =>  {
     try {
         const {body} = req;
-
+         
         res.json(body);
     } catch (error) {
         res.status(400).send(error);
