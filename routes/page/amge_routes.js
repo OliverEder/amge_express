@@ -12,6 +12,10 @@ import {
     boletines
 } from "../../controllers/amge_controller.js";
 
+import {
+    votacion_contestar
+} from "../../controllers/votaciones_controller.js"
+
 import { session_validation } from "../../validations/session_validation.js"
 
 const router_amge = express.Router();
@@ -106,4 +110,6 @@ router_amge.get("/noticia/:noticia_id", (req, res, next) => {
 });
 
 router_amge.get("/boletines", boletines);
+
+router_amge.get("/votacion/:vote_id", session_validation, votacion_contestar);
 export default router_amge;

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMGE</title>
+    <link rel="stylesheet" href="<%= base_url %>css/bulma.min.css">
+    <link rel="stylesheet" href="<%= base_url %>css/style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="<%= base_url %>css/swiper_styles.css">
+    <link rel="stylesheet" href="<%= base_url %>css/index.css">
+    <link rel="stylesheet" href="<%= base_url %>css/cropper.min.css">
+</head>
+<body>
+  <%- include("templates/navbar"); -%>
+  <div class="container">
+    <section class="section mt-5">
+        <div class="columns">
+            <div class="column">
+                <h2 class="is-size-1">
+                    Votación
+                </h2>
+                <hr>   
+                <h3 class="is-size-3" id="votacion" votacion_id="<%= votacion.vote_id %>">
+                    <%= votacion.vote_title %>
+                </h3>        
+                <p class="is-size-5">
+                    <%= votacion.vote_description %>
+                </p>     
+            </div>
+        </div>
+    </section>
+    <% if (errors.length != 0) { %>
+        <section class="section mt-5">
+            <div class="columns">
+                <div class="column">
+                    <article class="message is-info">
+                        <div class="message-header">
+                          <p>Alerta</p>
+                          <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+                            <ul>
+                                <% errors.forEach(error => { %>
+                                    <li>
+                                        <%= error %>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    <% } %>
+    <% if (errors.length == 0) { %>
+        
+        <section class="section mt-5">
+            <% votacion.questions.forEach(question => { %>
+                <div class="columns question_div" question="<%= question.question_id %>">
+                    <did class="column">
+                        <div class="card">
+                            <header class="card-header">
+                                <p 
+                                    class="card-header-title question" 
+                                    question="<%= question.question_id %>"
+                                >
+                                    <%= question.question_content %>
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <p class="mb-3 has-text-weight-bold">Opciones: </p>
+                                <% question.options.forEach(option => { %>
+                                    <div class="columns option_div" option="<%= option.option_id %>">
+                                        <did class="column">
+                                            <div class="card">
+                                                <header class="card-header">
+                                                    <p class="card-header-title">
+                                                        <label class="radio ">
+                                                            <input 
+                                                                class="opcion" 
+                                                                type="radio" 
+                                                                name="opcion_<%= question.question_id %>" 
+                                                                question="<%= question.question_id %>" 
+                                                                value="<%= option.option_id %>"
+                                                            />
+                                                            <%= option.option_content %> 
+                                                        </label>
+                                                    </p>
+                                                </header>
+                                            </div>
+                                        </did>
+                                    </div>
+                                <% }) %>
+                
+                            </div>
+                          </div>
+                    </did>
+                </div>
+            <% }) %>
+            
+    
+            <button class="button is-info" id="enviar_btn">Enviar</button>
+        </section >  
+    <% } %>    
+        
+  </div>
+
+
+
+  <%- include("templates/footer"); %>
+  <%- include("templates/login_model"); %>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="<%= base_url %>js/navbar.js"></script>
+  <script src="<%= base_url %>js/votacion.js"></script>
+  
+</body>
+</html>

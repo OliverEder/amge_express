@@ -184,8 +184,8 @@ const guardar = async (e) => {
     const preguntas = document.querySelectorAll(".pregunta");
     preguntas.forEach(pregunta => {
         const pregunta_obj = {
-            pregunta: "",
-            opciones: []
+            question: "",
+            options: []
         };
         const pregunta_input = pregunta.querySelector(".pregunta_input");
         const opcion_inputs = pregunta.querySelectorAll(".opcion_input");
@@ -193,7 +193,7 @@ const guardar = async (e) => {
         pregunta_obj.pregunta = pregunta_input.value;
 
         opcion_inputs.forEach(opcion_input => {
-            pregunta_obj.opciones.push(opcion_input.value)
+            pregunta_obj.options.push(opcion_input.value)
         })
 
         preguntas_array.push(pregunta_obj);
@@ -204,7 +204,7 @@ const guardar = async (e) => {
         vote_title: titulo_input.value,
         vote_description:descripccion_textarea.value,
         vote_status: status_select.value,
-        preguntas: JSON.stringify(preguntas_array)
+        questions: JSON.stringify(preguntas_array)
     }
     // Enviar datos de registro
     const base_url = localStorage.getItem("base_url");
@@ -219,7 +219,16 @@ const guardar = async (e) => {
     const result = await response.json();
     console.log("result:", result);
     
-
+    if(!result.error){
+        Swal.fire({
+            title: "Registro",
+            text: "Registro guardado correctamente",
+            icon: "success",
+            showConfirmButton: true
+        }).then(() => {
+            window.location.href="/dashboard/votaciones";
+        })
+    }
 }
 
 add_pregunta_btns.forEach(add_pregunta_btn => {
