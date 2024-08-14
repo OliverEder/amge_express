@@ -98,7 +98,8 @@ router_amge.get("/noticia/:noticia_id", (req, res, next) => {
     const noticias = {
         tampico_cuna_de_un_legado: "tampico",
         reporte_actividades_tampico: "reporte_actividades_tampico",
-        convocatoria_registro_planillas: "convocatoria_registro_planillas"
+        convocatoria_registro_planillas: "convocatoria_registro_planillas",
+        comunicado_votacion: "comunicado_votacion",
     }
     res.render(`noticias/${noticias[params.noticia_id]}`, {
         base_url: process.env.BASE_URL,
