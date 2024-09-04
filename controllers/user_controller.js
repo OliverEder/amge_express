@@ -77,6 +77,8 @@ export const edit_user_dashboard = async (req, res, next) => {
             ]
         });
 
+        console.log("memberships:", memberships);
+        
         res.render("dashboard/editar_usuario", {
             base_url: process.env.BASE_URL,
             user: user,

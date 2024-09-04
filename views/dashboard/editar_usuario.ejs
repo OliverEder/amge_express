@@ -345,7 +345,30 @@
                             </header>
                             <div class="card-content">
                               <div class="content">
-                                <%= memberships %>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de Membresia</th>
+                                            <th>Fecha de Inicio</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% memberships.forEach(membership => { %>
+                                            <tr>
+                                                <td><%= membership.cat_membership_type.cat_membership_type_name %></td>
+                                                <td><%= membership.membership_created_at %></td>
+                                                <td><%= membership.membership_status == "A" ? "Activa" : "Inactiva" %></td>
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+
+                                </table>
+                                
+                                <a 
+                                    class="button is-link" 
+                                    id="nueva_membresia_btn"
+                                >Nueva Membresia</a>
                               </div>
                             </div>
                         </div>
@@ -368,11 +391,57 @@
             </section>
 
 
-            
+            <div class="modal" id="nueva_membresia_modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Membresia</p>
+                        <button class="delete" id="close_modal" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Tipo de membresia</label>
+                                    <div class="control">
+                                        <div class="select">
+                                            <select id="tipo_membresia_select">
+                                                <option value="">Selecciona..</option>
+                                                <option value="1">Estudiante</option>
+                                                <option value="2">Jubilado</option>
+                                                <option value="3">Socio</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Fecha de inicio</label>
+                                    <div class="control">
+                                        <input class="input" type="date" id="fecha_inicio_input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification is-warning is-hidden" id="notification_membresia">
+                            <button class="delete" id="close_notification"></button>
+                            Los campos son requeridos
+                        </div>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <div class="buttons">
+                        <button class="button is-success" id="guardar_mebresia_btn">Guardar</button>
+                        <button class="button">Cancelar</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
             <%- include("templates/footer"); -%>            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="<%= base_url %>js/dashboard/editar_usuario.js"></script>
+    <script src="<%= base_url %>js/dashboard/editar_usuario_membresia.js"></script>
 </body>
 </html>
