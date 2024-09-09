@@ -101,6 +101,7 @@ router_amge.get("/noticia/:noticia_id", (req, res, next) => {
         convocatoria_registro_planillas: "convocatoria_registro_planillas",
         comunicado_votacion: "comunicado_votacion",
         resultados_votacion: "resultados_votacion",
+        segunda_asamblea: "segunda_asamblea"
     }
     res.render(`noticias/${noticias[params.noticia_id]}`, {
         base_url: process.env.BASE_URL,
