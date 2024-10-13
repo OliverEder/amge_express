@@ -1,3 +1,4 @@
+import axios from "axios";
 import bcrypt from "bcrypt";
 import moment from "moment";
 import nodemailer from 'nodemailer';
@@ -416,6 +417,55 @@ export const edit_register = async (req, res, next) => {
         res.json({ response: "Usuario editado correctamente" }); */
     } catch (error) {
         //Enviar error
+        console.log(error);
+        
+        res.status(400).send(error);
+        next();
+    }
+}
+
+export const realizar_pago = async (req, res, next) => {
+    try {
+        const {body} = req;
+        console.log("realizar_pago===================================");
+        
+        // Reemplaza con tu API key de Clip y los datos del cliente
+        const apiKey = '8bef80-f3d1-443f-a054-8e445a8614'; // Coloca tu API key aquí
+        const paymentToken = body.cardTokenID; // Token generado previamente
+        const customerEmail = 'oliver.espinosa.meneses@gmail.com'; // Coloca el correo del cliente
+        const customerPhone = '7771862220'; // Coloca el teléfono del cliente
+
+        // Configura la solicitud a Clip
+        const response = await axios.post(
+            'https://api.payclip.com/payments',
+            {
+                amount: 0.01, // Monto en MXN
+                currency: 'MXN',
+                description: 'Prueba Checkout Transparente',
+                payment_method: {
+                token: body.cardTokenID, // Token del pago obtenido anteriormente
+                },
+                customer: {
+                email: customerEmail,
+                phone: customerPhone,
+                },
+            },
+            {
+                headers: {
+                Authorization: `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+                },
+            }
+        );
+        console.log("response:", response);
+        
+        // Envía la respuesta de Clip al frontend
+        res.status(200).json(response.data);
+        
+    } catch (error) {
+        //Enviar error
+        console.log("error", error);
+        
         res.status(400).send(error);
         next();
     }

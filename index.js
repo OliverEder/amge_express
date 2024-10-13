@@ -13,6 +13,7 @@ import router_amge from "./routes/page/amge_routes.js";
 import router_api_user from "./routes/api/api_user_routes.js";
 import router_api_new from "./routes/api/api_new_routes.js";
 import router_api_vote from "./routes/api/api_vote_routes.js";
+import router_api_membership from "./routes/api/api_membership_routes.js"
 const app = express();
 
 //Habilitar Cors
@@ -49,6 +50,8 @@ app.use("/dashboard", router_dashboard);
 app.use("/api/user", router_api_user);
 app.use("/api/new", router_api_new);
 app.use("/api/vote", router_api_vote);
+app.use("/api/membership", router_api_membership);
+
 
 app.use("/", router_amge);
 
