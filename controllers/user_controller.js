@@ -1,5 +1,6 @@
 import axios from "axios";
 import bcrypt from "bcrypt";
+import fetch from 'node-fetch';
 import moment from "moment";
 import nodemailer from 'nodemailer';
 import jwt from "jsonwebtoken";
@@ -429,7 +430,21 @@ export const realizar_pago = async (req, res, next) => {
         const customerEmail = 'oliver.espinosa.meneses@gmail.com'; // Coloca el correo del cliente
         const customerPhone = '7771862220'; // Coloca el teléfono del cliente
 
-        // Configura la solicitud a Clip
+         // Cuerpo de la solicitud
+        const paymentData = {
+            amount: 1.00, // Monto en MXN
+            currency: 'MXN',
+            description: 'Prueba Checkout Transparente',
+            payment_method: {
+            token: paymentToken, // Token del pago obtenido anteriormente
+            },
+            customer: {
+            email: customerEmail,
+            phone: customerPhone,
+            },
+        };
+
+        /* // Configura la solicitud a Clip
         const response = await axios.post(
             'https://api.payclip.com/payments',
             {
@@ -451,10 +466,31 @@ export const realizar_pago = async (req, res, next) => {
                 },
             }
         );
-        console.log("response:", response);
+ */
+         // Realiza la solicitud POST a la API de Clip usando fetch
+        const response = await fetch('https://api.payclip.com/payments', {
+            method: 'POST',
+            headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(paymentData), // Convierte el cuerpo de la solicitud a JSON
+        });
+        /* console.log("response:", response);
         
         // Envía la respuesta de Clip al frontend
-        res.status(200).json(response.data);
+        res.status(200).json(response.data); */
+
+        // Verifica el estado de la respuesta
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.statusText}`);
+        }
+  
+      // Convierte la respuesta a JSON
+      const responseData = await response.json();
+  
+      // Envía la respuesta de Clip al frontend
+      res.status(200).json(responseData);
         
     } catch (error) {
         //Enviar error
