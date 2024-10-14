@@ -109,18 +109,20 @@ const suscribir = (e) => {
     card.mount("checkout");
     document.querySelector("#payment-form").addEventListener("submit", async (event) => {
         event.preventDefault();       
+        
+        
         try {
-          
+          console.log("1");
           // Obtén el token de la tarjeta
           const cardToken = await card.cardToken();
           
           // Guarda el Card Token ID de la tarjeta en una constante
-          const cardTokenID = cardToken.id;aa
+          const cardTokenID = cardToken.id;
           console.log("Card Token ID:", cardTokenID);
           const form_data = {
             cardTokenID:cardTokenID
           };
-
+          console.log("2");
            // Enviar datos de registro
           const response = await fetch(`${base_url}api/membership/realizar_pago`, {
             method: "POST",
@@ -129,9 +131,10 @@ const suscribir = (e) => {
             },
             body: new URLSearchParams(form_data)
           });
+          console.log("3");
 
           const result = await response.text();
-          console.log(result);
+          console.log("Result:",result);
           
         } catch (error) {
           
