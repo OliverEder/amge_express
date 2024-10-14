@@ -57,15 +57,21 @@ router_amge.get("/registro_membresia", (req, res, next) => {
 
 router_amge.get("/membresias", (req, res, next) => {
     const { session } = req;
+    console.log("session", session);
+    
     res.render("membresias", {
         base_url: process.env.BASE_URL,
         api_base_url: process.env.API_BASE_URL,
         logged: session.logged ? session.logged : false,
         user_id: session.logged ? session.user_id : "",
         user_email:  session.logged ? session.user_email : "",
+        user_names:  session.logged ? session.user_names : "",
+        user_last_names:  session.logged ? session.user_last_names : "",
         membership: session.membership
     });
 });
+
+
 
 router_amge.get("/aviso_privacidad", (req, res, next) => {
     const { session } = req;

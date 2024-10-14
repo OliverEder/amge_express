@@ -1,10 +1,15 @@
+
+
 const estudiante_btn = document.querySelector("#estudiante_btn");
 const jubilado_btn = document.querySelector("#jubilado_btn");
 const socio_btn = document.querySelector("#socio_btn");
 const pago_modal = document.querySelector("#pago_modal");
 const modal_background_pago = document.querySelector("#modal_background_pago");
 const close_pago = document.querySelector("#close_pago");
-
+const membresia_nombre_input = document.querySelector("#membresia_nombre_input");
+const membresia_email_input = document.querySelector("#membresia_email_input");
+const membresia_input = document.querySelector("#membresia_input");
+const membresia_precio_input = document.querySelector("#membresia_precio_input");
 const animate_elements = document.querySelectorAll(".animated_elements");
 
 
@@ -47,11 +52,12 @@ const pago_submit = async (e) => {
 
 const suscribir = (e) => {
     e.preventDefault();
+
     
     if(
-        !localStorage.getItem("user_email")
+        !localStorage.getItem("user_email") ||
+        !e.target.getAttribute("logged")
     ){
-        console.log("Mebresia Activa");
         Swal.fire({
             position: "top-end",
             icon: "warning",
@@ -66,7 +72,6 @@ const suscribir = (e) => {
         localStorage.getItem("membership_status") &&
         localStorage.getItem("membership_status") == "A"
     ){
-        console.log("Mebresia Activa");
         Swal.fire({
             position: "top-end",
             icon: "success",
@@ -77,7 +82,12 @@ const suscribir = (e) => {
         return
     }
 
-    console.log(localStorage.getItem("membership_status"));
+
+    membresia_nombre_input.value = `${localStorage.getItem("user_names")} ${localStorage.getItem("user_last_names")}` ;
+
+    membresia_email_input.value = localStorage.getItem("user_email");
+    membresia_input.value = e.target.getAttribute("membresia");
+    membresia_precio_input.value = `$${e.target.getAttribute("price")}`;
     const checkout = document.querySelector("#checkout");
 
     checkout.innerHTML = "";
@@ -105,7 +115,7 @@ const suscribir = (e) => {
           const cardToken = await card.cardToken();
           
           // Guarda el Card Token ID de la tarjeta en una constante
-          const cardTokenID = cardToken.id;
+          const cardTokenID = cardToken.id;aa
           console.log("Card Token ID:", cardTokenID);
           const form_data = {
             cardTokenID:cardTokenID

@@ -200,22 +200,14 @@ export const login = async (req, res, next) => {
         req.session.user_email = user.user_email;
         req.session.user_id = user.user_id;
         req.session.user_group_id = user.user_group_id;
+        req.session.user_names = user.user_names;
+        req.session.user_last_names = user.user_last_names;
         if(membresia){
             req.session.membership = membresia.membership_status;
         }else{
             req.session.membership = "I";
         }
         
-        console.log(req.session);
-        console.log({
-            token: token,
-            user_id:user.user_id,
-            user_email:user.user_email,
-            user_group_id: user.user_group_id,
-            user_group_name: user_group.user_group_name,
-            membresia: membresia,
-            errors: []
-        });
         res.header("auth-token", token).json({
             token: token,
             user_id:user.user_id,
@@ -223,6 +215,8 @@ export const login = async (req, res, next) => {
             user_group_id: user.user_group_id,
             user_group_name: user_group.user_group_name,
             membresia: membresia,
+            user_names: user.user_names,
+            user_last_names: user.user_last_names,
             errors: []
         });
         

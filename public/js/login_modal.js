@@ -137,6 +137,8 @@ const login = async (e) => {
         window.localStorage.setItem("user_email", result.user_email );
         window.localStorage.setItem("user_group_id", result.user_group_id );
         window.localStorage.setItem("user_group_name", result.user_group_name);
+        window.localStorage.setItem("user_names", result.user_names);
+        window.localStorage.setItem("user_last_names", result.user_last_names);
         if(result.membresia){
             window.localStorage.setItem("membership_status", result.membresia.membership_status);
         }
