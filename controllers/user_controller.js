@@ -432,7 +432,7 @@ export const realizar_pago = async (req, res, next) => {
 
          // Cuerpo de la solicitud
         const paymentData = {
-            amount: 1.00, // Monto en MXN
+            amount: 100.00, // Monto en MXN
             currency: 'MXN',
             description: 'Prueba Checkout Transparente',
             payment_method: {
@@ -476,6 +476,7 @@ export const realizar_pago = async (req, res, next) => {
             },
             body: JSON.stringify(paymentData), // Convierte el cuerpo de la solicitud a JSON
         });
+        console.log("response:", response);
         /* console.log("response:", response);
         
         // Envía la respuesta de Clip al frontend
@@ -485,7 +486,7 @@ export const realizar_pago = async (req, res, next) => {
         if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.statusText}`);
         }
-  
+
       // Convierte la respuesta a JSON
       const responseData = await response.json();
   
@@ -496,6 +497,72 @@ export const realizar_pago = async (req, res, next) => {
         //Enviar error
         console.log("error", error);
         
+        res.status(400).send(error);
+        next();
+    }
+}
+
+export const api_nueva_membresia = async (req, res, next) => {
+    try {
+        const {body} = req;
+        const new_membership = await Membership.create({
+            membership_created_at: body.fecha_inicio,
+            membership_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
+            cat_membership_type_id: body.tipo_membresia_id,  
+            user_id : body.user_id, 
+            membership_status: "A"
+        });
+        const cat_membership_type = await Cat_membership_type.findOne({
+            where:{cat_membership_type_id: body.tipo_membresia_id}
+        });
+
+        const user = await User.findOne({
+            where:{user_id: body.user_id}
+        });
+
+        // Crear correo de bienvenida
+        let contentHTML = `
+            Estimado(a) ${user.user_last_names} ${user.user_names}
+
+            Nos complace darte la más cálida bienvenida a la Asociación Mexicana de Geofísicos de Exploración (AMGE).
+            Nos alegra contar con tu participación en esta comunidad de profesionales comprometidos con el avance de la geofísica y la exploración en México.
+            En la AMGE, trabajamos para fomentar el desarrollo y la innovación en el campo de la geofísica, promoviendo la colaboración y el intercambio de conocimiento con colegas y organizaciones a nivel internacional.
+            Tu experiencia y contribuciones son valiosas para nosotros, y estamos seguros de que juntos lograremos avanzar en el entendimiento de nuevas técnicas y tecnologías en la exploración geofísica global.
+            Esperamos que esta membresía te brinde acceso a una red profesional de gran alcance, así como a oportunidades para participar en conferencias, publicaciones y proyectos internacionales que resalten el papel de la geofísica mexicana en el escenario global.
+            ¡Bienvenido(a) a la AMGE, y gracias por formar parte de nuestra misión de trascender fronteras!
+
+            Atentamente:
+            Asociación Mexicana de Geofísicos de Exploración (AMGE)
+        `;
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            auth: {
+                user: 'amge.soporte@gmail.com',
+                pass: '2024.amge.2024'
+            },
+            tls: { rejectUnauthorized: false }
+        });
+        try {
+            let info = await transporter.sendMail({
+                from: 'AMGE <amge.soporte@gmail.com>', // sender address,
+                to: 'oliver.espinosa.meneses@gmail.com',
+                subject: 'Membresia Activa',
+                html: contentHTML
+            });
+            console.log('Correo enviado: ', info.response);
+        } catch (error) {
+            console.error('Error al enviar el correo: ', error);
+        }
+        
+
+        const response = {
+            new_membership:new_membership,
+            cat_membership_type:cat_membership_type 
+        };
+        res.json(response);
+    } catch (error) {
         res.status(400).send(error);
         next();
     }
