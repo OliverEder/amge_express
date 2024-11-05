@@ -537,7 +537,7 @@ export const api_nueva_membresia = async (req, res, next) => {
         let transporter = nodemailer.createTransport({
             host: 'smtpout.secureserver.net',
             port: 465,
-            secure: false,
+            secure: true,
             auth: {
                 user: 'administracion@amgemx.org',
                 pass: '2024.Amge.2024'
