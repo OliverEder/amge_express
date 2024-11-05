@@ -535,8 +535,8 @@ export const api_nueva_membresia = async (req, res, next) => {
             Asociación Mexicana de Geofísicos de Exploración (AMGE)
         `;
         let transporter = nodemailer.createTransport({
-            host: 'smtp.amgemx.org',
-            port: 587,
+            host: 'smtpout.secureserver.net',
+            port: 465,
             secure: false,
             auth: {
                 user: 'administracion@amgemx.org',
