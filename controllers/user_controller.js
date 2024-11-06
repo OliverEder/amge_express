@@ -526,10 +526,8 @@ export const api_nueva_membresia = async (req, res, next) => {
 
             <div class="content">
                 <p>Nos complace darte la más cálida bienvenida a la <strong>Asociación Mexicana de Geofísicos de Exploración (AMGE)</strong>.</p>
-                <p>Nos alegra contar con tu participación en esta comunidad de profesionales comprometidos con el avance de la geofísica y la exploración en México.</p>
-                <p>En la AMGE, trabajamos para fomentar el desarrollo y la innovación en el campo de la geofísica, promoviendo la colaboración y el intercambio de conocimiento con colegas y organizaciones a nivel internacional.</p>
-                <p>Tu experiencia y contribuciones son valiosas para nosotros, y estamos seguros de que juntos lograremos avanzar en el entendimiento de nuevas técnicas y tecnologías en la exploración geofísica global.</p>
-                <p>Esperamos que esta membresía te brinde acceso a una red profesional de gran alcance, así como a oportunidades para participar en conferencias, publicaciones y proyectos internacionales que resalten el papel de la geofísica mexicana en el escenario global.</p>
+                <p>Nos alegra contar con tu participación en esta comunidad de profesionales comprometidos con el avance de la geofísica y la exploración en México. En la AMGE, trabajamos para fomentar el desarrollo y la innovación en el campo de la geofísica, promoviendo la colaboración y el intercambio de conocimiento con colegas y organizaciones a nivel internacional.</p>
+                <p>Tu experiencia y contribuciones son valiosas para nosotros, y estamos seguros de que juntos lograremos avanzar en el entendimiento de nuevas técnicas y tecnologías en la exploración geofísica global.Esperamos que esta membresía te brinde acceso a una red profesional de gran alcance, así como a oportunidades para participar en conferencias, publicaciones y proyectos internacionales que resalten el papel de la geofísica mexicana en el escenario global.</p>
                 <p><strong>¡Bienvenido(a) a la AMGE, y gracias por formar parte de nuestra misión de trascender fronteras!</strong></p>
             </div>
             <div class="footer">
