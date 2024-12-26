@@ -11,6 +11,7 @@ import { User_group } from "../models/user_group.js";
 import { where, Op, Sequelize } from "sequelize";
 import {} from "dotenv/config";
 import { paginacion_tabla } from "../helpers/paginacion_tablas.js";
+import { Sesion } from "../models/sesion.js";
 import { Delegation } from "../models/delegation.js";
 import { Membership } from "../models/membership.js";
 import { Cat_membership_type } from "../models/cat_membership_type.js";
@@ -168,7 +169,6 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
     try {
-        
         // Validación
         const errores = validationResult(req);
         if(!errores.isEmpty()){
@@ -183,6 +183,14 @@ export const login = async (req, res, next) => {
         //comparar los paswords hasheados
         const match = await bcrypt.compare(body.user_password, user.user_password);
         if(!match) return res.status(400).json({errors:[{msg:"El usuario o la contraseña son incorrectos"}]});
+        //Crear nuevo registro de sesion
+        const new_sesion = await Sesion.create({
+            user_id: user.user_id,
+            sesion_in: moment().subtract(6 ,'H').format('YYYY-MM-DD HH:mm:ss'),
+            sesion_last_check: moment().subtract(6 ,'H').format('YYYY-MM-DD HH:mm:ss'),
+            sesion_status: "A"
+        });
+
         //crear un payload
         const payload = { id: user.user_id }; 
         //Firmar el token      
@@ -195,11 +203,12 @@ export const login = async (req, res, next) => {
                 membership_status: "A"
             }
         });
-        console.log("membresia;", membresia);
+
         // Creación de la sesion por parte de express
         req.session.logged = true;
         req.session.user_email = user.user_email;
         req.session.user_id = user.user_id;
+        req.session.sesion_id = new_sesion.sesion_id;
         req.session.user_group_id = user.user_group_id;
         req.session.user_names = user.user_names;
         req.session.user_last_names = user.user_last_names;
@@ -218,6 +227,7 @@ export const login = async (req, res, next) => {
             membresia: membresia,
             user_names: user.user_names,
             user_last_names: user.user_last_names,
+            sesion_id: new_sesion.sesion_id,
             errors: []
         });
         
@@ -230,7 +240,26 @@ export const login = async (req, res, next) => {
 
 export const logout = async (req, res, next) => {
     try {
-        const { session } = req;
+        const { session, body } = req;
+        
+        const user = await User.findOne({ where: { user_id: body.user_id } });
+        const sesion = await Sesion.findOne({where: { sesion_id: body.sesion_id } });
+        
+        if(sesion.sesion_status === "A") {
+            const sesion_inactiva = User.update({
+                user_active_session: user.user_sesiones_activas - 1
+            }, {
+                where: { user_name: body.user_name }
+            });
+            const sesion_salida = Sesion.update({
+                sesion_out: moment().subtract(6 ,'H').format('YYYY-MM-DD HH:mm:ss'),
+                sesion_last_check: moment().subtract(6 ,'H').format('YYYY-MM-DD HH:mm:ss'),
+                sesion_status: "I"
+        
+            }, {
+                where: { sesion_id: body.sesion_id }
+            });
+        }
         session.destroy();
         res.json({state: "Sesion finalizada"});
         

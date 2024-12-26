@@ -66,7 +66,8 @@ const logout = async (e) => {
         const user_id = window.localStorage.getItem("user_id");
         
         const form_data = {
-            user_id: user_id            
+            user_id: user_id,         
+            sesion_id: window.localStorage.getItem('sesion_id')   
         }
 
         // Enviar datos de registro
@@ -78,6 +79,7 @@ const logout = async (e) => {
             body: new URLSearchParams(form_data)
         });
         const result = await response.json();
+
         localStorage.clear();
         setTimeout(() => {
             window.location.href="/";
@@ -116,7 +118,7 @@ const login = async (e) => {
             body: new URLSearchParams(form_data)
         });
         const result = await response.json();
-
+        
         if(result.errors.length != 0){
             Swal.fire({
                 title: "Inicio de sesión",
@@ -139,6 +141,7 @@ const login = async (e) => {
         window.localStorage.setItem("user_group_name", result.user_group_name);
         window.localStorage.setItem("user_names", result.user_names);
         window.localStorage.setItem("user_last_names", result.user_last_names);
+        window.localStorage.setItem("sesion_id", result.sesion_id);
         if(result.membresia){
             window.localStorage.setItem("membership_status", result.membresia.membership_status);
         }
