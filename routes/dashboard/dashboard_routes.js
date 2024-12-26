@@ -112,8 +112,13 @@ router_dashboard.get("/noticias/editar/:publicacion_id", (req, res, next) => {
 /* Publicaciones */
 
 router_dashboard.get("/publicaciones", (req, res, next) => {
+    const { session } = req;
+
     res.render("dashboard/dashboard", {
-        base_url: process.env.BASE_URL
+        base_url: process.env.BASE_URL,
+        logged: session.logged ? session.logged : false,
+        user_id: session.logged ? session.user_id : "",
+        user_email:  session.logged ? session.user_email : "",
     })
 });
 
