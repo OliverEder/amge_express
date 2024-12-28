@@ -1,12 +1,16 @@
 const buscar_input = document.querySelector("#buscar_input");
 const tbody_paginada = document.querySelector("#tbody_paginada");
 const tbody_busqueda = document.querySelector("#tbody_busqueda");
+const tbody_sessions = document.querySelector("#tbody_sessions");
 
+let currentPage = 1;
+let totalPages = 1;
 
 document.addEventListener("DOMContentLoaded", () => {
     build_active_users_chart();
     memberships_chart();
     build_sessions_record_chart();
+    paginate_sessions_table();
 })
 
 const build_active_users_chart = () => {
@@ -59,6 +63,96 @@ const build_sessions_record_chart = () => {
       
     Plotly.newPlot(sessions_record_chart, data, layout);
 }
+
+const paginate_sessions_table =  async (page = 1, limit = 5) => {
+    try {
+        console.log("page:", page, "limit", limit);
+        
+        // Enviar datos de registro
+        const base_url = localStorage.getItem("base_url");
+        const response = await fetch(`${base_url}api/session?page=${page}&limit=${limit}`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            },
+        });
+
+        const result = await response.json();
+        const {data, pagination} = result;
+        
+        // Actualizar variables globales
+        currentPage = pagination.currentPage;
+        totalPages = pagination.totalPages;
+
+        // Limpiar la tabla antes de agregar nuevos datos
+        tbody_sessions.innerHTML = "";
+
+        data.forEach((session, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${session.sesion_id}</td>
+                <td>${session.user.user_email}</td>
+                <td>${session.sesion_in}</td>
+                <td>${session.sesion_out ? session.sesion_out : ""}</td>
+                <td>
+                    <a href="#"><i class="fa-solid fa-eye mr-1"></i></a>
+                </td>
+            `;
+            tbody_sessions.appendChild(tr);
+        });
+        
+        // Actualizar los controles de paginación
+        updatePaginationControls();
+                
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
+const updatePaginationControls = () => {
+    console.log("updatePaginationControls::::");
+    
+    const paginationList = document.querySelector('.session_pagination-list');
+    paginationList.innerHTML = "";
+    console.log("paginationList::", paginationList);
+    
+    // Botón "Anterior"
+    const previousButton = document.querySelector('.session_pagination-previous');
+    previousButton.disabled = currentPage === 1;
+    previousButton.onclick = () => {
+        if (currentPage > 1) {
+            paginate_sessions_table(currentPage - 1);
+        }
+    };
+
+    // Botón "Siguiente"
+    const nextButton = document.querySelector('.session_pagination-next');
+    nextButton.disabled = currentPage === totalPages;
+    nextButton.onclick = () => {
+        if (currentPage < totalPages) {
+            paginate_sessions_table(currentPage + 1);
+        }
+    };
+
+    // Generar números de página
+    for (let i = 1; i <= totalPages; i++) {
+        const pageItem = document.createElement('li');
+        const pageLink = document.createElement('a');
+        pageLink.className = 'pagination-link';
+        if (i === currentPage) {
+            pageLink.classList.add('is-current');
+            pageLink.setAttribute('aria-current', 'page');
+        }
+        pageLink.textContent = i;
+        pageLink.onclick = () => paginate_sessions_table(i);
+
+        pageItem.appendChild(pageLink);
+        paginationList.appendChild(pageItem);
+    }
+};
+
+
 
 buscar_input.addEventListener("keyup", async (e) => {
     try {
@@ -113,4 +207,6 @@ buscar_input.addEventListener("keyup", async (e) => {
         console.log(error);
     }
 });
+
+
 

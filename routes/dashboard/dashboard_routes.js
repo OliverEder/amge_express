@@ -107,7 +107,7 @@ router_dashboard.get("/noticias/editar/:publicacion_id", (req, res, next) => {
     res.render("dashboard/dashboard", {
         base_url: process.env.BASE_URL
     })
-});
+}); 
 
 /* Publicaciones */
 

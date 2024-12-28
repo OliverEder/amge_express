@@ -88,4 +88,3 @@ User.belongsTo(Delegation, {
     }
 });
 
-  

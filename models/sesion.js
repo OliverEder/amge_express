@@ -1,6 +1,8 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js";
 
+import { User } from "./user.js";
+
 export const Sesion = db.define(
   "sesion",
   {
@@ -14,7 +16,7 @@ export const Sesion = db.define(
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
-        model: "users", // Ajusta según el nombre exacto de la tabla relacionada
+        model: "user", // Ajusta según el nombre exacto de la tabla relacionada
         key: "user_id",
       },
     },
@@ -40,3 +42,10 @@ export const Sesion = db.define(
     timestamps: false,
   }
 );
+
+
+Sesion.belongsTo(User, {
+    foreignKey: {
+      name: 'user_id'
+    }
+});
