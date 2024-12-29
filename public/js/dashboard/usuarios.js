@@ -47,21 +47,37 @@ const memberships_chart = () => {
     Plotly.newPlot(memberships_chart, data, layout);
 } 
 
-const build_sessions_record_chart = () => {
-    const sessions_record_chart = document.querySelector("#sessions_record_chart");
-    var data = [
-        {
-          x: ['2023-10-04', '2023-10-05', '2023-10-06', '2023-10-07', '2023-10-08', '2023-10-09'],
-          y: [12, 20, 16, 16, 16, 10],
-          type: 'scatter'
-        }
-    ];
+const build_sessions_record_chart = async () => {
 
-    var layout = {
-        title: 'Registro historico de sesiones',
-    };
-      
-    Plotly.newPlot(sessions_record_chart, data, layout);
+    try {
+        const base_url = localStorage.getItem("base_url");
+        const response = await fetch(`${base_url}api/session/stats`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            },
+        });
+
+        const result = await response.json();
+
+        const sessions_record_chart = document.querySelector("#sessions_record_chart");
+        var data = [
+            {
+                x: result.map(item => item.date), // Fechas
+                y: result.map(item => item.count), // Conteos
+                type: 'scatter'
+            }
+        ];
+
+        var layout = {
+            title: 'Registro historico de sesiones',
+        };
+        
+        Plotly.newPlot(sessions_record_chart, data, layout);
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
 
 const paginate_sessions_table =  async (page = 1, limit = 5) => {
