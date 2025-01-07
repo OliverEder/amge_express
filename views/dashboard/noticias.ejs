@@ -62,10 +62,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <% news.forEach(new_element => { %>
+                                            <tr>
+                                                <td><%= new_element.new_id %></td>
+                                                <td><%= new_element.new_title %></td>
+                                                <td><%= new_element.new_created_at %></td>
+                                                <td><%= new_element.new_status == "A" ? "Activo" : "Inactivo" %>
+                                                <td>
+                                                    <a href="/dashboard/noticias/<%= new_element.new_id %>">
+                                                        <i class="fa-solid fa-pen-to-square"></i> Editar
+                                                    </a>
+                                                    
+                                                </td>
+                                            </tr>
+                                        <% }) %>
+                                        
                                     </tbody>
                                 </table>
-                                <!-- <div class="columns">
+                                <div class="columns">
                                     <div class="column is-8 is-offset-2">
                                         <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                                             <a class="pagination-previous">Anterior</a>
@@ -81,7 +95,7 @@
                                             </ul>
                                         </nav>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             
                         </div>

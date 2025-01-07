@@ -13,6 +13,9 @@ export const New = db.define("new", {
     new_content: {
         type: Sequelize.TEXT
     },
+    new_thumbnail: {
+        type: Sequelize.TEXT
+    },
     new_views: {
         type: Sequelize.INTEGER
     },
