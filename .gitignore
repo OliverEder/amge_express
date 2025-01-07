@@ -218,4 +218,5 @@ $RECYCLE.BIN/
 public/boletines/
 public/usuarios/
 public/videos/
+public/news/
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node
