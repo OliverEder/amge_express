@@ -58,8 +58,12 @@ document.addEventListener("DOMContentLoaded", async () =>  {
                 return;
             }
 
+            console.log("status_select:", status_select.value);
+            
+
             const formData = new FormData();
             formData.append("new_title", titulo_input.value);
+            formData.append("new_id", titulo_input.getAttribute("new_id"));
             formData.append("new_thumbnail", miniatura_input.files[0]);
             formData.append("new_content", classic_editor.getData());
             formData.append("new_status", status_select.value);
@@ -67,14 +71,12 @@ document.addEventListener("DOMContentLoaded", async () =>  {
             const base_url = localStorage.getItem("base_url");
     
             // Enviar datos de registro
-            const response = await fetch(`${base_url}api/new/`, {
-                method: "POST",
+            const response = await fetch(`${base_url}api/new/${titulo_input.getAttribute("new_id")}`, {
+                method: "PUT",
                 body: formData
             });
-            const result = await response.json();
+            const result = await response.text();
             
-            console.log("result:", result);
-            //console.log("resullt:",result);
             Swal.fire({
                 title: "Registro",
                 text: "Registro correcto",

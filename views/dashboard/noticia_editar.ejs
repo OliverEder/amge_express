@@ -35,7 +35,7 @@
                             <a href="/dashboard/noticias">Noticias</a>
                         </li>
                         <li class="is-active">
-                            <a href="#" aria-current="page">Nueva noticia</a>
+                            <a href="#" aria-current="page">Editar noticia</a>
                         </li>
                     </ul>
                 </nav>
@@ -51,6 +51,10 @@
                                         name="titulo" 
                                         placeholder="Ingrese el título del post"
                                         id="titulo_input"
+                                        <% if (typeof new_obj != "undefined") { %>
+                                            value="<%= new_obj.new_title %>"
+                                        <% } %>
+                                        new_id="<%= new_obj.new_id %>"
                                     >
                                 </div>
                             </div>
@@ -58,7 +62,7 @@
                     </div>
                     <div class="columns">
                         <div class="column">
-                            <img src="" alt="" id="miniatura_img">
+                            <img src="<%= base_url %>news/thumbnails/<%= new_obj.new_thumbnail %>" alt="" id="miniatura_img">
                         </div>
                     </div>
                     <div class="columns">
@@ -88,8 +92,7 @@
                                         name="editor" 
                                         placeholder="Ingrese el contenido del post"
                                         id="editor" 
-                                    >
-                                    </textarea>
+                                    ><%= new_obj.new_content %></textarea>
                                 </div>
                             </div>
                         </div>
@@ -99,10 +102,10 @@
                             <div class="field">
                                 <label class="label">Status</label>
                                 <div class="control">
-                                    <div class="select" id="status_select">
-                                        <select>
-                                            <option value="A">Activo</option>
-                                            <option value="I">Inactivo</option>
+                                    <div class="select" >
+                                        <select id="status_select">
+                                            <option <%= new_obj.new_status ==  "A" ? "selected" : "" %> value="A">Activo</option>
+                                            <option <%= new_obj.new_status ==  "I" ? "selected" : "" %> value="I">Inactivo</option>
                                         </select>
                                     </div>
                                 </div>
@@ -135,7 +138,7 @@
     
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="<%= base_url %>js/dashboard/noticia_registro.js"></script>
+    <script src="<%= base_url %>js/dashboard/noticia_editar.js"></script>
     <script src="<%= base_url %>js/dashboard/dashboard.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 import express from "express";
-import { register_new } from "../../controllers/news_controller.js";
+
 import {
     api_votacion_registro, 
     api_registrar_respustas

@@ -5,7 +5,7 @@ import {
     session_validation_admin 
 } from "../../validations/session_validation.js"
 import { users_dashboard, edit_user_dashboard } from "../../controllers/user_controller.js";
-import { news } from "../../controllers/news_controller.js";
+import { news, view_edit_new } from "../../controllers/news_controller.js";
 import {votaciones, votacion_registro} from "../../controllers/votaciones_controller.js";
 const router_dashboard = express.Router();
 
@@ -83,12 +83,16 @@ router_dashboard.get("/eventos", (req, res, next) => {
 router_dashboard.get(
     "/noticias", 
     session_validation, 
-    //session_validation_admin,
+    session_validation_admin,
     news
 );
 
 router_dashboard.get("/noticias/nueva", (req, res, next) => {
     const { session } = req;
+    if(typeof new_obj != "undefined"){
+        console.log("new_obj:", new_obj);
+    }
+    
     res.render("dashboard/noticia_registro", {
         base_url: process.env.BASE_URL,
         logged: session.logged ? session.logged : false,
@@ -103,11 +107,12 @@ router_dashboard.get("/noticias/ver/:publicacion_id", (req, res, next) => {
     })
 });
 
-router_dashboard.get("/noticias/editar/:publicacion_id", (req, res, next) => {
-    res.render("dashboard/dashboard", {
-        base_url: process.env.BASE_URL
-    })
-}); 
+router_dashboard.get(
+    "/noticias/:new_id", 
+    session_validation, 
+    session_validation_admin,
+    view_edit_new
+); 
 
 /* Publicaciones */
 
