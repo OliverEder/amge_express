@@ -73,6 +73,38 @@
   <section class="section is-small">
       <h1 class="title">Anuncios AMGE</h1>
       <div class="columns">
+
+        <% processed_news.forEach(new_element => { %>
+          <div class="column is-4">
+            <div class="card animated_card animate__animated animate_element is-invisible">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <a href="<%= base_url %>noticias/<%= new_element.id %>">
+                      <img src="<%= base_url %>news/thumbnails/<%= new_element.thumbnail %>" alt="Placeholder image">
+                    </a>                      
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <a class="title is-4">
+                        <%= new_element.title %>
+                      </a>
+                    </div>
+                  </div>
+              
+                  <div class="content">
+                    <%= new_element.contentPreview %>
+                    <br>
+                    <a href="<%= base_url %>noticias/<%= new_element.id %>">ver más</a>
+                    <br>
+                    <time datetime="2016-1-1"><%= new_element.formattedDate %></time>
+                  </div>
+                </div>
+            </div>
+          </div>
+        <% }) %>
+
         <div class="column is-4">
           <div class="card animated_card animate__animated animate_element is-invisible">
               <div class="card-image">
