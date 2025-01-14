@@ -46,6 +46,11 @@ export const view_new = async (req, res, next) => {
         where:{new_id: params.new_id}
     });
 
+    New.update(
+        { new_views:  parseInt(new_obj.new_views) + 1 },
+        { where: { new_id: params.new_id } }
+    );
+
     res.render(`noticias/noticia`, {
         base_url: process.env.BASE_URL,
         api_base_url: process.env.API_BASE_URL,
@@ -64,6 +69,7 @@ export const api_register_new = async (req, res, next) => {
             new_title: body.new_title,
             new_content: body.new_content,
             new_thumbnail: file.originalname,
+            new_views: 0,
             new_created_at: moment().format("YYYY-MM-DD HH:mm:ss"),
             new_modified_at: moment().format("YYYY-MM-DD HH:mm:ss"),
             new_status: body.new_status

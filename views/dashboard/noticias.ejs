@@ -57,6 +57,7 @@
                                             <th>ID</th>
                                             <th>Titulo</th>
                                             <th>Creación</th>
+                                            <th>Vistas</th>
                                             <th>Status</th>
                                             <th></th>
                                         </tr>
@@ -67,6 +68,7 @@
                                                 <td><%= new_element.new_id %></td>
                                                 <td><%= new_element.new_title %></td>
                                                 <td><%= new_element.new_created_at %></td>
+                                                <th><%= new_element.new_views %></th>
                                                 <td><%= new_element.new_status == "A" ? "Activo" : "Inactivo" %>
                                                 <td>
                                                     <a href="/dashboard/noticias/<%= new_element.new_id %>">
